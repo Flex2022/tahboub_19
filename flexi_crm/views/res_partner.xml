@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <record id="view_partner_form_inherit" model="ir.ui.view">
+            <field name="name">view_partner_form_inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@class='d-flex align-items-baseline w-md-50']" position="after">
+                    <div class="d-flex align-items-baseline w-md-50">
+                        <i class="fa fa-fw me-1 fa-mobile text-primary" title="Mobile"/>
+                        <field name="mobile" class="w-100" widget="phone" placeholder="Mobile"/>
+                    </div>
+                </xpath>
+                <xpath expr="//field[@name='company_id']" position="after">
+                    <field name="warn_mobile_exist" invisible="1"/>
+                </xpath>
+                <xpath expr="//sheet" position="before">
+                    <div class="alert alert-warning" role="alert"
+                         invisible="warn_mobile_exist == False">
+                        This partner has a mobile number that is assigned to another partner
+                    </div>
+                </xpath>
+                <xpath expr="//field[@name='mobile'][1]" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="contacts.action_contacts" model="ir.actions.act_window">
+            <field name="context">{'default_company_type': 'person', 'default_mobile': '+962'}</field>
+        </record>
+    </data>
+</odoo>

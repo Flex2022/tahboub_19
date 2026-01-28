@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_order_form_inherit_categ" model="ir.ui.view">
+            <field name="name">view_order_form_inherit_categ</field>
+            <field name="model" >sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='order_line']/list" position="inside">
+                    <field name="price_total" optional="1"/>
+                </xpath>
+
+                <xpath expr="//sheet" position="before">
+                    <field name="is_separate_sol" invisible="1"/>
+                    <field name="wood_categs" invisible="1" widget="many2many_tags"/>
+                    <field name="accessory_categs" invisible="1" widget="many2many_tags"/>
+                    <field name="mixer_categs" invisible="1" widget="many2many_tags"/>
+                    <field name="electronic_categs" invisible="1" widget="many2many_tags"/>
+                    <field name="worktop_categs" invisible="1" widget="many2many_tags"/>
+                    <field name="service_categs" invisible="1" widget="many2many_tags"/>
+                    <field name="appliance_categs" invisible="1" widget="many2many_tags"/>
+                    <field name="bedroom_categs" invisible="1" widget="many2many_tags"/>
+                </xpath>
+
+                <xpath expr="//page[@name='order_lines']//field[@name='order_line']" position="attributes">
+                    <attribute name="readonly">state in ('done','cancel') or is_separate_sol</attribute>
+                    <attribute name="force_save">1</attribute>
+                </xpath>
+
+                <xpath expr="//page[@name='order_lines']" position="after">
+                    <page string="Order Lines By Category" name="order_lines_by_categ"
+                          invisible="not is_separate_sol">
+
+                        <button name="action_set_discount" type="object" string="Set Discount"
+                                class="float-end btn-secondary" icon="fa-tag"
+                                groups="product.group_discount_per_so_line"
+                                invisible="state not in ['draft', 'sent']"/>
+
+                        <notebook>
+                            <page string="Wood" name="order_lines_1">
+                                <field name="wood_order_line"
+                                       readonly="state in ('done','cancel')"
+                                       context="{'list_view_ref':'hz_sale_custom.sol_tree_wood'}">
+                                </field>
+                                <group col="6" class="mt-2 mt-md-0">
+                                    <group colspan="4"></group>
+                                    <group class="oe_subtotal_footer oe_right" colspan="2">
+                                        <field name="wood_untaxed" colspan="2"/>
+                                        <field name="wood_tax" colspan="2"/>
+                                        <field name="wood_total" colspan="2"/>
+                                    </group>
+                                    <div class="oe_clear"/>
+                                </group>
+                            </page>
+
+                            <page string="Bedroom" name="order_lines_8">
+                                <field name="bedroom_order_line"
+                                       readonly="state in ('done','cancel')"
+                                       context="{'list_view_ref':'hz_sale_custom.sol_tree_bedroom'}"/>
+                                <group col="6" class="mt-2 mt-md-0">
+                                    <group colspan="4"></group>
+                                    <group class="oe_subtotal_footer oe_right" colspan="2">
+                                        <field name="bedroom_untaxed" colspan="2"/>
+                                        <field name="bedroom_tax" colspan="2"/>
+                                        <field name="bedroom_total" colspan="2"/>
+                                    </group>
+                                    <div class="oe_clear"/>
+                                </group>
+                            </page>
+
+                            <page string="Accessories" name="order_lines_2">
+                                <field name="accessory_order_line"
+                                       readonly="state in ('done','cancel')"
+                                       context="{'list_view_ref':'hz_sale_custom.sol_tree_accessory'}">
+                                </field>
+                                <group col="6" class="mt-2 mt-md-0">
+                                    <group colspan="4"></group>
+                                    <group class="oe_subtotal_footer oe_right" colspan="2">
+                                        <field name="accessory_untaxed" colspan="2"/>
+                                        <field name="accessory_tax" colspan="2"/>
+                                        <field name="accessory_total" colspan="2"/>
+                                    </group>
+                                    <div class="oe_clear"/>
+                                </group>
+                            </page>
+
+                            <page string="Sinks &amp; Mixers" name="order_lines_3">
+                                <field name="mixer_order_line"
+                                       readonly="state in ('done','cancel')"
+                                       context="{'list_view_ref':'hz_sale_custom.sol_tree_mixer'}"/>
+                                <group col="6" class="mt-2 mt-md-0">
+                                    <group colspan="4"></group>
+                                    <group class="oe_subtotal_footer oe_right" colspan="2">
+                                        <field name="mixer_untaxed" colspan="2"/>
+                                        <field name="mixer_tax" colspan="2"/>
+                                        <field name="mixer_total" colspan="2"/>
+                                    </group>
+                                    <div class="oe_clear"/>
+                                </group>
+                            </page>
+
+                            <page string="Electromechanical Work" name="order_lines_4">
+                                <field name="electronic_order_line"
+                                       readonly="state in ('done','cancel')"
+                                       context="{'list_view_ref':'hz_sale_custom.sol_tree_electronic'}"/>
+                                <group col="6" class="mt-2 mt-md-0">
+                                    <group colspan="4"></group>
+                                    <group class="oe_subtotal_footer oe_right" colspan="2">
+                                        <field name="electronic_untaxed" colspan="2"/>
+                                        <field name="electronic_tax" colspan="2"/>
+                                        <field name="electronic_total" colspan="2"/>
+                                    </group>
+                                    <div class="oe_clear"/>
+                                </group>
+                            </page>
+
+                            <page string="Worktops" name="order_lines_5">
+                                <field name="worktop_order_line"
+                                       readonly="state in ('done','cancel')"
+                                       context="{'list_view_ref':'hz_sale_custom.sol_tree_worktop'}"/>
+                                <group col="6" class="mt-2 mt-md-0">
+                                    <group colspan="4"></group>
+                                    <group class="oe_subtotal_footer oe_right" colspan="2">
+                                        <field name="worktop_untaxed" colspan="2"/>
+                                        <field name="worktop_tax" colspan="2"/>
+                                        <field name="worktop_total" colspan="2"/>
+                                    </group>
+                                    <div class="oe_clear"/>
+                                </group>
+                            </page>
+
+                            <page string="Services" name="order_lines_6">
+                                <field name="service_order_line"
+                                       readonly="state in ('done','cancel')"
+                                       context="{'list_view_ref':'hz_sale_custom.sol_tree_service'}"/>
+                                <group col="6" class="mt-2 mt-md-0">
+                                    <group colspan="4"></group>
+                                    <group class="oe_subtotal_footer oe_right" colspan="2">
+                                        <field name="service_untaxed" colspan="2"/>
+                                        <field name="service_tax" colspan="2"/>
+                                        <field name="service_total" colspan="2"/>
+                                    </group>
+                                    <div class="oe_clear"/>
+                                </group>
+                            </page>
+
+                            <page string="Electric Hardware" name="order_lines_7">
+                                <field name="appliance_order_line"
+                                       readonly="state in ('done','cancel')"
+                                       context="{'list_view_ref':'hz_sale_custom.sol_tree_appliance'}"/>
+                                <group col="6" class="mt-2 mt-md-0">
+                                    <group colspan="4"></group>
+                                    <group class="oe_subtotal_footer oe_right" colspan="2">
+                                        <field name="appliance_untaxed" colspan="2"/>
+                                        <field name="appliance_tax" colspan="2"/>
+                                        <field name="appliance_total" colspan="2"/>
+                                    </group>
+                                    <div class="oe_clear"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

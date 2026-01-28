@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+<!--        <template id="report_saleorder_document_inherit" inherit_id="sale.report_saleorder_document">-->
+
+<!--            &lt;!&ndash; Modifications related to th_description &ndash;&gt;-->
+<!--            <xpath expr="//th[@name='th_description']" position="attributes">-->
+<!--                <attribute name="style">display: none;</attribute>-->
+<!--            </xpath>-->
+<!--            <xpath expr="//th[@name='th_description']" position="after">-->
+<!--                <th name="th_product_name" class="text-center">Product Name</th>-->
+<!--&lt;!&ndash;                <th name="th_product_brand" class="text-center">Brand</th>&ndash;&gt;-->
+<!--            </xpath>-->
+
+<!--            &lt;!&ndash; Modifications related to td_name &ndash;&gt;-->
+<!--            <xpath expr="//td[@name='td_name']" position="attributes">-->
+<!--                 <attribute name="style">display: none;</attribute>-->
+<!--            </xpath>-->
+<!--            <xpath expr="//td[@name='td_name']" position="after">-->
+<!--                <td name="td_product_name">-->
+<!--                    <span t-field="line.product_id.name"/>-->
+<!--                </td>-->
+<!--&lt;!&ndash;                <td name="td_product_brand">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <span t-field="line.brand_id.name"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                </td>&ndash;&gt;-->
+<!--            </xpath>-->
+
+<!--            &lt;!&ndash; Modifications related to th_priceunit &ndash;&gt;-->
+<!--            <xpath expr="//th[@name='th_priceunit']" position="replace">-->
+<!--                <th name="th_priceunit" class="text-right">Unit Price With Tax</th>-->
+<!--            </xpath>-->
+<!--            <xpath expr="//td[@name='td_priceunit']/span" position="replace">-->
+<!--                <span t-esc="'%.3f' % (line.price_total / line.product_uom_qty)"/>-->
+<!--            </xpath>-->
+
+<!--            &lt;!&ndash; Removals related to th_discount and th_taxes &ndash;&gt;-->
+<!--            <xpath expr="//th[@name='th_discount']" position="replace"></xpath>-->
+<!--            <xpath expr="//th[@name='th_taxes']" position="replace"></xpath>-->
+
+<!--            &lt;!&ndash; Modifications related to th_subtotal &ndash;&gt;-->
+<!--            <xpath expr="//th[@name='th_subtotal']" position="replace">-->
+<!--                <th name="th_subtotal" class="text-right">-->
+<!--                    <span>Total Price With Tax</span>-->
+<!--                </th>-->
+<!--            </xpath>-->
+
+<!--            &lt;!&ndash; Removals and Modifications related to td elements &ndash;&gt;-->
+<!--            <xpath expr="//span[@t-field='line.discount']/.." position="replace"></xpath>-->
+<!--            <xpath expr="//td[@name='td_taxes']" position="replace"></xpath>-->
+<!--            <xpath expr="//td[@name='td_subtotal']" position="replace">-->
+<!--                <td name="td_subtotal" class="text-right o_price_total">-->
+<!--                    <span t-field="line.price_total"/>-->
+<!--                </td>-->
+<!--            </xpath>-->
+
+<!--        </template>-->
+
+
+    </data>
+</odoo>

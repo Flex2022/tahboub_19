@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+add_payment_tax,add_payment_tax,model_add_payment_tax,account.group_account_manager,1,1,1,1
+

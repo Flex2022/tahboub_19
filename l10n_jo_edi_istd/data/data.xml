@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--Department-->
+        <record id="dep_fiscal_position_011" model="account.fiscal.position">
+            <!--            <field name="name">فاتورة دخل نقدي محلية</field>-->
+            <field name="name">Local cash income bill</field>
+            <field name="code_l10n_jo">011</field>
+            <field name="l10n_jo_tax_company_type">1</field>
+        </record>
+
+        <record id="dep_fiscal_position_021" model="account.fiscal.position">
+            <!--            <field name="name">فاتورة دخل ذمم محلية</field>-->
+            <field name="name">Local receivables income invoice</field>
+            <field name="code_l10n_jo">021</field>
+            <field name="l10n_jo_tax_company_type">1</field>
+        </record>
+
+        <record id="dep_fiscal_position_111" model="account.fiscal.position">
+            <!--            <field name="name">فاتورة دخل نقدي تصدير</field>-->
+            <field name="name">Export cash income invoice</field>
+            <field name="code_l10n_jo">111</field>
+            <field name="l10n_jo_tax_company_type">1</field>
+        </record>
+
+        <record id="dep_fiscal_position_121" model="account.fiscal.position">
+            <!--            <field name="name">فاتورة دخل ذمم تصدير</field>-->
+            <field name="name">Export income invoice</field>
+            <field name="code_l10n_jo">121</field>
+            <field name="l10n_jo_tax_company_type">1</field>
+        </record>
+
+
+        <record id="dep_fiscal_position_012" model="account.fiscal.position">
+            <!--            <field name="name">فاتورة مبيعات عامة نقدي محلية</field>-->
+            <field name="name">Local cash general sales invoice</field>
+            <field name="code_l10n_jo">012</field>
+            <field name="l10n_jo_tax_company_type">2</field>
+
+        </record>
+
+        <record id="dep_fiscal_position_022" model="account.fiscal.position">
+            <!--            <field name="name">فاتورة مبيعات عامة ذمم محلية</field>-->
+            <field name="name">General sales invoice, local receivables</field>
+            <field name="code_l10n_jo">022</field>
+            <field name="l10n_jo_tax_company_type">2</field>
+
+        </record>
+
+
+        <record id="dep_fiscal_position_112" model="account.fiscal.position">
+            <!--            <field name="name">فاتورة مبيعات عامة نقدي تصدير</field>-->
+            <field name="name">General sales invoice, cash, export</field>
+            <field name="code_l10n_jo">112</field>
+            <field name="l10n_jo_tax_company_type">2</field>
+
+        </record>
+
+
+        <record id="dep_fiscal_position_122" model="account.fiscal.position">
+            <!--            <field name="name">فاتورة مبيعات عامة ذمم تصدير</field>-->
+            <field name="name">General sales invoice for export receivables</field>
+            <field name="code_l10n_jo">122</field>
+            <field name="l10n_jo_tax_company_type">2</field>
+        </record>
+
+
+        <record id="dep_fiscal_position_212" model="account.fiscal.position">
+            <!--            <field name="name">فاتورة مبيعات عامة نقدي مناطق تنموية</field>-->
+            <field name="name">General sales invoice, cash, development areas</field>
+            <field name="code_l10n_jo">212</field>
+            <field name="l10n_jo_tax_company_type">2</field>
+        </record>
+
+
+        <record id="dep_fiscal_position_222" model="account.fiscal.position">
+            <!--            <field name="name">فاتورة مبيعات عامة ذمم تصدير مناطق تنموية</field>-->
+            <field name="name">General sales invoice, export receivables, development areas</field>
+            <field name="code_l10n_jo">222</field>
+            <field name="l10n_jo_tax_company_type">2</field>
+        </record>
+
+        <!--3-->
+
+        <record id="dep_fiscal_position_223" model="account.fiscal.position">
+            <!--            <field name="name">فاتورة مبيعات خاصة ذمم تصدير مناطق تنموية</field>-->
+            <field name="name">Special sales invoice for export receivables from development areas</field>
+            <field name="code_l10n_jo">223</field>
+            <field name="l10n_jo_tax_company_type">3</field>
+        </record>
+
+
+        <record id="dep_fiscal_position_013" model="account.fiscal.position">
+            <!--            <field name="name">فاتورة مبيعات خاصة نقدي محلية</field>-->
+            <field name="name">Local cash special sales invoice</field>
+            <field name="code_l10n_jo">013</field>
+            <field name="l10n_jo_tax_company_type">3</field>
+        </record>
+
+
+        <record id="dep_fiscal_position_023" model="account.fiscal.position">
+            <!--            <field name="name">فاتورة مبيعات خاصة ذمم محلية</field>-->
+            <field name="name">Special sales invoice for local receivables</field>
+            <field name="code_l10n_jo">023</field>
+            <field name="l10n_jo_tax_company_type">3</field>
+        </record>
+
+        <record id="dep_fiscal_position_113" model="account.fiscal.position">
+            <!--            <field name="name">فاتورة مبيعات خاصة نقدي تصدير</field>-->
+            <field name="name">Export cash special sales invoice</field>
+            <field name="code_l10n_jo">113</field>
+            <field name="l10n_jo_tax_company_type">3</field>
+        </record>
+
+        <record id="dep_fiscal_position_123" model="account.fiscal.position">
+            <!--            <field name="name">فاتورة مبيعات خاصة ذمم تصدير</field>-->
+            <field name="name">Special sales invoice for export receivables</field>
+            <field name="code_l10n_jo">123</field>
+            <field name="l10n_jo_tax_company_type">3</field>
+        </record>
+
+        <record id="dep_fiscal_position_213" model="account.fiscal.position">
+            <!--            <field name="name">فاتورة مبيعات خاصة نقدي مناطق تنموية</field>-->
+            <field name="name">Special sales invoice, cash, development areas</field>
+            <field name="code_l10n_jo">213</field>
+            <field name="l10n_jo_tax_company_type">3</field>
+        </record>
+
+
+    </data>
+</odoo>

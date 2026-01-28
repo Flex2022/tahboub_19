@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+<!--        <record id="group_all_crm_stage" model="res.groups">-->
+<!--            <field name="name">Access For All CRM Stages</field>-->
+<!--        </record>-->
+        <record id="group_crm_receptionist" model="res.groups">
+            <field name="name">CRM Receptionist</field>
+        </record>
+    </data>
+</odoo>

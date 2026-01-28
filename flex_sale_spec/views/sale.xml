@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_order_form_specs" model="ir.ui.view">
+        <field name="name">sale.order.view.specs</field>
+        <field name="model">sale.order</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Specification Form" groups="account.group_account_invoice">
+                    <group col="4">
+                        <field name="plan_location" string=" موقع المخطط"/>
+                    </group>
+<!--                    WOOD-->
+                    <group string="الخشب">
+                        <field name="sliding_wood_id" string="خشب الدرف" options="{'no_create': 1}"/>
+                        <field name="door_model_id" string="موديل الباب" options="{'no_create': 1}"/>
+                        <field name="pillar_sold_id" string="عامود الصولد" options="{'no_create': 1}"/>
+                        <field name="laminate_grains_id" string="عرق اللامينيت" options="{'no_create': 1}"/>
+                        <field name="wood_color_id" string="اللون 1"/>
+                        <field name="wood_color2_id" string="اللون 2"/>
+                        <field name="wood_color3_id" string="اللون 3"/>
+                        <field name="wood_color4_id" string="اللون 4"/>
+                        <field name="cornice_type_id" string="موديل الكورنيش" options="{'no_create': 1}"/>
+                        <field name="light_pelmets_id" string="حاجب الإنارة" options="{'no_create': 1}"/>
+                        <field name="glass_cabinets_type_id" string="موديل خزائن الزجاج" options="{'no_create': 1}"/>
+                        <field name="glass_color_id" string="لون الزجاج" options="{'no_create': 1}"/>
+                        <field name="bench_upholstery_id" string="البنش" options="{'no_create': 1}"/>
+                        <field name="panel_type_id" string="نوع البانيل" options="{'no_create': 1}"/>
+                        <field name="panel_color_id" string="لون البانيل" options="{'no_create': 1}"/>
+                    </group>
+                    <group string="الأجهزة">
+                        <field name="chopper" string="فرامة"/>
+                        <field name="oven" string="فرن"/>
+                        <field name="cooktop" string="مسطح"/>
+                        <field name="stove" string="بوتجاز"/>
+                        <field name="extractor_fan" string="شفاط"/>
+                        <field name="microwave" string="مايكرويف"/>
+                        <field name="dishwasher" string="غسالة صحون"/>
+                        <field name="washing_dryer_machine" string="غسالة ملابس/ مجفف"/>
+                        <field name="refrigerator" string="ثلاجة"/>
+                        <field name="filter" string="فلتر"/>
+                        <field name="freezer" string="فريزر"/>
+                        <field name="water_cooler" string="كولر"/>
+                        <field name="heater" string="سخان"/>
+                        <field name="warming_drawer" string="درج تسخين"/>
+                        <field name="coffee_maker" string="ماكينة قهوة"/>
+                        <field name="grill_fryer" string="قلاية/شواية"/>
+                        <field name="note_device" string="ملاحظات"/>
+                    </group>
+                    <group string="الأيادي والإكسسوارات ">
+                        <group string="الأيادي 1">
+                            <field name="hands_type_id" string=" الأيادي " options="{'no_create': 1}"/>
+                            <field name="supplier_id_hand1_text" string="المورد" />
+                            <field name="handle_installation_text" string="مكان التركيب"/>
+                            <field name="count" string="العدد"/>
+                            <field name="installation_method_id" string=" طريقة التركيب " options="{'no_create': 1}"/>
+                        </group>
+                        <group string="الأيادي 2">
+                            <field name="handle2_id" string=" الأيادي " options="{'no_create': 1}"/>
+                            <field name="supplier_id_hand2_text" string="المورد"/>
+                            <field name="handle_installation2_text" string="مكان التركيب"/>
+                            <field name="count2" string="العدد"/>
+                            <field name="installation_method_id2" string=" طريقة التركيب " options="{'no_create': 1}"/>
+                        </group>
+                        <group string="الأيادي 3">
+                            <field name="handle3_id" string=" الأيادي "/>
+                            <field name="supplier_id_hand3_text" string="المورد"/>
+                            <field name="handle_installation3_text" string="مكان التركيب"/>
+                            <field name="count3" string="العدد"/>
+                            <field name="installation_method_id3" string=" طريقة التركيب " options="{'no_create': 1}"/>
+                        </group>
+
+                        <group string="الإكسسوارات">
+
+                            <field name="accessories" string="الإكسسوار 1"/>
+                            <field name="accessories_count" string="العدد"/>
+                            <field name="accessories2" string="الإكسسوار 2"/>
+                            <field name="accessories_count2" string="العدد"/>
+                            <field name="accessories3" string="الإكسسوار 3"/>
+                            <field name="accessories_count3" string="العدد"/>
+                            <field name="accessories4" string="الإكسسوار 4"/>
+                            <field name="accessories_count4" string="العدد"/>
+                            <field name="accessories5" string="الإكسسوار 5"/>
+                            <field name="accessories_count5" string="العدد"/>
+                            <field name="accessories6" string="الإكسسوار 6"/>
+                            <field name="accessories_count6" string="العدد"/>
+                            <field name="accessories_note" string="ملاحظات إضافية"/>
+                        </group>
+
+
+                    </group>
+                    <group string="الإنارة">
+                        <group string="الإنارة 1">
+                            <field name="lighting1" string="نوع الإنارة " options="{'no_create': 1}"/>
+                            <field name="lighting1_installation_text" string="مكان التركيب" />
+                            <field name="lighting1_count" string="العدد"/>
+                        </group>
+                        <group string="الإنارة 2">
+                            <field name="lighting2" string="نوع الإنارة " options="{'no_create': 1}"/>
+                            <field name="lighting2_installation_text" string="مكان التركيب" />
+                            <field name="lighting2_count" string="العدد"/>
+                        </group>
+                        <group string="الإنارة 3">
+                            <field name="lighting3" string="نوع الإنارة " options="{'no_create': 1}"/>
+                            <field name="lighting3_installation" string="مكان التركيب"/>
+                            <field name="lighting3_count" string="العدد"/>
+                            <field name="lighting_note" string="ملاحظات أخرى"/>
+                        </group>
+                    </group>
+
+
+                </page>
+                <page string="Bedroom Specification" groups="account.group_account_invoice">
+                    <group string="الكتف">
+                        <field name="side_panel_color" string="لون الكتف"/>
+                        <field name="grain" string="العرق"/>
+                    </group>
+                    <group string="الكاركيس">
+                        <field name="carcass_color" string="لون الكاركيس"/>
+                        <field name="carcass_grain" string="العرق"/>
+                    </group>
+                    <group string="الدرف فصالات">
+                        <group string=" باب ط ارضي رقم 1">
+                            <field name="door_ground_model_one_id" string="نوع الباب"/>
+                            <field name="wood_ground_one_frame_color_one" string="لون الدرفة/ فريم الخشب"/>
+                            <field name="frame_color_one" string="لون فريم "/>
+                            <field name="glass_ground_one_model_one_id" string="نوع الزجاج"/>
+                        </group>
+                         <group string=" باب ط ارضي رقم 2">
+                            <field name="door_ground_model_two_id" string="نوع الباب"/>
+                            <field name="wood_ground_two_frame_color_one" string="لون الدرفة/ فريم الخشب"/>
+                            <field name="frame_color_two" string="لون فريم "/>
+                            <field name="glass_ground_two_model_one_id" string="نوع الزجاج"/>
+                        </group>
+                        <group string=" باب ط 2 رقم 1">
+                            <field name="door_floor2_model_one_id" string="نوع الباب"/>
+                            <field name="wood_floor2_one_frame_color_one" string="لون الدرفة/ فريم الخشب"/>
+                            <field name="frame_floor2_color_one" string="لون فريم "/>
+                            <field name="glass_floor2_one_model_one_id" string="نوع الزجاج"/>
+                        </group>
+                        <group string=" باب ط 2 رقم 2:">
+                            <field name="door_floor2_model_two_id" string="نوع الباب"/>
+                            <field name="wood_floor2_two_frame_color_one" string="لون الدرفة/ فريم الخشب"/>
+                            <field name="frame_floor2_color_two" string="لون فريم "/>
+                            <field name="glass_floor2_two_model_one_id" string="نوع الزجاج"/>
+                        </group>
+                    </group>
+                      <group string="درف السحاب /باب 1+3">
+                          <group string="قطعة رقم 1:">
+                            <field name="sliding_door_one_id" string="نوع الباب"/>
+                            <field name="frame_color_one_sliding" string="لون الفريم السحاب"/>
+                            <field name="piece_color_one" string="لون القطعة"/>
+                            <field name="piece_height_one" string="ارتفاع القطع"/>
+                          </group>
+                          <group string="قطعة رقم 2:">
+                            <field name="sliding_door_two_id" string="نوع الباب"/>
+                            <field name="frame_color_two_sliding" string="لون الفريم السحاب"/>
+                            <field name="piece_color_two" string="لون القطعة"/>
+                            <field name="piece_height_two" string="ارتفاع القطع"/>
+                          </group>
+                          <group string="قطعة رقم 3:">
+                            <field name="sliding_door_three_id" string="نوع الباب"/>
+                            <field name="frame_color_three" string="لون الفريم السحاب"/>
+                            <field name="piece_color_three" string="لون القطعة"/>
+                            <field name="piece_height_three" string="ارتفاع القطع"/>
+                          </group>
+                    </group>
+                      <group string="درف السحاب  باب 2+4">
+                          <group string="قطعة رقم 1:">
+                            <field name="sliding_door_four_id" string="نوع الباب"/>
+                            <field name="frame_color_four" string="لون الفريم السحاب"/>
+                            <field name="piece_color_four" string="لون القطعة"/>
+                            <field name="piece_height_four" string="ارتفاع القطع"/>
+                          </group>
+                          <group string="قطعة رقم 2:">
+                            <field name="sliding_door_five_id" string="نوع الباب"/>
+                            <field name="frame_color_five" string="لون الفريم السحاب"/>
+                            <field name="piece_color_five" string="لون القطعة"/>
+                            <field name="piece_height_five" string="ارتفاع القطع"/>
+                          </group>
+                          <group string="قطعة رقم 3:">
+                            <field name="sliding_door_six_id" string="نوع الباب"/>
+                            <field name="frame_color_six" string="لون الفريم السحاب"/>
+                            <field name="piece_color_six" string="لون القطعة"/>
+                            <field name="piece_height_six" string="ارتفاع القطع"/>
+                          </group>
+                    </group>
+                     <group string="الكومدينات">
+                        <field name="bedside_table_model" string="نوع الكومدينة"/>
+                        <field name="beside_table_color" string="لون الكومدينة"/>
+                         <field name="beside_table_count" string="العدد"/>
+                        <field name="beside_table_beech_wood_bases" string="ارتفاع قواعد الزان"/>
+                         <field name="beside_table_additional_note" string="ملاحظات إضافية"/>
+                        <field name="beside_table_beech_wood_bases_color" string="لون قواعد الزان"/>
+                         <field name="beside_table_beech_wood_bases_model" string="نوع قواعد الزان"/>
+                        <field name="beside_table_drawer_color" string="لون وجه الدرج"/>
+                         <field name="beside_table_wood_box" string="ارتفاع بوكس الخشب للكومدينة"/>
+                    </group>
+                    <group string="الجزيرة/التسريحة/الاضافات ">
+                        <field name="vanity_carcass_color" string="لون الكاركيس"/>
+                        <field name="vanity_beech_wood_bases" string="نوع قاعدة زان"/>
+                         <field name="vanity_mirror" string="المرأة"/>
+                        <field name="vanity_Leaves" string="لون الدرف"/>
+                         <field name="vanity_top_color" string="لون التوب"/>
+                        <field name="vanity_mirror_type" string="نوع المرأة"/>
+                    </group>
+                    <group string="الايادي">
+                        <group string="الأيادي 1">
+                            <field name="hand_one_type_id" string="أيادي رقم 1 " />
+                            <field name="hand_one_code" string="الكود"/>
+                            <field name="hand_one_vendor" string="المورد"/>
+                            <field name="hand_one_count" string="العدد"/>
+                            <field name="hand_one_installation_place" string="مكان التركيب"/>
+                            <field name="hand_one_installation_type" string=" طريقة التركيب "/>
+                        </group>
+                        <group string="الأيادي 2">
+                            <field name="hand_two_type" string="أيادي رقم 2 " />
+                            <field name="hand_two_code" string="الكود"/>
+                            <field name="hand_two_vendor" string="المورد"/>
+                            <field name="hand_two_count" string="العدد"/>
+                            <field name="hand_two_installation_place" string="مكان التركيب"/>
+                            <field name="hand_two_installation_type" string=" طريقة التركيب "/>
+                        </group>
+                        <group string="الأيادي 3">
+                            <field name="hand_three_type" string="أيادي رقم 3 " />
+                            <field name="hand_three_code" string="الكود"/>
+                            <field name="hand_three_vendor" string="المورد"/>
+                            <field name="hand_three_count" string="العدد"/>
+                            <field name="hand_three_installation_place" string="مكان التركيب"/>
+                            <field name="hand_three_installation_type" string=" طريقة التركيب "/>
+                        </group>
+
+                    </group>
+                    <group string="الاكسسوارات">
+                        <group string="الاكسسوار 1">
+                            <field name="accessories_one_type_id" string="الاكسسوار" />
+                            <field name="accessories_one_count" string="العدد"/>
+                        </group>
+                        <group string="الاكسسوار 2">
+                            <field name="accessories_two_type" string="الاكسسوار " />
+                            <field name="accessories_two_count" string="العدد"/>
+
+                        </group>
+                        <group string="الاكسسوار 3">
+                            <field name="accessories_three_type" string="الاكسسوار " />
+                            <field name="accessories_three_count" string="العدد"/>
+
+                        </group>
+                         <group string="الاكسسوار 4">
+                            <field name="accessories_four_type" string="الاكسسوار " />
+<!--                            <field name="hand_three_code" string="العدد"/>-->
+                            <field name="accessories_four_count" string="العدد"/>
+
+                        </group>
+                        <group string="الاكسسوار 5">
+                            <field name="accessories_five_type" string="الاكسسوار " />
+                            <field name="accessories_five_count" string="العدد"/>
+                        </group>
+                        <group string="الاكسسوار 6">
+                            <field name="accessories_six_type" string="الاكسسوار " />
+                            <field name="accessories_six_count" string="العدد"/>
+                        </group>
+                    </group>
+                     <group string="لون Headboard-Bedbox">
+                        <field name="headboard_type" string="Headboard " />
+                        <field name="headboard_count" string="العدد"/>
+                        <field name="bed_box_type" string="Bedbox"/>
+                        <field name="bed_box_count" string="العدد"/>
+                         <field name="textile_color" string="لون القماش"/>
+                     </group>
+                    <group string="قياسات السرير">
+                      <group string="الراسية">
+                        <field name="bed_head_width" string="عرض الراسية"/>
+                        <field name="bed_head_height" string="ارتفاع الراسية"/>
+                        <field name="bed_head_length" string="طول الراسية"/>
+                          <field name="bed_head_type" string="نوع الراسية"/>
+                        <field name="bed_head_upholstery" string="شكل التنجيد و الأرجل (إرفاق صوره)" widget="image" options="{'width': 100, 'height': 100}"/>
+                      </group>
+                         <group string="البوكس">
+                        <field name="bed_box_width" string="عرض البوكس"/>
+                        <field name="bed_box_height" string="ارتفاع البوكس"/>
+                        <field name="bed_box_length" string="طول البوكس"/>
+                          <field name="bed_box_one_type" string="نوع البوكس"/>
+                        <field name="bed_box_upholstery" string="شكل التنجيد و الأرجل (إرفاق صوره)" widget="image" options="{'width': 100, 'height': 100}"/>
+                      </group>
+                        <group string="الفرشة-المرتبه">
+                        <field name="mattress_width" string="عرض الفرشة"/>
+                        <field name="mattress_height" string="ارتفاع الفرشة"/>
+                        <field name="mattress_length" string="طول الفرشة"/>
+                          <field name="mattress_type" string="نوع الفرشة"/>
+                        <field name="mattress_upholstery" string="شكل التنجيد و الأرجل (إرفاق صوره)" widget="image" options="{'width': 100, 'height': 100}"/>
+                      </group>
+                         <group string="الأرجل">
+                        <field name="legs_width" string="عرض الأرجل"/>
+                        <field name="legs_height" string="ارتفاع الأرجل"/>
+                        <field name="legs_length" string="طول الأرجل"/>
+                          <field name="legs_type" string="نوع الأرجل"/>
+                        <field name="legs_upholstery" string="شكل التنجيد و الأرجل (إرفاق صوره)" widget="image" options="{'width': 100, 'height': 100}"/>
+                      </group>
+                         <group string="ملاحظات إضافية">
+                        <field name="bed_additional_note" string="ملاحظات إضافية"/>
+                      </group>
+                     </group>
+                     <group string="الإناره">
+                        <field name="lighting_type" string="انارة 1 " />
+                        <field name="lighting_installation_place" string="مكان التركيب"/>
+                        <field name="lighting_two_type" string="انارة2"/>
+                        <field name="lighting_two_installation_place" string="مكان التركيب"/>
+                         <field name="additional_lighting_note" string="ملاحظات إضافية"/>
+                     </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>    

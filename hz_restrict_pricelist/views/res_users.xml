@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!--    <record id="ir_rule_pricelist_restriction" model="ir.rule">-->
+<!--        <field name="name">Pricelist Restriction</field>-->
+<!--        <field name="model_id" ref="product.model_product_pricelist"/>-->
+<!--        <field name="domain_force">[('id', 'in', user.allowed_pricelists.ids)]</field>-->
+<!--    </record>-->
+
+    <record id="view_users_form_inherit" model="ir.ui.view">
+        <field name="name">view_users_form_inherit</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <group name="other_preferences" position="after">
+                <group>
+                    <div colspan="2">
+                        <field name="restrict_pricelist" class="oe_inline" nolabel="1"/>
+                        <label for="restrict_pricelist" class="font-weight-bold"/>
+                    </div>
+                    <field name="allowed_pricelists" widget="many2many_tags" options="{'no_create': True}"
+                           invisible="not restrict_pricelist"/>
+                </group>
+            </group>
+        </field>
+    </record>
+
+</odoo>

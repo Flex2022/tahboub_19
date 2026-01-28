@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="res_config_settings_view_form_inherit" model="ir.ui.view">
+            <field name="name">res_config_settings_view_form_inherit</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//setting[@id='tax_fiscal_country_234']" position="after">
+                    <setting class="col-12 col-lg-6 o_setting_box" id="default_fiscal_position">
+                        <div class="o_setting_left_pane"/>
+                        <div class="o_setting_right_pane">
+<!--                            <span class="o_form_label">Fiscal Position</span>-->
+                            <label for="fiscal_position_id"/>
+                            <div class="text-muted">
+                                Default fiscal position while creating partners
+                            </div>
+                            <div class="text-muted">
+                                <field name="fiscal_position_id" options="{'no_create': True}"/>
+                            </div>
+                        </div>
+                    </setting>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

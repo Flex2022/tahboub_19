@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+custom_rate,custom_rate,model_custom_rate,,1,1,1,1
+set_discount,set_discount,model_set_discount,,1,1,1,1
+customer_project_crud,customer_project_crud,model_customer_project,,1,1,1,1

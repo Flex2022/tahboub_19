@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <record id="res_config_settings_view_form_inherit" model="ir.ui.view">
+            <field name="name">res.config.settings.form.crm.custom</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="crm.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='is_membership_multi']/../.." position="after">
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                            <field name="is_name_triple"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="is_name_triple"/>
+                            <div class="text-muted">
+                                - Validate partner name while creating from leads (As a Triple Name).
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

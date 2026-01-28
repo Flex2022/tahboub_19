@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="delivery_list_template_content">
+            <div class="page" dir="ltr">
+                <h2 class="text-center">Delivery List</h2>
+                <table class="table table-sm table-bordered" style="font-size: 14px !important;" dir="ltr">
+                    <thead>
+                        <tr>
+                            <th class="text-center">
+                                <span>Reference</span>
+                            </th>
+                            <th class="text-center">
+                                <span>Contact</span>
+                            </th>
+                            <th class="text-center">
+                                <span>Address</span>
+                            </th>
+                            <th class="text-center">
+                                <span>Responsible Employee</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="docs.sudo()" t-as="o">
+                            <td class="text-center">
+                                <span t-field="o.name"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-field="o.partner_id"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-field="o.partner_address"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-field="o.employee_id"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </template>
+
+        <template id="delivery_list_template">
+            <t t-call="web.html_container">
+                <t t-call="web.internal_layout">
+                    <t t-call="flex_sale_workflow.delivery_list_template_content"/>
+                </t>
+            </t>
+        </template>
+
+        <record id="action_report_delivery_list" model="ir.actions.report">
+            <field name="name">Delivery List</field>
+            <field name="model">stock.picking</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">flex_sale_workflow.delivery_list_template</field>
+            <field name="report_file">flex_sale_workflow.delivery_list_template</field>
+            <field name="binding_model_id" ref="stock.model_stock_picking"/>
+            <field name="print_report_name">'Delivery List'</field>
+            <field name="binding_type">report</field>
+        </record>
+
+    </data>
+</odoo>

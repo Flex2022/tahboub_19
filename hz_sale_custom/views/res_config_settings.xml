@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="sh_pdc_account_setting_inherit" model="ir.ui.view">
+            <field name="name">sh.pdc.account.setting.inherit</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="sale.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//block[@name='catalog_setting_container']" position="after">
+                    <block title="Order Lines &amp; Categories" name="order_line_categ_setting_container">
+                        <div class="row mt16 o_settings_container">
+                            <field name="selected_categs" invisible="1"/>
+
+                            <div class="col-12 col-lg-6 o_setting_box">
+                                <div class="o_setting_left_pane">
+                                    <field name="is_separate_sol"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="is_separate_sol"/>
+                                </div>
+                            </div>
+
+                            <div class="row" invisible="not is_separate_sol">
+                                <div class="col-12 col-lg-6 o_setting_box">
+                                    <div class="o_setting_right_pane">
+                                        <label for="wood_categs"/>
+                                        <div class="text-muted">
+                                            <field name="wood_categs" widget="many2many_tags"
+                                                   domain="[('id', 'not in', selected_categs)]"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-lg-6 o_setting_box">
+                                    <div class="o_setting_right_pane">
+                                        <label for="bedroom_categs"/>
+                                        <div class="text-muted">
+                                            <field name="bedroom_categs" widget="many2many_tags"
+                                                   domain="[('id', 'not in', selected_categs)]"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-lg-6 o_setting_box">
+                                    <div class="o_setting_right_pane">
+                                        <label for="accessory_categs"/>
+                                        <div class="text-muted">
+                                            <field name="accessory_categs" widget="many2many_tags"
+                                                   domain="[('id', 'not in', selected_categs)]"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-lg-6 o_setting_box">
+                                    <div class="o_setting_right_pane">
+                                        <label for="mixer_categs"/>
+                                        <div class="text-muted">
+                                            <field name="mixer_categs" widget="many2many_tags"
+                                                   domain="[('id', 'not in', selected_categs)]"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-lg-6 o_setting_box">
+                                    <div class="o_setting_right_pane">
+                                        <label for="electronic_categs"/>
+                                        <div class="text-muted">
+                                            <field name="electronic_categs" widget="many2many_tags"
+                                                   domain="[('id', 'not in', selected_categs)]"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-lg-6 o_setting_box">
+                                    <div class="o_setting_right_pane">
+                                        <label for="worktop_categs"/>
+                                        <div class="text-muted">
+                                            <field name="worktop_categs" widget="many2many_tags"
+                                                   domain="[('id', 'not in', selected_categs)]"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-lg-6 o_setting_box">
+                                    <div class="o_setting_right_pane">
+                                        <label for="service_categs"/>
+                                        <div class="text-muted">
+                                            <field name="service_categs" widget="many2many_tags"
+                                                   domain="[('id', 'not in', selected_categs)]"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-lg-6 o_setting_box">
+                                    <div class="o_setting_right_pane">
+                                        <label for="appliance_categs"/>
+                                        <div class="text-muted">
+                                            <field name="appliance_categs" widget="many2many_tags"
+                                                   domain="[('id', 'not in', selected_categs)]"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </block>
+                </xpath>
+
+                <xpath expr="//setting[@id='show_margins']" position="after">
+                    <div class="col-12 col-lg-6 o_setting_box" id="editable_price">
+                        <div class="o_setting_left_pane">
+                            <field name="is_sol_price_editable"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="is_sol_price_editable"/>
+                            <div class="text-muted">
+                                Editable unit price in order lines
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box" id="editable_discount">
+                        <div class="o_setting_left_pane">
+                            <field name="is_sol_discount_editable"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="is_sol_discount_editable"/>
+                            <div class="text-muted">
+                                Editable Discount in order lines
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+

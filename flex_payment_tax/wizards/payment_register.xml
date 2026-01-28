@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_account_payment_register_form_ppa" model="ir.ui.view">
+            <field name="name">account.payment.register.form.ppa</field>
+            <field name="model">account.payment.register</field>
+            <field name="inherit_id" ref="account.view_account_payment_register_form"/>
+            <field name="arch" type="xml">
+                <field name="communication" position="after">
+                    <field name="use_payment_tax" invisible="1"/>
+                    <field name="tax_id" options="{'no_create': True}"
+                           invisible="not use_payment_tax or not can_edit_wizard or (can_group_payments and not group_payment)"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</odoo>

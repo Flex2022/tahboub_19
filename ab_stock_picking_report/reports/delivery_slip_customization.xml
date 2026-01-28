@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <template id="delivery_slip_customization" inherit_id="stock.report_delivery_document">
+            <xpath expr="//t[@t-set='information_block']" position="replace">
+                <t t-if="o.is_show_customer_address">
+                    <t t-set="information_block">
+                        <div class="row">
+                            <div class="col-7" name="div_incoming_address">
+                                <div t-if="o.picking_type_id.code=='incoming' and partner">
+                                    <span>
+                                        <strong>Vendor Address:</strong>
+                                    </span>
+                                </div>
+                                <div t-if="o.picking_type_id.code=='internal' and partner">
+                                    <span>
+                                        <strong>Warehouse Address:</strong>
+                                    </span>
+                                </div>
+                                <div t-if="o.picking_type_id.code=='outgoing' and partner">
+                                    <span>
+                                        Customer Name:
+                                    </span>
+                                    <span t-esc="o.sale_id.partner_id.name"/>
+                                    <span>
+                                        <strong>Customer Address:</strong>
+                                    </span>
+                                    <span t-esc="o.sale_id.partner_id"
+                                          t-options='{"widget": "contact", "fields": ["address", "name", "phone", "vat"], "no_marker": True, "phone_icons": True}'/>
+                                </div>
+                                <t t-if="o.picking_type_id.code!='outgoing' and partner">
+                                    <div t-if="partner" name="partner_header">
+                                        <div t-field="partner.commercial_partner_id"
+                                             t-options='{"widget": "contact", "fields": ["address", "name", "phone", "vat"], "no_marker": True, "phone_icons": True}'/>
+                                        <p t-if="partner.sudo().commercial_partner_id.vat"><t
+                                                t-esc="o.company_id.country_id.vat_label or 'Tax ID'"/>:
+                                            <span t-field="partner.sudo().commercial_partner_id.vat"/>
+                                        </p>
+                                    </div>
+                                </t>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+
+                <t t-if="not o.is_show_customer_address">
+                    <t t-set="information_block">
+                        <div class="row">
+                            <div class="col-7" name="div_incoming_address">
+                                <div t-if="o.picking_type_id.code=='incoming' and partner">
+                                    <span>
+                                        <strong>Vendor Address:</strong>
+                                    </span>
+                                </div>
+                                <div t-if="o.picking_type_id.code=='internal' and partner">
+                                    <span>
+                                        <strong>Warehouse Address:</strong>
+                                    </span>
+                                </div>
+                                <div t-if="o.picking_type_id.code=='outgoing' and partner">
+                                    <span>
+                                        Customer Name:
+                                    </span>
+                                    <br/>
+                                    <span t-field="o.sale_id.partner_id.name"/>
+                                </div>
+                                <br/>
+                                <div t-if="o.picking_type_id.code=='outgoing' and partner">
+                                    <span>
+                                        <strong>Customer Address:</strong>
+                                    </span>
+                                </div>
+                                <div t-if="partner" name="partner_header">
+                                    <div t-field="partner.commercial_partner_id"
+                                         t-options='{"widget": "contact", "fields": ["address", "name", "phone", "vat"], "no_marker": True, "phone_icons": True}'/>
+                                    <p t-if="partner.sudo().commercial_partner_id.vat"><t
+                                            t-esc="o.company_id.country_id.vat_label or 'Tax ID'"/>:
+                                        <span t-field="partner.sudo().commercial_partner_id.vat"/>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </xpath>
+
+        </template>
+
+
+    </data>
+</odoo>

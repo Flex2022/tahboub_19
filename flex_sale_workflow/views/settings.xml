@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.flex_sale</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="10"/>
+        <field name="inherit_id" ref="sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@id='connectors_setting_container']" position="after">
+                <h2 class="mt32">Flex Sale Workflow</h2>
+                <div class="row mt16 o_settings_container" name="flex_ops_accounts">
+                    <div class="col-12 col-lg-6 o_setting_box" id="flex_ops_sale_settings_div">
+                        <div class="o_setting_left_pane">
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <div class="row mt8">
+                                <label for="active_sale_mrp_customization"
+                                       class="col-lg-4 o_light_label"/>
+                                <field name="active_sale_mrp_customization"/>
+                            </div>
+                                                       <div class="row mt8" invisible="not active_sale_mrp_customization">
+                                <label for="flex_sale_product_category"
+                                       class="col-lg-4 o_light_label"/>
+                                <field name="flex_sale_product_category"
+                                       options="{'no_create': True,'no_edit': True}"/>
+                            </div>
+                            <div class="row mt8" invisible="not active_sale_mrp_customization">
+                                <label for="flex_sale_stock_move_type" class="col-lg-4 o_light_label"/>
+                                <field name="flex_sale_stock_move_type"
+                                       options="{'no_create': True,'no_edit': True}"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

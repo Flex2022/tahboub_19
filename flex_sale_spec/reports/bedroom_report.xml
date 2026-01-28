@@ -1,0 +1,1216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_artifex_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                       <style>
+                          table.table-bordered {
+                            border: 2px solid black;
+                          }
+                         table.table-bordered th,
+                          table.table-bordered td {
+                            border: 2px solid black; /* Ensures all cell borders are darkened */
+                           font-weight: bold;
+                          }
+                           span {
+                                font-size: 25px; /* or any size you prefer */
+                            }
+
+                            strong {
+                                font-size: 25px;
+                                font-weight: bold;
+                            }
+
+
+                    </style>
+
+                    <div class="page" dir="rtl">
+                        <div class="row">
+                            <table class="table table-bordered" style="width: 100%;height: 170px;">
+                            <tr>
+                               <td rowspan="2" style="width: 420px; height: 170px;">
+                                   <img t-att-src="image_data_uri(o.company_id.logo)" t-if="o.company_id.logo"
+                                        style="width: 420px; height: 170px;object-fit: cover;"/>
+                                </td>
+                                 <td style="height: 85px;text-align: right;">
+                                      <h5>
+                                    <strong>إسم العميل:</strong>
+                                     <div t-field="o.partner_id.name" style="font-weight: bold;"/>
+                                      </h5>
+                                </td>
+                                 <td rowspan="2" class="text-center" style="vertical-align: middle;">
+                                     <h5>
+                                     <strong>
+                                        نموذج تفاصيل غرف<br/>  النوم وخزائن الحائط
+                                     </strong>
+                                     </h5>
+<!--                                     <strong>Customer Name:</strong>-->
+<!--                                    <span t-field="o.partner_id.name"/>-->
+                                </td>
+<!--                                <td rowspan="2"  class="text-center" style="vertical-align: middle;">-->
+<!--                                    <strong>-->
+<!--                                        اليوم والتاريخ:-->
+<!--                                    </strong>-->
+<!--                                    <div t-field="o.date_order" t-options='{"widget": "date"}'/>-->
+<!--                                    <div t-field="o.date_order_day"/>-->
+<!--                                  <strong>Customer Name:</strong>-->
+<!--                                    <span t-field="o.partner_id.name"/>-->
+<!--                                </td>-->
+                                <td rowspan="2" style="padding: 0; vertical-align: top;">
+                                    <table class="text-center" style="width: 100%; height: 100%; border: 1px solid black; border-collapse: collapse;">
+                                        <tbody>
+                                            <tr style="border-bottom: 1px solid black;">
+                                                <td style="padding: 5px; vertical-align: middle;">
+                                                    <h5>
+                                                    <strong>
+                                                            اليوم والتاريخ:
+                                                        </strong>
+                                                        <div t-field="o.date_order" t-options='{"widget": "date"}' style="font-weight: bold;"/>
+                                                        <div t-field="o.date_order_day" style="font-weight: bold;"/>
+                                                    </h5>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 5px; vertical-align: middle;">
+                                                    <h5>
+                                                    <strong>رقم ID:</strong>
+                                                    <div t-field="o.name" style="font-weight: bold;"/>
+                                                    </h5>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                 <td class="text-start" style="height: 85px;text-align: right;">
+                                     <h5>
+                                  <strong>موقع المخطط:</strong>
+                                    <div t-field="o.plan_location"/>
+                                     </h5>
+                                </td>
+<!--                                 <td>-->
+<!--                                   555-->
+<!--                                </td>-->
+<!--                                 <td  class="text-center">-->
+<!--                                    0-->
+<!--                                </td>-->
+<!--                                <td colspan="2" class="text-center">-->
+<!--                                    <h3>Customer Name: <span t-field="o.partner_id.name"/></h3>-->
+<!--                                </td>-->
+                            </tr>
+                            <!-- Add your custom fields here -->
+                        </table>
+                        </div>
+                         <div class="row text-center" style="border:2px solid black;height: 40px;margin-top: -20px;">
+                             <div class="col-12 text-center">
+                                    <h4>
+
+                                         <strong>الكتف</strong>
+                                    </h4>
+                             </div>
+
+
+
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>لون الكتف:</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <h5>
+                                <strong t-field="o.side_panel_color"/>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                 <h5>
+                                    <strong>العرق:</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <h5>
+                                <strong t-field="o.grain"/>
+                                </h5>
+                            </div>
+                        </div>
+
+                         <div class="row text-center" style="border:2px solid black;height: 40px;">
+                             <div class="col-12 text-center">
+                                    <h4>
+
+                                         <strong>الكاركيس</strong>
+                                    </h4>
+                             </div>
+
+
+
+                        </div>
+
+                         <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong> لون الكاركيس:</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <h5>
+                                <strong t-field="o.carcass_color"/>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                 <h5>
+                                    <strong>العرق:</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <h5>
+                                <strong t-field="o.carcass_grain"/>
+                                </h5>
+                            </div>
+                        </div>
+                         <div class="row text-center" style="border:2px solid black;height: 40px;">
+                             <div class="col-12 text-center">
+                                    <h4>
+
+                                         <strong>الدرف فصالات</strong>
+                                    </h4>
+                             </div>
+
+
+
+                        </div>
+
+                       <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+                                <div style="width: 20%; border:2px solid black;">
+<!--                                    <strong>لون الكاركيس:</strong>-->
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <h5>
+                                    <strong>نوع الباب</strong>
+                                    </h5>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <h5>
+                                    <strong>لون الدرفة/ فريم الخشب</strong>
+                                    </h5>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <h5>
+                                    <strong>لون فريم </strong>
+                                    </h5>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <h5>
+                                    <strong>نوع الزجاج </strong>
+                                    </h5>
+                                </div>
+                            </div>
+                        <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+                                <div style="width: 20%; border:2px solid black;">
+                                    <h5>
+                                    <strong> باب ط ارضي رقم 1:</strong>
+                                    </h5>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <h5>
+                                    <strong t-field="o.door_ground_model_one_id"/>
+                                    </h5>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <h5>
+                                   <strong t-field="o.wood_ground_one_frame_color_one"/>
+                                    </h5>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <h5>
+                                    <strong t-field="o.frame_color_one"/>
+                                    </h5>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <h5>
+                                   <strong t-field="o.glass_ground_one_model_one_id"/>
+                                    </h5>
+                                </div>
+                            </div>
+                        <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+                                <div style="width: 20%; border:2px solid black;">
+                                    <h5>
+                                    <strong> باب ط ارضي رقم 2:</strong>
+                                    </h5>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <h5>
+                                    <strong t-field="o.door_ground_model_two_id"/>
+                                    </h5>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <h5>
+                                    <strong t-field="o.wood_ground_two_frame_color_one"/>
+                                    </h5>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <h5>
+                                    <strong t-field="o.frame_color_two"/>
+                                    </h5>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <h5>
+                                    <strong t-field="o.glass_ground_two_model_one_id"/>
+                                    </h5>
+                                </div>
+                            </div>
+                        <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+                                <div style="width: 20%; border:2px solid black;">
+                                    <h5>
+                                    <strong> باب ط 2 رقم 1:</strong>
+                                    </h5>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <h5>
+                                    <strong t-field="o.door_floor2_model_one_id"/>
+                                    </h5>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <h5>
+                                    <strong t-field="o.wood_floor2_one_frame_color_one"/>
+                                    </h5>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <h5>
+                                    <strong t-field="o.frame_floor2_color_one"/>
+                                    </h5>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <h5>
+                                    <strong t-field="o.glass_floor2_one_model_one_id"/>
+                                    </h5>
+                                </div>
+                            </div>
+                        <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+                                <div style="width: 20%; border:2px solid black;">
+
+                                    <strong> باب ط 2 رقم 2:</strong>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong t-field="o.door_floor2_model_two_id"/>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong t-field="o.wood_floor2_two_frame_color_one"/>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong t-field="o.frame_floor2_color_two"/>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong t-field="o.glass_floor2_two_model_one_id"/>
+                                </div>
+                            </div>
+                        <div class="row text-center" style="border:2px solid black;height: 40px;">
+                             <div class="col-12 text-center">
+                                    <h4>
+
+                                         <strong>درف السحاب /باب 1+3</strong>
+                                    </h4>
+                             </div>
+
+
+
+                        </div>
+
+                       <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+                                <div style="width: 20%; border:2px solid black;">
+<!--                                    <strong>لون الكاركيس:</strong>-->
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong>نوع الباب</strong>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong>لون الفريم السحاب</strong>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong>لون القطعة </strong>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong>ارتفاع القطع</strong>
+                                </div>
+                            </div>
+                        <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong>قطعة رقم 1:</strong>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong t-field="o.sliding_door_one_id"/>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                   <strong t-field="o.frame_color_one_sliding"/>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong t-field="o.piece_color_one"/>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                   <strong t-field="o.piece_height_one"/>
+                                </div>
+                            </div>
+                        <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong>قطعة رقم 2:</strong>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong t-field="o.sliding_door_two_id"/>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong t-field="o.frame_color_two_sliding"/>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong t-field="o.piece_color_two"/>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong t-field="o.piece_height_two"/>
+                                </div>
+                            </div>
+                        <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong>قطعة رقم 3:</strong>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong t-field="o.sliding_door_three_id"/>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong t-field="o.frame_color_three"/>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong t-field="o.piece_color_three"/>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong t-field="o.piece_height_three"/>
+                                </div>
+                            </div>
+                        <div class="row text-center" style="border:2px solid black;height: 40px;">
+                        <div class="col-12 text-center">
+                                    <h4>
+
+                                         <strong>درف السحاب  باب 2+4</strong>
+                                    </h4>
+                             </div>
+
+
+
+                        </div>
+
+                       <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+                                <div style="width: 20%; border:2px solid black;">
+<!--                                    <strong>لون الكاركيس:</strong>-->
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong>نوع الباب</strong>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong>لون الفريم السحاب</strong>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong>لون القطعة </strong>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong>ارتفاع القطع</strong>
+                                </div>
+                            </div>
+                        <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong>قطعة رقم 1:</strong>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong t-field="o.sliding_door_four_id"/>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                   <strong t-field="o.frame_color_four"/>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong t-field="o.piece_color_four"/>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                   <strong t-field="o.piece_height_four"/>
+                                </div>
+                            </div>
+                        <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong>قطعة رقم 2:</strong>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong t-field="o.sliding_door_five_id"/>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong t-field="o.frame_color_five"/>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong t-field="o.piece_color_five"/>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong t-field="o.piece_height_five"/>
+                                </div>
+                            </div>
+                        <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong>قطعة رقم 3:</strong>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong t-field="o.sliding_door_six_id"/>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong t-field="o.frame_color_six"/>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong t-field="o.piece_color_six"/>
+                                </div>
+                                <div style="width: 20%; border:2px solid black;">
+                                    <strong t-field="o.piece_height_six"/>
+                                </div>
+                            </div>
+                         <div class="row text-center" style="border:2px solid black;height: 40px;">
+                             <div class="col-12 text-center">
+                                    <h4>
+
+                                         <strong>الكومدينات</strong>
+                                    </h4>
+                             </div>
+
+
+
+                        </div>
+
+                         <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>نوع الكومدينة:</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.bedside_table_model"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                 <h5>
+                                    <strong>لون قواعد الزان:</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.beside_table_beech_wood_bases_color"/>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>لون الكومدينة:</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.beside_table_color"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                 <h5>
+                                    <strong>نوع قواعد الزان:</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.beside_table_beech_wood_bases_model"/>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>العدد:</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.beside_table_count"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                 <h5>
+                                    <strong>لون وجه الدرج:</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.beside_table_drawer_color"/>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>ارتفاع قواعد الزان:</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.beside_table_beech_wood_bases"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                 <h5>
+                                    <strong>ارتفاع بوكس الخشب للكومدينة:</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.beside_table_wood_box"/>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>ملاحظات إضافية:</strong>
+                                </h5>
+                            </div>
+                            <div class="col-9" style="border:2px solid black;">
+                                <strong t-field="o.beside_table_additional_note"/>
+                            </div>
+                        </div>
+                        <br/>
+                        <br/>
+                         <div class="row text-center" style="border:2px solid black;height: 40px;margin-top: 400px;">
+                             <div class="col-12 text-center">
+                                    <h4>
+
+                                         <strong>الجزيرة/التسريحة/الاضافات </strong>
+                                    </h4>
+                             </div>
+
+
+
+                        </div>
+
+                         <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>لون الكاركيس :</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.vanity_carcass_color"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                 <h5>
+                                    <strong>لون الدرف:</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.vanity_Leaves"/>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>نوع قاعدة زان:</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.vanity_beech_wood_bases"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                 <h5>
+                                    <strong>لون التوب:</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.vanity_top_color"/>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>المرأة :</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.vanity_mirror"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                 <h5>
+                                    <strong>نوع المرأة:</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.vanity_mirror_type"/>
+                            </div>
+                        </div>
+                         <div class="row text-center" style="border:2px solid black;height: 40px;">
+                             <div class="col-12 text-center">
+                                    <h4>
+
+                                         <strong>الايادي </strong>
+                                    </h4>
+                             </div>
+
+
+
+                        </div>
+                        <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+                        <div style="width: 16.66%; border:2px solid black;">
+<!--                            <strong>الكود</strong>-->
+                        </div>
+                        <div style="width: 16.66%; border:2px solid black;">
+                            <strong>الكود</strong>
+                        </div>
+                        <div style="width: 16.66%; border:2px solid black;">
+                            <strong>المورد</strong>
+                        </div>
+                        <div style="width: 16.66%; border:2px solid black;">
+                            <strong>العدد</strong>
+                        </div>
+                        <div style="width: 16.66%; border:2px solid black;">
+                            <strong>مكان التركيب</strong>
+                        </div>
+                        <div style="width: 16.66%; border:2px solid black;">
+                            <strong>طريقة التركيب</strong>
+                        </div>
+                    </div>
+                        <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong>أيادي رقم 1 :</strong>
+                                    <br/>
+                                    <strong t-field="o.hand_one_type_id"/>
+                                </div>
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong t-field="o.hand_one_code"/>
+                                </div>
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong t-field="o.hand_one_vendor"/>
+                                </div>
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong t-field="o.hand_one_count"/>
+                                </div>
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong t-field="o.hand_one_installation_place"/>
+                                </div>
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong t-field="o.hand_one_installation_type"/>
+                                </div>
+                            </div>
+                            <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong>أيادي رقم 2 :</strong>
+                                    <br/>
+                                    <strong t-field="o.hand_two_type"/>
+                                </div>
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong t-field="o.hand_two_code"/>
+                                </div>
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong t-field="o.hand_two_vendor"/>
+                                </div>
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong t-field="o.hand_two_count"/>
+                                </div>
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong t-field="o.hand_two_installation_place"/>
+                                </div>
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong t-field="o.hand_two_installation_type"/>
+                                </div>
+                            </div>
+                            <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong>أيادي رقم 3 :</strong>
+                                    <br/>
+                                    <strong t-field="o.hand_three_type"/>
+                                </div>
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong t-field="o.hand_three_code"/>
+                                </div>
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong t-field="o.hand_three_vendor"/>
+                                </div>
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong t-field="o.hand_three_count"/>
+                                </div>
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong t-field="o.hand_three_installation_place"/>
+                                </div>
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong t-field="o.hand_three_installation_type"/>
+                                </div>
+                            </div>
+                            <div class="row text-center" style="border:2px solid black;height: 40px;">
+                             <div class="col-12 text-center">
+                                    <h4>
+
+                                         <strong>الاكسسوارات</strong>
+                                    </h4>
+                             </div>
+
+
+
+                        </div>
+
+                         <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>الاكسسوار 1:</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.accessories_one_type_id"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                 <h5>
+                                    <strong>العدد</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.accessories_one_count"/>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>الاكسسوار 2</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.accessories_two_type"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                 <h5>
+                                    <strong>العدد</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.accessories_two_count"/>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>الاكسسوار 3</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.accessories_three_type"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                 <h5>
+                                    <strong>العدد</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.accessories_three_count"/>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>الاكسسوار 4</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.accessories_four_type"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                 <h5>
+                                    <strong>العدد</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.accessories_four_count"/>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>الاكسسوار 5</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.accessories_five_type"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                 <h5>
+                                    <strong>العدد</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.accessories_five_count"/>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>الاكسسوار 6</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.accessories_six_type"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                 <h5>
+                                    <strong>العدد</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.accessories_six_count"/>
+                            </div>
+                        </div>
+                         <div class="row text-center" style="border:2px solid black;height: 40px;">
+                             <div class="col-12 text-center">
+                                    <h4>
+
+                                         <strong>لون Headboard-Bedbox</strong>
+                                    </h4>
+                             </div>
+
+
+
+                        </div>
+
+                         <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>Headboard</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.headboard_type"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                 <h5>
+                                    <strong>العدد</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.headboard_count"/>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>Bedbox</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.bed_box_type"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                 <h5>
+                                    <strong>العدد</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.bed_box_count"/>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>لون القماش</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.textile_color"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+<!--                                 <h5>-->
+<!--                                    <strong>العدد</strong>-->
+<!--                                </h5>-->
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+<!--                                <span t-field="o.hand_three_code"/>-->
+                            </div>
+                        </div>
+                         <div class="row text-center" style="border:2px solid black;height: 40px;">
+                             <div class="col-12 text-center">
+                                    <h4>
+
+                                         <strong>قياسات السرير  </strong>
+                                    </h4>
+                             </div>
+
+
+
+                        </div>
+                        <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+                        <div style="width: 16.66%; border:2px solid black;">
+<!--                            <strong>الكود</strong>-->
+                        </div>
+                        <div style="width: 16.66%; border:2px solid black;">
+                            <strong>العرض</strong>
+                        </div>
+                        <div style="width: 16.66%; border:2px solid black;">
+                            <strong>الطول</strong>
+                        </div>
+                        <div style="width: 16.66%; border:2px solid black;">
+                            <strong>الارتفاع</strong>
+                        </div>
+                        <div style="width: 16.66%; border:2px solid black;">
+                            <strong>النوع</strong>
+                        </div>
+                        <div style="width: 16.66%; border:2px solid black;">
+                            <strong>شكل التنجيدو الأرجل (إرفاق صوره)</strong>
+                        </div>
+                    </div>
+                        <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong>الراسية</strong>
+<!--                                    <br/>-->
+<!--                                    <span t-field="o.hand_one_type_id"/>-->
+                                </div>
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong t-field="o.bed_head_width"/>
+                                </div>
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong t-field="o.bed_head_height"/>
+                                </div>
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong t-field="o.bed_head_length"/>
+                                </div>
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong t-field="o.bed_head_type"/>
+                                </div>
+                                <div style="width: 16.66%; border:2px solid black;">
+<!--                                    <span t-field="o.bed_head_upholstery" widget="image" width="100" height="100"/>-->
+                                    <img t-att-src="image_data_uri(o.bed_head_upholstery)" t-if="o.bed_head_upholstery"
+                                        style="width: 250px; height: 100px;object-fit: cover;"/>
+                                </div>
+                            </div>
+                            <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong>البوكس </strong>
+<!--                                    <br/>-->
+<!--                                    <span t-field="o.hand_two_type"/>-->
+                                </div>
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong t-field="o.bed_box_width"/>
+                                </div>
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong t-field="o.bed_box_height"/>
+                                </div>
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong t-field="o.bed_box_length"/>
+                                </div>
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong t-field="o.bed_box_one_type"/>
+                                </div>
+                                <div style="width: 16.66%; border:2px solid black;">
+<!--                                    <span t-field="o.bed_box_upholstery" widget="image" width="100" height="100"/>-->
+                                    <img t-att-src="image_data_uri(o.bed_box_upholstery)" t-if="o.bed_box_upholstery"
+                                        style="width: 250px; height: 100px;object-fit: cover;"/>
+                                </div>
+                            </div>
+                            <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong>الفرشة-المرتبه</strong>
+<!--                                    <br/>-->
+<!--                                    <span t-field="o.hand_three_type"/>-->
+                                </div>
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong t-field="o.mattress_width"/>
+                                </div>
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong t-field="o.mattress_height"/>
+                                </div>
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong t-field="o.mattress_length"/>
+                                </div>
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong t-field="o.mattress_type"/>
+                                </div>
+                                <div style="width: 16.66%; border:2px solid black;">
+<!--                                    <span t-field="o.mattress_upholstery" widget="image" width="100" height="100"/>-->
+                                    <img t-att-src="image_data_uri(o.mattress_upholstery)" t-if="o.mattress_upholstery"
+                                        style="width: 250px; height: 100px;object-fit: cover;"/>
+                                </div>
+                            </div>
+                            <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong>الأرجل </strong>
+<!--                                    <br/>-->
+<!--                                    <span t-field="o.hand_three_type"/>-->
+                                </div>
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong t-field="o.legs_width"/>
+                                </div>
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong t-field="o.legs_height"/>
+                                </div>
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong t-field="o.legs_length"/>
+                                </div>
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong t-field="o.legs_type"/>
+                                </div>
+                                <div style="width: 16.66%; border:2px solid black;">
+<!--                                    <span t-field="o.legs_upholstery" widget="image" width="100" height="100"/>-->
+                                    <img t-att-src="image_data_uri(o.legs_upholstery)" t-if="o.legs_upholstery"
+                                        style="width: 250px; height: 100px;object-fit: cover;"/>
+                                </div>
+                            </div>
+                            <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+                                <div style="width: 16.66%; border:2px solid black;">
+                                    <strong>ملاحظات إضافية: </strong>
+<!--                                    <br/>-->
+<!--                                    <span t-field="o.hand_three_type"/>-->
+                                </div>
+                                <div style="width: 83.34%; border:2px solid black;">
+                                    <strong t-field="o.bed_additional_note"/>
+                                </div>
+                            </div>
+                             <div class="row text-center" style="border:2px solid black;height: 40px;margin-top: 500px;">
+                                 <br/>
+                                 <br/>
+                             <div class="col-12 text-center">
+                                    <h4>
+
+                                         <strong>الإناره</strong>
+                                    </h4>
+                             </div>
+
+                        </div>
+
+                         <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>انارة 1:</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.lighting_type"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                 <h5>
+                                    <strong>مكان التركيب</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.lighting_installation_place"/>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>انارة2 :</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.lighting_two_type"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                 <h5>
+                                    <strong>مكان التركيب</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.lighting_two_installation_place"/>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>ملاحظات إضافية</strong>
+                                </h5>
+                            </div>
+<!--                            <div class="col-3" style="border:2px solid black;">-->
+<!--                                <span t-field="o.textile_color"/>-->
+<!--                            </div>-->
+<!--                            <div class="col-3" style="border:2px solid black;">-->
+<!--&lt;!&ndash;                                 <h5>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <strong>العدد</strong>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </h5>&ndash;&gt;-->
+<!--                            </div>-->
+                            <div class="col-9" style="border:2px solid black;">
+                                <strong t-field="o.additional_lighting_note"/>
+                            </div>
+                        </div>
+                        <div class="row text-center" >
+                            <div class="col-8 text-center" style="border:2px solid black;height: 40px;">
+                                    <h4>
+                                        <strong>الفريق الاول :  </strong>
+                                        <strong style="margin-right: 10px;" t-field="o.company_id.name"/>
+                                    </h4>
+
+                            </div>
+                             <div class="col-4 text-center" style="border:2px solid black;height: 40px;">
+                                    <h4>
+                                        <strong>الفريق الثاني:العميل   </strong>
+                                    </h4>
+                            </div>
+                        </div>
+                        <div class="row text-center" >
+                            <div class="col-3 text-center" style="border:2px solid black;height:100px;">
+                                    <h4>
+                                        <br/>
+
+                                        <strong>اسم المندوب: </strong>
+                                    </h4>
+                            </div>
+                             <div class="col-3 text-center" style="border:2px solid black;height:100px;">
+
+                            </div>
+                             <div class="col-3 text-center" style="border:2px solid black;height: 100px;">
+                                    <h4>
+                                        <br/>
+                                        <strong>اسم المندوب: </strong>
+                                    </h4>
+                            </div>
+                             <div class="col-3 text-center" style="border:2px solid black;height: 100px;">
+<!--                                    <h4>-->
+<!--                                        <strong>الإنارة  </strong>-->
+<!--                                    </h4>-->
+                            </div>
+                        </div>
+                        <div class="row text-center" >
+                            <div class="col-3 text-center" style="border:2px solid black;height:100px;">
+                                    <h4>
+                                        <br/>
+
+                                        <strong>توقيع المندوب:</strong>
+                                    </h4>
+                            </div>
+                             <div class="col-3 text-center" style="border:2px solid black;height:100px;">
+
+                            </div>
+                             <div class="col-3 text-center" style="border:2px solid black;height: 100px;">
+                                    <h4>
+                                        <br/>
+                                        <strong>توقيع المندوب: </strong>
+                                    </h4>
+                            </div>
+                             <div class="col-3 text-center" style="border:2px solid black;height: 100px;">
+<!--                                    <h4>-->
+<!--                                        <strong>الإنارة  </strong>-->
+<!--                                    </h4>-->
+                            </div>
+                        </div>
+                        <div class="text-center col-12">
+                            <h5><strong>هذه التفاصيل سجلت على حسب الواقع, حيث أن أرتيفكس غير مسؤولة عن اي تعديل على منسوب البلاط او السقف.</strong></h5>
+                        </div>
+
+                    </div>
+                    </t>
+
+                </t>
+            </t>
+        </template>
+        <record id="paperformat_bedroom_report" model="report.paperformat">
+            <field name="name">A4 - Bedroom Form</field>
+            <field name="default" eval="True" />
+            <field name="format">custom</field>
+            <field name="page_height">300</field>
+            <field name="page_width">350</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">0</field>
+            <field name="margin_bottom">0</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">35</field>
+            <field name="dpi">90</field>
+        </record>
+          <record id="action_bedroom_report" model="ir.actions.report">
+            <field name="name">Bedroom Report</field>
+            <field name="model">sale.order</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">flex_sale_spec.report_artifex_template</field>
+            <field name="report_file">flex_sale_spec.report_artifex_template</field>
+            <field name="binding_model_id" ref="sale.model_sale_order"/>
+            <field name="binding_type">report</field>
+            <field name="paperformat_id" ref="flex_sale_spec.paperformat_bedroom_report"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+        <!-- Inherit the purchase.order view and add the new fields -->
+        <record id="view_purchase_order_form_inherited" model="ir.ui.view">
+            <field name="name">purchase.order.form.inherited</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <field name="currency_id" position="after">
+                    <label for="additional_currency"/>
+                    <div class="o_row" name="div_additional_currency">
+                        <field name="additional_currency_rate_access" invisible="1"/>
+                        <field name="additional_currency_rate"
+                               readonly="additional_currency_rate_access == False"/>
+                        <field name="additional_currency" readonly="0" options="{'no_create': True}"
+                               groups="base.group_multi_currency"/>
+                    </div>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

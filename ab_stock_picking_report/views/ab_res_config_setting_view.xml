@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="ab_res_config" model="ir.ui.view">
+			<field name="name">ab.res.config</field>
+			<field name="model">res.config.settings</field>
+			<field name="inherit_id" ref="account.res_config_settings_view_form" />
+            <field name="arch" type="xml">
+
+                <xpath expr="//setting[@id='reception_report']" position="after">
+					<setting class="col-12 col-lg-6 o_setting_box" id="show_customer_address" title="Show Customer Address">
+                            <div class="o_setting_left_pane">
+                                <field name="is_show_customer_address"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="is_show_customer_address"/>
+                                <div class="text-muted">
+                                    Show Customer Address In Delivery Slip Report
+                                </div>
+                            </div>
+                        </setting>
+				</xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

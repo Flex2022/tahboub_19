@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- ============================================= -->
+        <!-- Inherit Sale Advance Payment Wizard -->
+        <!-- ============================================= -->
+        <record id="view_sale_advance_payment_inv_select_lines" model="ir.ui.view">
+            <field name="name">sale.advance.payment.inv.select.lines</field>
+            <field name="model">sale.advance.payment.inv</field>
+            <field name="inherit_id" ref="sale.view_sale_advance_payment_inv"/>
+            <field name="arch" type="xml">
+
+                <!-- Add option to select order lines -->
+                <xpath expr="//group" position="inside">
+
+                    <group>
+                        <field name="select_order_line_to_invoice"
+                               string="Select Order Lines To Invoice"
+                               invisible="advance_payment_method != 'delivered'"/>
+                    </group>
+
+                    <group invisible="not select_order_line_to_invoice">
+                        <field name="order_line_ids"
+                               widget="many2many_tags"
+                               options="{'no_create': True}"
+                               domain="[('order_id', 'in', sale_order_ids)]"/>
+                    </group>
+
+                </xpath>
+
+            </field>
+        </record>
+
+        <!-- ============================================= -->
+        <!-- Action -->
+        <!-- ============================================= -->
+        <record id="action_view_sale_advance_payment_inv" model="ir.actions.act_window">
+            <field name="name">Create Invoices</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.advance.payment.inv</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="binding_model_id" ref="sale.model_sale_order"/>
+            <field name="binding_view_types">list</field>
+            <field name="view_id" ref="view_sale_advance_payment_inv_select_lines"/>
+        </record>
+
+    </data>
+</odoo>
+
+
+
+
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<odoo>-->
+<!--    <data>-->
+
+<!--        <record id="select_order_line_to_invoice" model="ir.ui.view">-->
+<!--    <field name="name">Select Order Line To Invoice</field>-->
+<!--    <field name="model">sale.advance.payment.inv</field>-->
+<!--    <field name="inherit_id" ref="sale.view_sale_advance_payment_inv"/>-->
+<!--    <field name="arch" type="xml">-->
+<!--        <xpath expr="//form" position="replace">-->
+<!--            <form string="Invoice Sales Order">-->
+<!--                <p class="oe_grey">-->
+<!--                    Invoices will be created in draft so that you can review-->
+<!--                    them before validation.-->
+<!--                </p>-->
+<!--                <group>-->
+<!--                    <group>-->
+<!--                        <field name="count" invisible="count == 1" readonly="True"/>-->
+<!--                        <field name="advance_payment_method" class="oe_inline" widget="radio"-->
+<!--                               invisible="count &gt; 1"/>-->
+<!--                        <field name="has_down_payments" invisible="1"/>-->
+
+<!--                        <label for="deduct_down_payments" string=""-->
+<!--                               invisible="not has_down_payments or advance_payment_method != 'delivered'"/>-->
+
+<!--                        <div invisible="not has_down_payments or advance_payment_method != 'delivered'"-->
+<!--                             id="down_payment_details">-->
+<!--                            <field name="deduct_down_payments" nolabel="1"/>-->
+<!--                            <label for="deduct_down_payments"/>-->
+<!--                        </div>-->
+
+<!--                        <field name="product_id" context="{'default_invoice_policy': 'order'}" class="oe_inline"-->
+<!--                               invisible="1"/>-->
+
+<!--                        <label for="amount"-->
+<!--                               invisible="advance_payment_method not in ('fixed','percentage')"/>-->
+
+<!--                        <div invisible="advance_payment_method not in ('fixed','percentage')"-->
+<!--                             id="payment_method_details">-->
+<!--                            <field name="currency_id" invisible="1"/>-->
+<!--                            <field name="fixed_amount"-->
+<!--                                   required="advance_payment_method == 'fixed'"-->
+<!--                                   invisible="advance_payment_method != 'fixed'"-->
+<!--                                   class="oe_inline"/>-->
+<!--                            <field name="amount"-->
+<!--                                   required="advance_payment_method == 'percentage'"-->
+<!--                                   invisible="advance_payment_method != 'percentage'"-->
+<!--                                   class="oe_inline"/>-->
+<!--                            <span invisible="advance_payment_method != 'percentage'"-->
+<!--                                  class="oe_inline">%-->
+<!--                            </span>-->
+<!--                        </div>-->
+
+<!--                        <field name="deposit_account_id" options="{'no_create': True}" class="oe_inline"-->
+<!--                               invisible="advance_payment_method not in ('fixed', 'percentage') or product_id != False"-->
+<!--                               groups="account.group_account_manager"/>-->
+
+<!--                        <field name="deposit_taxes_id" class="oe_inline" widget="many2many_tags"-->
+<!--                               domain="[('type_tax_use','=','sale')]"-->
+<!--                               invisible="advance_payment_method not in ('fixed', 'percentage') or product_id != False"/>-->
+<!--                    </group>-->
+<!--                    <group>-->
+<!--                        <field name="select_order_line_to_invoice"-->
+<!--                               invisible="advance_payment_method != 'delivered'"/>-->
+<!--                    </group>-->
+<!--                    <field name="order_line"-->
+<!--                           invisible="select_order_line_to_invoice != True"/>-->
+<!--                </group>-->
+<!--                <footer>-->
+<!--                    <button name="create_invoices" id="create_invoice_open" string="Create and View Invoice"-->
+<!--                            type="object" context="{'open_invoices': True}" class="btn-primary"-->
+<!--                            data-hotkey="q"/>-->
+<!--                    <button name="create_invoices" id="create_invoice" string="Create Invoice" type="object"-->
+<!--                            data-hotkey="w"/>-->
+<!--                    <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="z"/>-->
+<!--                </footer>-->
+<!--            </form>-->
+<!--        </xpath>-->
+<!--    </field>-->
+<!--</record>-->
+
+<!--        <record id="action_view_sale_advance_payment_inv" model="ir.actions.act_window">-->
+<!--            <field name="name">Create invoices</field>-->
+<!--            <field name="type">ir.actions.act_window</field>-->
+<!--            <field name="res_model">sale.advance.payment.inv</field>-->
+<!--            <field name="view_mode">form</field>-->
+<!--            <field name="target">new</field>-->
+<!--            &lt;!&ndash; TODO: check if we need this &ndash;&gt;-->
+<!--            <field name="binding_model_id" ref="sale.model_sale_order"/>-->
+<!--            <field name="binding_view_types">list</field>-->
+<!--            <field name="view_id" ref="ab_select_order_line_to_invoice.select_order_line_to_invoice"/>-->
+<!--        </record>-->
+
+<!--    </data>-->
+<!--</odoo>-->

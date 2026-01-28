@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+sale_spec,sale_spec,model_sale_spec,base.group_user,1,1,1,1
+bedroom_spec,bedroom_spec,model_bedroom_spec,base.group_user,1,1,1,1

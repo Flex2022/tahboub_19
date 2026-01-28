@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <record id="view_move_form_inherit" model="ir.ui.view">
+            <field name="name">view_move_form_inherit</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='invoice_line_ids']/list/field[@name='tax_ids']" position="before">
+                    <field name="is_tax_manager" column_invisible="True"/>
+                    <field name="is_tax_readonly_sale" column_invisible="True"/>
+                    <field name="is_tax_readonly_purchase" column_invisible="True"/>
+                </xpath>
+
+                <xpath expr="//field[@name='line_ids']/list/field[@name='tax_ids']" position="before">
+                    <field name="is_tax_manager" column_invisible="True"/>
+                    <field name="is_tax_readonly_sale" column_invisible="True"/>
+                    <field name="is_tax_readonly_purchase" column_invisible="True"/>
+                </xpath>
+
+                <xpath expr="//field[@name='invoice_line_ids']/list/field[@name='tax_ids']" position="attributes">
+                    <attribute name="readonly">(is_tax_readonly_sale and parent.move_type in ['out_invoice', 'out_refund']) and not is_tax_manager or (is_tax_readonly_purchase and parent.move_type in ['in_invoice', 'in_refund'] and not is_tax_manager)</attribute>
+                    <attribute name="force_save">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+<!--        <record id="view_move_form_inherit_edit_tax" model="ir.ui.view">-->
+<!--            <field name="name">view_move_form_inherit_edit_tax</field>-->
+<!--            <field name="model">account.move</field>-->
+<!--            <field name="inherit_id" ref="ab_tax_readonly.view_move_form_inherit"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <xpath expr="//field[@name='invoice_line_ids']/list/field[@name='tax_ids']" position="attributes" groups="ab_tax_readonly.group_edit_tax">-->
+<!--                    <attribute name="readonly">False</attribute>-->
+<!--                </xpath>-->
+<!--            </field>-->
+<!--        </record>-->
+
+    </data>
+</odoo>

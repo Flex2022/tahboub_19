@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_account_move_form_inherit" model="ir.ui.view">
+            <field name="name">account.move.form.inherit</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='invoice_user_id']" position="after">
+                    <!-- Add the new field ref_partner_id -->
+                    <field name="employee_id" widget="many2one_avatar_employee"/>
+                    <field name="ref_partner_id"/>
+                    <field name="show_ready_kanban_button" invisible="1"/>
+                </xpath>
+                <!-- Add a button for Create Stock Move -->
+                <button name="button_set_checked" position="after">
+                    <button string="Create Stock Picking" type="object" name="action_picking_tree_ready_kanban"
+                            invisible="not show_ready_kanban_button"/>
+                </button>
+            </field>
+        </record>
+    </data>
+</odoo>

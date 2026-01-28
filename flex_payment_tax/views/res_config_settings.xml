@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_config_settings_form_payment_tax" model="ir.ui.view">
+            <field name="name">res.config.settings.form.payment.tax</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="account.res_config_settings_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="inside">
+                    <field name="company_id" invisible="1"/>
+                </xpath>
+
+                <block name="default_taxes_setting_container" position="inside">
+                    <setting id="use_payment_tax"
+                             title="Enable bank fees in payments"
+                             groups="account.group_account_user"
+                             help="Enable tax entry in payments"
+                             company_dependent="1">
+
+                        <field name="use_payment_tax"/>
+
+<!--                        <div class="content-group" invisible="not use_payment_tax">-->
+<!--                            <div class="row mt16">-->
+<!--                                <label for="payment_tax_account_id" class="col-lg-4 o_light_label"/>-->
+<!--                                <field name="payment_tax_account_id"-->
+<!--                                       placeholder="Select Account"-->
+<!--                                       context="{'default_company_id': company_id}"/>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                    </setting>
+                </block>
+            </field>
+        </record>
+    </data>
+</odoo>

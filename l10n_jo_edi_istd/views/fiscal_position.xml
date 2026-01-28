@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="l10n_jo_edi_istd_account_fiscal_position_form_inherit" model="ir.ui.view">
+            <field name="name">l10n_jo_edi_istd.account.fiscal.position.form</field>
+            <field name="model">account.fiscal.position</field>
+            <field name="inherit_id" ref="account.view_account_position_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[1]/group[1]/field[@name='company_id']" position="after">
+                    <field name="code_l10n_jo"/>
+                </xpath>
+                <xpath expr="//group[1]/group[2]/field[@name='country_id']" position="after">
+                    <field name="l10n_jo_tax_company_type"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="l10n_jo_edi_istd_account_fiscal_position_tree_inherit" model="ir.ui.view">
+            <field name="name">l10n_jo_edi_istd.account.fiscal.position_tree</field>
+            <field name="model">account.fiscal.position</field>
+            <field name="inherit_id" ref="account.view_account_position_tree"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="code_l10n_jo"/>
+                    <field name="l10n_jo_tax_company_type"/>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

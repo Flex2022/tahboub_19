@@ -1,0 +1,15 @@
+{
+    'name': 'Flex Customer Stock',
+    'version': '19.0.0',
+    'summary': '',
+    'description': '',
+    'category': '',
+    'author': 'Sohaib Alamleh ||Flex-ops',
+    'website': '',
+    'license': '',
+    'depends': ['flex_inventory_modified'],
+    'data': ['reports/stock_report.xml'],
+    'demo': [''],
+    'installable': True,
+    'auto_install': False,
+}

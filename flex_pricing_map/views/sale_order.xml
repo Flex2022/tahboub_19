@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_order_form_inherit" model="ir.ui.view">
+            <field name="name">view_order_form_inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet" position="inside">
+                    <field name="use_price_map" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='order_line']//list//field[@name='price_unit']" position="before">
+                    <field name="price_map_id" options="{'no_create': True}" column_invisible="parent.use_price_map == False"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="sol_tree_inherit" model="ir.ui.view">
+            <field name="name">sol_tree_inherit</field>
+            <field name="model">sale.order.line</field>
+            <field name="inherit_id" ref="hz_sale_custom.sol_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='price_unit']" position="before">
+                    <field name="price_map_id" options="{'no_create': True}" optional="hide"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

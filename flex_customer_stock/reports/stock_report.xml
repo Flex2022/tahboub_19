@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="flex_report_picking" inherit_id="stock.report_picking">
+        <xpath expr="//div[@name='partner_header']" position="replace">
+            <t t-if="o.picking_type_id.code == 'outgoing' and o.company_iden == '3'">
+                 <div t-if="o.sale_id.partner_id" name="partner_header">
+                     <div t-field="o.sale_id.partner_id" t-options='{"widget": "contact", "fields": ["address", "name", "phone"], "no_marker": True, "phone_icons": True}'/>
+                     <p t-if="o.sudo().sale_id.partner_id.vat"><t t-esc="o.company_id.country_id.vat_label or 'Tax ID'"/>: <span t-field="o.sudo().sale_id.partner_id.vat"/></p>
+                 </div>
+            </t>
+            <t t-else="">
+                 <div t-if="o.partner_id" name="partner_header">
+                     <div t-field="o.partner_id" t-options='{"widget": "contact", "fields": ["address", "name", "phone"], "no_marker": True, "phone_icons": True}'/>
+                     <p t-if="o.sudo().partner_id.vat"><t t-esc="o.company_id.country_id.vat_label or 'Tax ID'"/>: <span t-field="o.sudo().partner_id.vat"/></p>
+                 </div>
+            </t>
+        </xpath>
+    </template>
+    <template id="flex_report_delivery_document" inherit_id="stock.report_delivery_document">
+        <xpath expr="//div[@name='partner_header']" position="replace">
+            <t t-if="o.picking_type_id.code == 'outgoing' and o.company_iden == '3'">
+                <div t-if="o.sale_id.partner_id" name="partner_header">
+                    <div t-field="o.sale_id.partner_id" t-options='{"widget": "contact", "fields": ["address", "name", "phone"], "no_marker": True, "phone_icons": True}'/>
+                    <p t-if="o.sudo().sale_id.partner_id.vat"><t t-esc="o.company_id.country_id.vat_label or 'Tax ID'"/>: <span t-field="o.sudo().sale_id.partner_id.vat"/></p>
+                </div>
+            </t>
+            <t t-else="">
+                <div t-if="partner" name="partner_header">
+                    <div t-field="partner.commercial_partner_id" t-options='{"widget": "contact", "fields": ["address", "name", "phone"], "no_marker": True, "phone_icons": True}'/>
+                    <p t-if="partner.sudo().commercial_partner_id.vat"><t t-esc="o.company_id.country_id.vat_label or 'Tax ID'"/>: <span t-field="o.sudo().commercial_partner_id.vat"/></p>
+                </div>
+            </t>
+        </xpath>
+    </template>
+</odoo>

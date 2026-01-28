@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="report_abbreviated">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-set="o" t-value="doc"/>
+                    <t t-call="web.external_layout">
+                        <t t-set="o" t-value="o.with_context(lang=o.partner_id.lang)" />
+                        <t t-set="information_block">
+                            <strong t-if="o.address_id == o.partner_invoice_id">Invoice and shipping address:</strong>
+                            <div t-if="o.partner_invoice_id">
+                                <strong t-if="o.address_id != o.partner_invoice_id">Invoice address: </strong>
+                                <div t-field="o.partner_invoice_id"
+                                     t-options='{"widget": "contact", "fields": ["address", "name", "phone"], "no_marker": True, "phone_icons": True}'/>
+                                <p t-if="o.partner_invoice_id.vat"><t t-esc="o.company_id.country_id.vat_label or 'Tax ID'"/>: <span t-field="o.partner_invoice_id.vat"/></p>
+                            </div>
+                            <t t-if="o.address_id != o.partner_invoice_id">
+                                <strong>Shipping address :</strong>
+                                <div t-field="o.address_id"
+                                     t-options='{"widget": "contact", "fields": ["address", "name", "phone"], "no_marker": True, "phone_icons": True}'/>
+                                <p t-if="o.address_id.vat"><t t-esc="o.company_id.country_id.vat_label or 'Tax ID'"/>: <span t-field="o.address_id.vat"/></p>
+                            </t>
+                        </t>
+                        <t t-set="address">
+                            <div t-field="o.partner_id"
+                                 t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}' />
+                        </t>
+                        <div class="page">
+                            <div class="oe_structure"/>
+
+                            <h2>
+                                <span t-if="o.state != 'draft'">Repair Order #:</span>
+                                <span t-if="o.state == 'draft'">Repair Quotation #:</span>
+                                <span t-field="o.name"/>
+                            </h2>
+
+<!--                            <div id="informations" class="row mt32 mb32">-->
+<!--                                <div t-if="o.product_id.name" class="col-3 bm-2">-->
+<!--                                    <strong>Product to Repair:</strong>-->
+<!--                                    <p t-field="o.product_id.name" class="m-0"/>-->
+<!--                                </div>-->
+<!--                                <div class="col-3 bm-2" groups="stock.group_production_lot">-->
+<!--                                    <strong>Lot/Serial Number:</strong>-->
+<!--                                    <t t-if="o.lot_id">-->
+<!--                                        <span t-field="o.lot_id.name"/>-->
+<!--                                    </t>-->
+<!--                                </div>-->
+<!--                                <div t-if="o.guarantee_limit" class="col-3 bm-2">-->
+<!--                                    <strong>Warranty:</strong>-->
+<!--                                    <p t-field="o.guarantee_limit" class="m-0"/>-->
+<!--                                </div>-->
+<!--                                <div class="col-3 bm-2">-->
+<!--                                    <strong>Printing Date:</strong>-->
+<!--                                    <p t-esc="datetime.datetime.now().strftime('%Y-%m-%d')" t-options="{'widget': 'date'}" class="m-0"/>-->
+<!--                                </div>-->
+<!--                            </div>-->
+
+                            <table class="table table-condensed o_main_table">
+                                <thead>
+                                    <tr>
+                                        <th>Product to Repair</th>
+                                        <th>Lot/Serial Number</th>
+                                        <th>Quantity</th>
+                                        <th>Warranty</th>
+                                        <th>Printing Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                <span t-field="o.product_id.name"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="o.lot_id.name"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="o.product_qty"/>
+                                                <span t-field="o.product_uom.name"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="o.guarantee_limit"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="datetime.datetime.now().strftime('%Y-%m-%d')" t-options="{'widget': 'date'}"/>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+
+                            <hr/>
+
+<!--                            <div id="total" class="row justify-content-end mt-4">-->
+<!--                                <div class="col-6">-->
+<!--                                    <table class="table table-condensed">-->
+<!--                                        <t t-if="o.invoice_method !='none'">-->
+<!--                                            <tr class="border-black o_subtotal">-->
+<!--                                                <td><strong>Total Without Taxes</strong></td>-->
+<!--                                                <td class="text-right">-->
+<!--                                                    <span t-field="o.amount_untaxed"-->
+<!--                                                          t-options='{"widget": "monetary", "display_currency": o.pricelist_id.currency_id}'/>-->
+<!--                                                </td>-->
+<!--                                            </tr>-->
+<!--                                            <tr>-->
+<!--                                                <td>Taxes</td>-->
+<!--                                                <td class="text-right o_price_total">-->
+<!--                                                    <span t-field="o.amount_tax"-->
+<!--                                                          t-options='{"widget": "monetary", "display_currency": o.pricelist_id.currency_id}'/>-->
+<!--                                                </td>-->
+<!--                                            </tr>-->
+<!--                                            <tr class="border-black o_total">-->
+<!--                                                <td><strong>Total</strong></td>-->
+<!--                                                <td class="text-right o_price_total">-->
+<!--                                                    <span t-field="o.amount_total"-->
+<!--                                                          t-options='{"widget": "monetary", "display_currency": o.pricelist_id.currency_id}'/>-->
+<!--                                                </td>-->
+<!--                                            </tr>-->
+<!--                                        </t>-->
+<!--                                    </table>-->
+<!--                                </div>-->
+<!--                            </div>-->
+
+<!--                            <p t-field="o.quotation_notes"/>-->
+                            <div class="oe_structure"/>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <record id="action_report_repair_abbreviated" model="ir.actions.report">
+            <field name="name">Repair Abbreviated</field>
+            <field name="model">repair.order</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">flex_repair_custom.report_abbreviated</field>
+            <field name="report_file">flex_repair_custom.report_abbreviated</field>
+            <field name="print_report_name">'Repair - %s' % (object.name) </field>
+            <field name="binding_model_id" ref="repair.model_repair_order"/>
+            <field name="binding_type">report</field>
+        </record>
+
+    </data>
+</odoo>

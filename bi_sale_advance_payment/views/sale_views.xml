@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="sale_order_view_inherit">
+        <field name="name">sale.order.view.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <group name="sale_header" position="inside">
+                <group>
+                    <field name="total_advance_amount_payments"/>
+                </group>
+            </group>
+            <xpath expr="/form/header/button[@name='action_cancel']" position="after">
+                <button name="%(bi_sale_advance_payment.action_advance_payment_wizard_form)d" type="action"
+                        string="Advance Payment" class="oe_highlight"/>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string="Payment Advance" groups="account.group_account_invoice">
+                    <group>
+                        <button name="%(bi_sale_advance_payment.action_select_payment)d" type="action"
+                                string="Get Payments" class="oe_highlight"/>
+                    </group>
+
+                    <field name="account_payment_ids">
+                        <list>
+                            <field name="company_currency_id" invisible="1"/>
+                            <field name="date"/>
+                            <field name="name"/>
+                            <field name="journal_id"/>
+                            <field name="payment_method_line_id"/>
+                            <field name="partner_id" string="Customer"/>
+                            <field name="amount_signed" string="Amount in Currency"
+                                   groups="base.group_multi_currency"
+                                   optional="hide"/>
+                            <field name="currency_id" string="Payment Currency" groups="base.group_multi_currency"
+                                   optional="hide"/>
+                            <field name="amount_company_currency_signed" widget="monetary" string="Amount"
+                                   sum="Total"/>
+                            <field name="state" widget="badge" decoration-info="state == 'draft'"
+                                   decoration-success="state == 'posted'"/>
+                            <field name="tax_id"/>
+
+                            <field name="remaining" sum="Total"/>
+                            <button name="delete_action" type="object" class="fa fa-trash-o" title="Delete"
+                                    context="{'sale_id': parent.id}"/>
+                        </list>
+                    </field>
+
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="sale_order_view_tree_inherit">
+        <field name="name">sale.order.view.tree.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_tree"/>
+        <field name="arch" type="xml">
+            <field name="amount_total" position="after">
+                <field name="total_advance_amount_payments" sum="Total"/>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="sale_quotation_view_tree_inherit">
+        <field name="name">sale.order.quotation.view.tree.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_quotation_tree"/>
+        <field name="arch" type="xml">
+            <field name="amount_total" position="after">
+                <field name="total_advance_amount_payments" sum="Total"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>    

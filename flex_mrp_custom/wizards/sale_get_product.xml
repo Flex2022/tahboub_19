@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="sale_get_product_form" model="ir.ui.view">
+            <field name="name">Sale Get Product</field>
+            <field name="model">sale.get.product</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="4">
+                            <field name="sale_id" options="{'no_create': True}"/>
+                            <field name="production_id" readonly="1" options="{'no_open': True}"/>
+                        </group>
+                        <field name="line_ids" readonly="0" force_save="1" options="{'no_open': True}">
+                            <list editable="bottom">
+                                <field name="product_id" options="{'no_create': True}"/>
+                                <field name="qty"/>
+                                <field name="product_uom" force_save="1"/>
+                                <field name="mrp_product_id" invisible="1"/>
+                                <field name="wizard_id" invisible="1"/>
+                            </list>
+                        </field>
+                    </sheet>
+                    <footer>
+                        <button name="action_confirm" string="Confirm" type="object" class="btn-primary"/>
+                        <button string="Cancel" special="cancel" class="btn-secondary"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="select_payment_wizard_form">
+            <field name="name">select.payment.wizard.form</field>
+            <field name="model">select.payment.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Select Payments">
+                    <group>
+                        <field name="account_payment_ids" options="{'no_create': True}" widget="many2many">
+                            <list>
+                                <field name="company_currency_id" invisible="1"/>
+                                <field name="date"/>
+                                <field name="name"/>
+                                <field name="journal_id"/>
+                                <field name="payment_method_line_id"/>
+                                <field name="partner_id" string="Customer"/>
+                                <field name="amount_signed" string="Amount in Currency"
+                                       groups="base.group_multi_currency"
+                                       optional="hide"/>
+                                <field name="currency_id" string="Payment Currency" groups="base.group_multi_currency"
+                                       optional="hide"/>
+                                <field name="amount_company_currency_signed" widget="monetary" string="Amount"
+                                       sum="Total"/>
+                                <field name="state" widget="badge" decoration-info="state == 'draft'"
+                                       decoration-success="state == 'posted'"/>
+                                <field name="remaining" sum="Total"/>
+                            </list>
+                        </field>
+                    </group>
+                    <footer>
+                        <button name="action_get_payments" string="Get Payments" type="object" class="btn-primary"/>
+                        <button special="cancel" string="Cancel" class="btn-secondary"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_select_payment" model="ir.actions.act_window">
+            <field name="name">Select Payments</field>
+            <field name="res_model">select.payment.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

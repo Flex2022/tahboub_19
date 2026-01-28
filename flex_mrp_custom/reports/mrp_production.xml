@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+<!--        <template id="flex_report_mrporder" inherit_id="mrp.report_mrporder">-->
+<!--            <xpath expr="//table[@t-if='o.move_raw_ids']/thead//th[1]" position="after">-->
+<!--                <th>-->
+<!--                    Description-->
+<!--                </th>-->
+<!--            </xpath>-->
+<!--            <xpath expr="//span[@t-field='raw_line.product_id']/.." position="after">-->
+<!--                <td class="w-50">-->
+<!--                    <span t-field="raw_line.product_id.description_pickingout"/>-->
+<!--                </td>-->
+<!--            </xpath>-->
+<!--        </template>-->
+    </data>
+</odoo>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="group_product_cost" model="res.groups">
+            <field name="name">Access Product Cost</field>
+        </record>
+
+        <record id="group_sale_create" model="res.groups">
+            <field name="name">Allow Creation From Sales Module</field>
+        </record>
+    </data>
+</odoo>

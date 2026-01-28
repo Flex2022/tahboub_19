@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <template id="report_saleorder_document_inherit" inherit_id="sale.report_saleorder_document">
+            <xpath expr="//div[@t-field='doc.partner_id']" position="replace">
+                <div t-field="doc.partner_id" class="mb-0"
+                     t-options='{"widget": "contact", "fields": ["address", "name", "phone"], "no_marker": True}'/>
+
+            </xpath>
+            <xpath expr="//th[@name='th_description']" position="after">
+                <th name="th_name" class="text-center">Product Name</th>
+                <th name="th_product_brand" class="text-center">Brand</th>
+            </xpath>
+            <xpath expr="//th[@name='th_priceunit']" position="replace">
+                <th name="th_priceunit" class="text-right">Unit Price With Tax</th>
+            </xpath>
+            <xpath expr="//th[@name='th_discount']" position="replace"/>
+            <xpath expr="//th[@name='th_taxes']" position="replace"/>
+            <xpath expr="//th[@name='th_subtotal']" position="replace">
+                <th name="th_subtotal" class="text-right">
+                    <span>Total Price With Tax</span>
+                </th>
+            </xpath>
+            <xpath expr="//td[@name='td_product_name']" position="after">
+                <td name="td_name">
+                    <span t-field="line.product_id.name"/>
+                </td>
+                <td name="td_product_brand">
+                    <span t-field="line.brand_id.name"/>
+                </td>
+            </xpath>
+            <xpath expr="//td[@name='td_product_priceunit']/span" position="replace">
+                <span t-esc="'%.2f' % (line.price_total / line.product_uom_qty)"/>
+            </xpath>
+            <xpath expr="//td[@name='td_product_discount']" position="replace"/>
+            <xpath expr="//td[@name='td_product_taxes']" position="replace"/>
+            <xpath expr="//td[@name='td_product_subtotal']" position="replace">
+                <td name="td_product_subtotal" class="text-right o_price_total">
+                    <span t-field="line.price_total"/>
+                </td>
+            </xpath>
+        </template>
+
+        <template id="ab_invoice_report_customization" inherit_id="account.report_invoice_document">
+
+            <!-- FIX ADDRESS -->
+            <xpath expr="//address[@t-field='o.partner_id']" position="attributes">
+                <attribute name="t-options">
+                    {"widget": "contact", "fields": ["address", "name", "phone",], "no_marker": True}
+                </attribute>
+            </xpath>
+
+            <!-- FIX TABLE -->
+            <xpath expr="//th[@name='th_description']" position="replace">
+                <th name="th_ref" class="text-start">
+                    <span>Internal Reference</span>
+                </th>
+                <th name="th_description" class="text-start">
+                    <span>Description</span>
+                </th>
+                <th name="th_name" class="text-center">Product Name</th>
+                <th name="th_product_brand" class="text-center">Brand</th>
+            </xpath>
+            <xpath expr="//th[@name='th_priceunit']" position="replace">
+                <th name="th_priceunit"
+                    t-attf-class="text-end text-nowrap {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}">
+                    <span>Unit Price With Tax</span>
+                </th>
+            </xpath>
+            <xpath expr="//th[@name='th_discount']" position="replace"/>
+            <xpath expr="//th[@name='th_taxes']" position="replace"/>
+            <xpath expr="//th[@name='th_subtotal']" position="replace">
+                <th name="th_subtotal" class="text-right">
+                    <span>Total Price With Tax</span>
+                </th>
+            </xpath>
+            <xpath expr="//td[@name='account_invoice_line_name']" position="before">
+                <td name="td_ref">
+                    <span t-field="line.product_id.default_code"/>
+                </td>
+            </xpath>
+            <xpath expr="//td[@name='account_invoice_line_name']" position="after">
+                <td name="td_name">
+                    <span t-field="line.product_id.name"/>
+                </td>
+                <td name="td_product_brand">
+                    <span t-field="line.product_id.brand_id.name"/>
+                </td>
+            </xpath>
+
+            <xpath expr="//td[@name='td_price_unit']/span" position="replace">
+                <span t-esc="'%.2f' % (line.price_total / line.quantity)"/>
+            </xpath>
+            <xpath expr="//td[@name='td_discount']" position="replace"/>
+            <xpath expr="//td[@name='td_taxes']" position="replace"/>
+            <xpath expr="//td[@name='td_subtotal']" position="replace">
+                <td name="td_subtotal" class="text-right o_price_total">
+                    <span t-field="line.price_total"/>
+                </td>
+            </xpath>
+            <!--            <xpath expr="//table[@name='invoice_line_table']" position="replace">-->
+            <!--                <table class="table table-sm o_main_table" name="invoice_line_table">-->
+            <!--                    <thead>-->
+            <!--                        <tr>-->
+            <!--                            <th class="text-left">Internal Reference</th>-->
+            <!--                            <th class="text-left">Description</th>-->
+            <!--                            <th class="text-left">Product Name</th>-->
+            <!--                            <th class="text-left">Brand</th>-->
+            <!--                            <th class="text-right">Quantity</th>-->
+            <!--                            <th class="text-right">Unit Price With Tax</th>-->
+            <!--                            <th class="text-right">Total Price With Tax</th>-->
+            <!--                        </tr>-->
+            <!--                    </thead>-->
+
+            <!--                    <tbody class="invoice_tbody">-->
+            <!--                        <t t-foreach="o.invoice_line_ids.filtered(lambda l: not l.display_type)" t-as="line">-->
+            <!--                            <tr>-->
+            <!--                                <td>-->
+            <!--                                    <span t-field="line.product_id.default_code"/>-->
+            <!--                                </td>-->
+            <!--                                <td>-->
+            <!--                                    <span t-field="line.name"/>-->
+            <!--                                </td>-->
+            <!--                                <td>-->
+            <!--                                    <span t-field="line.product_id.name"/>-->
+            <!--                                </td>-->
+            <!--                                <td>-->
+            <!--                                    <span t-field="line.product_id.brand_id.name"/>-->
+            <!--                                </td>-->
+            <!--                                <td class="text-right">-->
+            <!--                                    <span t-field="line.quantity"/>-->
+            <!--                                </td>-->
+            <!--                                <td class="text-right">-->
+            <!--                                    <span t-esc="'%.2f' % (line.price_total / line.quantity if line.quantity else 0)"/>-->
+            <!--                                </td>-->
+            <!--                                <td class="text-right">-->
+            <!--                                    <span t-field="line.price_total"/>-->
+            <!--                                </td>-->
+            <!--                            </tr>-->
+            <!--                        </t>-->
+            <!--                    </tbody>-->
+            <!--                </table>-->
+            <!--            </xpath>-->
+
+        </template>
+
+
+    </data>
+</odoo>

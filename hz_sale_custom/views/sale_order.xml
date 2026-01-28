@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_order_form_inherit" model="ir.ui.view">
+            <field name="name">view_order_form_inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='order_details']" position="after">
+                    <xpath expr="//group[@name='sale_shipping']" position="move"/>
+                </xpath>
+                <xpath expr="//list/field[@name='price_unit']" position="replace">
+                    <field name="is_sol_price_editable" invisible="1"/>
+                    <field name="price_unit" force_save="1" readonly="is_sol_price_editable == False"/>
+                </xpath>
+                <xpath expr="//field[@name='payment_term_id']" position="after">
+                    <field name="customer_project_id"/>
+                </xpath>
+                <xpath expr="//field[@name='commitment_date']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='date_order']" position="after">
+                    <field name="show_discount"/>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="view_quotation_tree_inherit" model="ir.ui.view">
+            <field name="name">view_quotation_tree_inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//list/field[@name='partner_id']" position="after">
+                    <field name="customer_project_id" optional="show"/>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="view_order_search_inherit" model="ir.ui.view">
+            <field name="name">view_order_search_inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="before">
+                    <field name="partner_shipping_id"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

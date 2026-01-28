@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="sol_tree" model="ir.ui.view">
+            <field name="name">sale.order.line.list.custom</field>
+            <field name="model">sale.order.line</field>
+            <field name="priority" eval="100"/>
+            <field name="arch" type="xml">
+                <list string="Sales Order Lines" editable="bottom">
+                    <field name="product_uom_id" invisible="1"/>
+
+                    <field name="sequence" widget="handle"/>
+                    <field name="display_type" invisible="1"/>
+                    <field name="product_updatable" invisible="1"/>
+
+                    <field name="product_id"
+                           readonly="not product_updatable"
+                           required="not display_type"
+                           force_save="1"
+                           context="{
+                       'partner_id': parent.partner_id,
+                       'quantity': product_uom_qty,
+                       'pricelist': parent.pricelist_id,
+                       'uom': product_uom_id,
+                       'company_id': parent.company_id,
+                       'default_lst_price': price_unit,
+                       'default_description_sale': name
+                   }"
+                           domain="[('sale_ok', '=', True), '|', ('company_id', '=', False), ('company_id', '=', parent.company_id)]"
+                           widget="product_configurator"/>
+
+                    <field name="product_template_id" string="Product" invisible="1"
+                           readonly="not product_updatable"
+                           required="not display_type"
+                           context="{
+                       'partner_id': parent.partner_id,
+                       'quantity': product_uom_qty,
+                       'pricelist': parent.pricelist_id,
+                       'uom': product_uom_id,
+                       'company_id': parent.company_id,
+                       'default_list_price': price_unit,
+                       'default_description_sale': name
+                   }"
+                           domain="[('sale_ok', '=', True), '|', ('company_id', '=', False), ('company_id', '=', parent.company_id)]"
+                           widget="product_configurator"/>
+
+                    <field name="name" widget="section_and_note_text" optional="show"/>
+
+                    <field name="analytic_distribution"
+                           widget="analytic_distribution"
+                           optional="hide"
+                           groups="analytic.group_analytic_accounting"
+                           options="{'product_field': 'product_id', 'business_domain': 'sale_order'}"/>
+
+                    <field name="product_uom_qty"
+                           decoration-info="(not display_type and invoice_status == 'to invoice')"
+                           decoration-bf="(not display_type and invoice_status == 'to invoice')"
+                           context="{
+                       'partner_id': parent.partner_id,
+                       'quantity': product_uom_qty,
+                       'pricelist': parent.pricelist_id,
+                       'uom': product_uom_id,
+                       'company_id': parent.company_id
+                   }"/>
+
+                    <field name="qty_delivered"
+                           decoration-info="(not display_type and invoice_status == 'to invoice')"
+                           decoration-bf="(not display_type and invoice_status == 'to invoice')"
+                           string="Delivered"
+                           column_invisible="parent.state not in ['sale', 'done']"
+                           readonly="qty_delivered_method != 'manual'"
+                           optional="show"/>
+
+                    <field name="qty_delivered_method" invisible="1"/>
+
+                    <field name="qty_invoiced"
+                           decoration-info="(not display_type and invoice_status == 'to invoice')"
+                           decoration-bf="(not display_type and invoice_status == 'to invoice')"
+                           string="Invoiced"
+                           column_invisible="parent.state not in ['sale', 'done']"
+                           optional="show"/>
+
+                    <field name="qty_to_invoice" invisible="1"/>
+                    <field name="product_uom_readonly" invisible="1"/>
+
+                    <field name="product_uom_id" force_save="1" string="UoM"
+                           readonly="product_uom_readonly"
+                           required="not display_type"
+                           context="{'company_id': parent.company_id}"
+                           groups="uom.group_uom"
+                           options="{'no_open': True}"
+                           optional="show"/>
+
+                    <field name="customer_lead" optional="hide"
+                           readonly="parent.state not in ['draft', 'sent', 'sale']"/>
+
+                    <field name="is_sol_price_editable" invisible="1"/>
+                    <field name="is_sol_discount_editable" invisible="1"/>
+
+                    <field name="price_unit" force_save="1" readonly="not is_sol_price_editable"/>
+
+                    <field name="is_tax_readonly_sale" invisible="1"/>
+
+                    <field name="tax_ids" widget="many2many_tags" options="{'no_create': True}"
+                           domain="[('type_tax_use','=','sale'),('company_id','=',parent.company_id), ('country_id', '=', parent.tax_country_id)]"
+                           context="{'active_test': True}" optional="show"
+                           readonly="is_tax_readonly_sale or qty_invoiced > 0"/>
+
+                    <field name="discount" string="Disc.%" force_save="1" groups="product.group_discount_per_so_line"
+                           optional="show"
+                           readonly="not is_sol_discount_editable"/>
+
+                    <field name="price_subtotal" widget="monetary"
+                           groups="account.group_show_line_subtotals_tax_excluded"/>
+                    <field name="price_total" widget="monetary"
+                           groups="account.group_show_line_subtotals_tax_included"/>
+
+                    <field name="state" invisible="1"/>
+                    <field name="invoice_status" invisible="1"/>
+                    <field name="currency_id" invisible="1"/>
+                    <field name="price_tax" invisible="1"/>
+                    <field name="company_id" invisible="1"/>
+                </list>
+            </field>
+        </record>
+        <record id="sol_tree_wood" model="ir.ui.view">
+            <field name="name">sale_order_line_tree_wood</field>
+            <field name="model">sale.order.line</field>
+            <field name="inherit_id" ref="hz_sale_custom.sol_tree"/>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <field name="product_id" position="attributes">
+                    <attribute name="domain">
+                        [('sale_ok', '=', True), '|', ('company_id', '=', False), ('company_id', '=',
+                        parent.company_id), ('categ_id', 'in', parent.wood_categs)]
+                    </attribute>
+                </field>
+            </field>
+        </record>
+
+        <record id="sol_tree_accessory" model="ir.ui.view">
+            <field name="name">sale_order_line_tree_accessory</field>
+            <field name="model">sale.order.line</field>
+            <field name="inherit_id" ref="hz_sale_custom.sol_tree"/>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <field name="product_id" position="attributes">
+                    <attribute name="domain">
+                        [('sale_ok', '=', True), '|', ('company_id', '=', False), ('company_id', '=',
+                        parent.company_id), ('categ_id', 'in', parent.accessory_categs)]
+                    </attribute>
+                </field>
+            </field>
+        </record>
+
+        <record id="sol_tree_mixer" model="ir.ui.view">
+            <field name="name">sale_order_line_tree_mixer</field>
+            <field name="model">sale.order.line</field>
+            <field name="inherit_id" ref="hz_sale_custom.sol_tree"/>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <field name="product_id" position="attributes">
+                    <attribute name="domain">
+                        [('sale_ok', '=', True), '|', ('company_id', '=', False), ('company_id', '=',
+                        parent.company_id), ('categ_id', 'in', parent.mixer_categs)]
+                    </attribute>
+                </field>
+            </field>
+        </record>
+
+        <record id="sol_tree_electronic" model="ir.ui.view">
+            <field name="name">sale_order_line_tree_electronic</field>
+            <field name="model">sale.order.line</field>
+            <field name="inherit_id" ref="hz_sale_custom.sol_tree"/>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <field name="product_id" position="attributes">
+                    <attribute name="domain">
+                        [('sale_ok', '=', True), '|', ('company_id', '=', False), ('company_id', '=',
+                        parent.company_id), ('categ_id', 'in', parent.electronic_categs)]
+                    </attribute>
+                </field>
+            </field>
+        </record>
+
+        <record id="sol_tree_worktop" model="ir.ui.view">
+            <field name="name">sale_order_line_tree_worktop</field>
+            <field name="model">sale.order.line</field>
+            <field name="inherit_id" ref="hz_sale_custom.sol_tree"/>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <field name="product_id" position="attributes">
+                    <attribute name="domain">
+                        [('sale_ok', '=', True), '|', ('company_id', '=', False), ('company_id', '=',
+                        parent.company_id), ('categ_id', 'in', parent.worktop_categs)]
+                    </attribute>
+                </field>
+            </field>
+        </record>
+
+        <record id="sol_tree_service" model="ir.ui.view">
+            <field name="name">sale_order_line_tree_service</field>
+            <field name="model">sale.order.line</field>
+            <field name="inherit_id" ref="hz_sale_custom.sol_tree"/>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <field name="product_id" position="attributes">
+                    <attribute name="domain">
+                        [('sale_ok', '=', True), '|', ('company_id', '=', False), ('company_id', '=',
+                        parent.company_id), ('categ_id', 'in', parent.service_categs)]
+                    </attribute>
+                </field>
+            </field>
+        </record>
+
+        <record id="sol_tree_appliance" model="ir.ui.view">
+            <field name="name">sale_order_line_tree_appliance</field>
+            <field name="model">sale.order.line</field>
+            <field name="inherit_id" ref="hz_sale_custom.sol_tree"/>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <field name="product_id" position="attributes">
+                    <attribute name="domain">
+                        [('sale_ok', '=', True), '|', ('company_id', '=', False), ('company_id', '=',
+                        parent.company_id), ('categ_id', 'in', parent.appliance_categs)]
+                    </attribute>
+                </field>
+            </field>
+        </record>
+
+        <record id="sol_tree_bedroom" model="ir.ui.view">
+            <field name="name">sale_order_line_tree_bedroom</field>
+            <field name="model">sale.order.line</field>
+            <field name="inherit_id" ref="hz_sale_custom.sol_tree"/>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <field name="product_id" position="attributes">
+                    <attribute name="domain">
+                        [('sale_ok', '=', True), '|', ('company_id', '=', False), ('company_id', '=',
+                        parent.company_id), ('categ_id', 'in', parent.bedroom_categs)]
+                    </attribute>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_stock_landed_cost_form_inherited" model="ir.ui.view">
+            <field name="name">stock.landed.cost.form</field>
+            <field name="model">stock.landed.cost</field>
+            <field name="inherit_id" ref="stock_landed_costs.view_stock_landed_cost_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='cost_lines']/list/field[@name='split_method']" position="after">
+                    <field name="valid_products" widget="many2many_tags" invisible="1"/>
+                    <field name="by_products" widget="many2many_tags" options="{'no_create': 1}"
+                           invisible="split_method != 'some_products'"
+                           required="split_method == 'some_products'"/>
+                </xpath>
+                <xpath expr="//field[@name='valuation_adjustment_lines']/list/field[@name='additional_landed_cost']"
+                       position="attributes">
+                    <attribute name="sum">Total Additional Landed Cost</attribute>
+                    <attribute name="digits">[16, 3]</attribute>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

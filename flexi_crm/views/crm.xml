@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <record id="crm_quick_create_opportunity_form_inh" model="ir.ui.view">
+            <field name="name">crm.lead.form.quick_create.inh</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.quick_create_opportunity_form"/>
+            <field name="arch" type="xml">
+                <field name="partner_id" position="replace">
+                    <field name="partner_id" required="1" widget="res_partner_many2one" options="{'no_quick_create': True, 'no_create_edit' : False}" context="{'res_partner_search_mode': 'customer', 'show_vat': True}"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="crm_lead_view_form_inh" model="ir.ui.view">
+            <field name="name">crm.lead.form.inh</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Marketing Information" name="marketing_information">
+                        <group>
+                            <group>
+                                <field name="age_cat"/>
+                                <field name="budget"/>
+                                <field name="residence_type"/>
+                                <field name="residence_space"/>
+                                <field name="place_residence"/>
+                            </group>
+                        </group>
+                    </page>
+                </notebook>
+
+                <xpath expr="//field[@name='tag_ids']" position="after">
+                    <field name="product_categ_id" options="{'no_create': 1}"/>
+                </xpath>
+
+                <xpath expr="//field[@name='company_id']" position="after">
+                    <field name="is_name_triple" invisible="1"/>
+<!--                    <field name="is_required_fields" invisible="1"/>-->
+<!--                    <field name="ab_required_fields_ids" invisible="1"/>-->
+
+                </xpath>
+<!--                <xpath expr="//page[@name='lead']//field[@name='street']" position="attributes">-->
+<!--                    <attribute name="attrs">{'required': [('is_required_fields', '=', True)]}</attribute>-->
+<!--                </xpath>-->
+<!--                <xpath expr="//page[@name='lead']//field[@name='city']" position="attributes">-->
+<!--                    <attribute name="attrs">{'required': [('is_required_fields', '=', True)]}</attribute>-->
+<!--                </xpath>-->
+<!--                <xpath expr="//page[@name='lead']//field[@name='state_id']" position="attributes">-->
+<!--                    <attribute name="attrs">{'required': [('is_required_fields', '=', True)]}</attribute>-->
+<!--                </xpath>-->
+<!--                <xpath expr="//page[@name='lead']//field[@name='country_id']" position="attributes">-->
+<!--                    <attribute name="attrs">{'required': [('is_required_fields', '=', True)]}</attribute>-->
+<!--                </xpath>-->
+<!--                <xpath expr="//page[@name='lead']//field[@name='campaign_id']" position="attributes">-->
+<!--                    <attribute name="attrs">{'required': [('is_required_fields', '=', True)]}</attribute>-->
+<!--                </xpath>-->
+<!--                <xpath expr="//page[@name='lead']//field[@name='medium_id']" position="attributes">-->
+<!--                    <attribute name="attrs">{'required': [('is_required_fields', '=', True)]}</attribute>-->
+<!--                </xpath>-->
+<!--                <xpath expr="//page[@name='lead']//field[@name='source_id']" position="attributes">-->
+<!--                    <attribute name="attrs">{'required': [('is_required_fields', '=', True)]}</attribute>-->
+<!--                </xpath>-->
+
+<!--                <xpath expr="//group[@name='lead_partner']//field[@name='partner_id']" position="attributes">-->
+<!--                    <attribute name="context">{-->
+<!--                        'default_name': contact_name,-->
+<!--                        'default_title': title,-->
+<!--                        'default_street': street,-->
+<!--                        'default_street2': street2,-->
+<!--                        'default_city': city,-->
+<!--                        'default_state_id': state_id,-->
+<!--                        'default_zip': zip,-->
+<!--                        'default_country_id': country_id,-->
+<!--                        'default_function': function,-->
+<!--                        'default_phone': phone,-->
+<!--                        'default_mobile': mobile,-->
+<!--                        'default_email': email_from,-->
+<!--                        'default_user_id': user_id,-->
+<!--                        'default_team_id': team_id,-->
+<!--                        'default_website': website,-->
+<!--                        'show_vat': True,-->
+<!--                        'name_is_triple': is_name_triple,-->
+<!--                        'default_company_type': 'person',-->
+<!--                        'default_mobile': '+962',-->
+<!--                        }-->
+<!--                    </attribute>-->
+<!--                </xpath>-->
+
+<!--                <xpath expr="//group[@name='opportunity_partner']//field[@name='partner_id']" position="attributes">-->
+<!--                    <attribute name="context">{-->
+<!--                        'res_partner_search_mode': type == 'opportunity' and 'customer' or False,-->
+<!--                        'default_name': contact_name or partner_name,-->
+<!--                        'default_street': street,-->
+<!--                        'default_is_company': type == 'opportunity' and contact_name == False,-->
+<!--                        'default_company_name': type == 'opportunity' and partner_name,-->
+<!--                        'default_street2': street2,-->
+<!--                        'default_city': city,-->
+<!--                        'default_title': title,-->
+<!--                        'default_state_id': state_id,-->
+<!--                        'default_zip': zip,-->
+<!--                        'default_country_id': country_id,-->
+<!--                        'default_function': function,-->
+<!--                        'default_phone': phone,-->
+<!--                        'default_mobile': mobile,-->
+<!--                        'default_email': email_from,-->
+<!--                        'default_user_id': user_id,-->
+<!--                        'default_team_id': team_id,-->
+<!--                        'default_website': website,-->
+<!--                        'show_vat': True,-->
+<!--                        'name_is_triple': is_name_triple,-->
+<!--                        'default_company_type': 'person',-->
+<!--                        'default_mobile': '+962',-->
+<!--                        }-->
+<!--                    </attribute>-->
+<!--                </xpath>-->
+<!--                <xpath expr="//field[@name='phone']" position="attributes">-->
+<!--                    <attribute name="attrs">{'required': [('is_required_fields', '=', True)]}</attribute>-->
+<!--                </xpath>-->
+                <xpath expr="//field[@name='user_company_ids']" position="after">
+                    <field name="lead_categ_id" options="{'no_create': 1}"/>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="quick_create_opportunity_form_inh" model="ir.ui.view">
+            <field name="name">crm.lead.form.quick_create.inh</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.quick_create_opportunity_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="attributes">
+<!--                    <attribute name="attrs">{'required': [('is_required_fields', '=', True)]}</attribute>-->
+<!--                    <attribute name="context">{-->
+<!--                        'res_partner_search_mode': type == 'opportunity' and 'customer' or False,-->
+<!--                        'default_name': contact_name or partner_name,-->
+<!--                        'default_is_company': type == 'opportunity' and contact_name == False,-->
+<!--                        'default_company_name': type == 'opportunity' and partner_name,-->
+<!--                        'default_phone': phone,-->
+<!--                        'default_email': email_from,-->
+<!--                        'default_user_id': user_id,-->
+<!--                        'default_team_id': team_id,-->
+<!--                        'show_vat': True,-->
+<!--                        'name_is_triple': is_name_triple,-->
+<!--                        'default_company_type': 'person',-->
+<!--                        'default_mobile': '+962',-->
+<!--                        }-->
+<!--                    </attribute>-->
+                </xpath>
+<!--                <xpath expr="//field[@name='phone']" position="attributes">-->
+<!--                    <attribute name="attrs">{'required': [('is_required_fields', '=', True)]}</attribute>-->
+<!--                </xpath>-->
+                <xpath expr="//field[@name='company_id']" position="after">
+<!--                    <field name="is_required_fields" invisible="1"/>-->
+                    <field name="is_name_triple" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="crm_case_kanban_view_leads_inherit" model="ir.ui.view">
+            <field name="name">crm.case.kanban.view.leads.inherit</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_kanban_view_leads"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="attributes">
+                    <attribute name="options">{'no_create': True}</attribute>
+                </xpath>
+                <progressbar position="attributes">
+                    <attribute name="sum_field"></attribute>
+                </progressbar>
+            </field>
+        </record>
+
+<!--        <record id="crm_stage_form_inherit" model="ir.ui.view">-->
+<!--            <field name="name">crm_stage_form_inherit</field>-->
+<!--            <field name="model">crm.stage</field>-->
+<!--            <field name="inherit_id" ref="crm.crm_stage_form"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <field name="team_id" position="after">-->
+<!--                    <field name="need_permission" groups="flexi_crm.group_all_crm_stage"/>-->
+<!--                </field>-->
+<!--            </field>-->
+<!--        </record>-->
+
+    </data>
+</odoo>

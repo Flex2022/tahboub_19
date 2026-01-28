@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_account_payment_form_inherit" model="ir.ui.view">
+            <field name="name">view_account_payment_form_inherit</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_form"/>
+            <field name="arch" type="xml">
+                <field name="partner_id" position="attributes">
+                    <attribute name="required">1</attribute>
+                </field>
+                <field name="journal_id" position="after">
+                    <field name="use_payment_tax" invisible="1"/>
+                    <field name="tax_move_id" invisible="1"/>
+                    <field name="tax_id" options="{'no_create': True}"
+                           readonly="state != 'draft'"
+                           invisible="not use_payment_tax"/>
+                    <!--                    <field name="new_tax"/>-->
+                </field>
+                <button name="button_open_journal_entry" position="before">
+                    <button name="button_open_tax_entry" type="object" class="oe_stat_button" icon="fa-bars"
+                            invisible="not tax_move_id">
+                        <div class="o_stat_info">
+                            <span class="o_stat_text">Tax Entry</span>
+                        </div>
+                    </button>
+
+                    <field name="reverse_tax_moves" widget="many2many_tags" invisible="1"/>
+                    <button name="button_open_reverse_tax_entry" type="object" class="oe_stat_button" icon="fa-bars"
+                            invisible="not reverse_tax_moves">
+                        <div class="o_stat_info">
+                            <span class="o_stat_text">Reverse Tax Entry</span>
+                        </div>
+                    </button>
+                </button>
+            </field>
+        </record>
+
+    </data>
+</odoo>

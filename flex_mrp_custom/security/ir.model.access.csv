@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+sale_get_product,sale_get_product,model_sale_get_product,,1,1,1,1
+sale_get_product_line,sale_get_product_line,model_sale_get_product_line,,1,1,1,1
+
+import_component,import_component,model_import_component,,1,1,1,1
+import_component_line,import_component_line,model_import_component_line,,1,1,1,1

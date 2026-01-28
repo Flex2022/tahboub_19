@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+   <data>
+    <record id="base.EGP" model="res.currency">
+        <field name="name">EGP</field>
+        <field name="full_name">Egyptian Pound</field>
+        <field name="symbol">ج.م</field>
+        <field name="rounding">0.01</field>
+        <field name="active" eval="True"/>
+        <field name="currency_unit_label">Pound</field>
+        <field name="currency_subunit_label">Piastre</field>
+    </record>
+</data>
+
+</odoo>

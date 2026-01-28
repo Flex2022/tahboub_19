@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="product_template_button_onhand_qty_inherit" model="ir.ui.view">
+            <field name="name">view.onhand.qty.button.inherit</field>
+            <field name="model">stock.quant</field>
+            <field name="inherit_id" ref="stock.view_stock_quant_tree_inventory_editable"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='inventory_quantity']" position="replace">
+                    <field name="inventory_quantity" widget="counted_quantity_widget" readonly="is_true"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_stock_quant_tree_editable_inherit" model="ir.ui.view">
+            <field name="name">view.onhand.qty.button.inherit</field>
+            <field name="model">stock.quant</field>
+            <field name="inherit_id" ref="stock.view_stock_quant_tree_editable"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//field[@name='inventory_quantity_auto_apply']" position="replace">
+                    <field name="inventory_quantity_auto_apply" sum="Total On Hand" readonly="is_true"/>
+                </xpath>
+
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

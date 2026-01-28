@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="set_discount_form" model="ir.ui.view">
+            <field name="name">set_discount</field>
+            <field name="model">set.discount</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group col="4">
+                        <field name="discount" widget="percentage"/>
+                        <field name="category"/>
+                        <field name="sale_id" invisible="1"/>
+                    </group>
+                    <footer>
+                        <button name="action_confirm" string="Confirm" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_set_discount" model="ir.actions.act_window">
+            <field name="name">Set Discount</field>
+            <field name="res_model">set.discount</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="context">{'default_sale_id': active_id}</field>
+            <field name="view_id" ref="set_discount_form"/>
+        </record>
+
+    </data>
+</odoo>

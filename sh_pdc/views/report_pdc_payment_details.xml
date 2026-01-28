@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_pdc_payment_details">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <t t-foreach="docs" t-as="doc">
+                    <div class="page">
+                        <center>
+                            <h2>PDC Payment Report</h2>
+                        </center>
+                        <br/>
+                        <table class="table table-sm table-bordered  text-center">
+                            <tr>
+                                <th>Name</th>
+                                <th>
+                                    <t t-if="doc.register_partner_account == 'account'">
+                                        Account
+                                    </t>
+                                    <t t-else="">
+                                        Customer
+                                    </t>
+                                </th>
+                                <th>Bank</th>
+                                <th>Payment Date</th>
+                                <th>Payment Amount</th>
+                                <th>Cheque Reference</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span t-field="doc.name"/>
+                                </td>
+                                <td>
+                                    <t t-if="doc.register_partner_account == 'account'">
+                                        <span t-field="doc.account_id"/>
+                                    </t>
+                                    <t t-else="">
+                                        <span t-field="doc.partner_id"/>
+                                    </t>
+
+                                </td>
+                                <td>
+                                    <span t-field="doc.bank_id.display_name"/>
+                                </td>
+                                <td>
+                                    <span t-field="doc.payment_date"/>
+                                </td>
+                                <td>
+                                    <span t-field="doc.payment_amount"/>
+                                </td>
+                                <td>
+                                    <span t-field="doc.reference"/>
+                                </td>
+                            </tr>
+                        </table>
+                        <table class="table table-sm table-bordered text-center">
+                            <tr>
+                                <th>Payment Journal</th>
+                                <th>Under Collection Account</th>
+                                <th>Agent</th>
+                                <th>Due Date</th>
+                                <th>Memo</th>
+                                <th>Status</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span t-field="doc.journal_id"/>
+                                </td>
+                                <td>
+                                    <span t-field="doc.account_id_under_collection"/>
+                                </td>
+                                <td>
+                                    <span t-field="doc.agent"/>
+                                </td>
+                                <td>
+                                    <span t-field="doc.due_date"/>
+                                </td>
+                                <td>
+                                    <span t-field="doc.memo"/>
+                                </td>
+                                <td>
+                                    <span t-field="doc.state"/>
+                                </td>
+                            </tr>
+                        </table>
+                        <t t-if="doc.line_ids">
+                            <center>
+                                <h4>PDC Sub Cheques</h4>
+                            </center>
+                            <table class="table table-sm text-center">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>
+                                        <t t-if="doc.register_partner_account == 'account'">
+                                            Account
+                                        </t>
+                                        <t t-else="">
+                                            Customer
+                                        </t>
+                                    </th>
+                                    <th>Cheque Reference</th>
+                                    <th>Payment Amount</th>
+                                    <th>Payment Date</th>
+                                    <th>Journal</th>
+                                    <th>Due Date</th>
+                                    <th>Status</th>
+                                </tr>
+                                <tr t-foreach="doc.line_ids" t-as="line">
+                                    <td>
+                                        <span t-field="line.name"/>
+                                    </td>
+                                    <td>
+                                        <t t-if="doc.register_partner_account == 'account'">
+                                            <span t-field="line.account_id"/>
+                                        </t>
+                                        <t t-else="">
+                                            <span t-field="line.partner_id"/>
+                                        </t>
+                                    </td>
+                                    <td>
+                                        <span t-field="line.reference"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="line.payment_amount"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="line.payment_date"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="line.journal_id"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="line.due_date"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="line.state"/>
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </t>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <record id="paperformat_pdc_details" model="report.paperformat">
+        <field name="name">PDC</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">25</field>
+        <field name="margin_bottom">5</field>
+        <field name="margin_left">5</field>
+        <field name="margin_right">5</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">45</field>
+        <field name="dpi">80</field>
+    </record>
+    <record id="action_report_pdc_payment_details" model="ir.actions.report">
+        <field name="name">PDC Payment Report Details</field>
+        <field name="model">pdc.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">sh_pdc.report_pdc_payment_details</field>
+        <field name="report_file">sh_pdc.report_pdc_payment_details</field>
+        <field name="binding_model_id" ref="sh_pdc.model_pdc_wizard"/>
+        <field name="paperformat_id" ref="sh_pdc.paperformat_pdc_details"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

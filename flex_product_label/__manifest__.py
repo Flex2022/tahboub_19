@@ -1,0 +1,15 @@
+{
+    'name': 'Flex Product Label',
+    'version': '1.0',
+    'summary': '',
+    'description': '',
+    'category': '',
+    'author': 'Sohaib Alamleh||Flex-ops',
+    'website': '',
+    'license': '',
+    'depends': ['web','product','stock','brand','flex_sale_workflow'],
+    'data': ['reports/label.xml'],
+    'demo': [''],
+    'installable': True,
+    'auto_install': False,
+}

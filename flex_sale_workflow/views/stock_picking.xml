@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="stock_picking_cancel_inherit_view_form" model="ir.ui.view">
+            <field name="name">stock.picking.view.form</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('o_td_label')]" position="before">
+                    <field name="sale_partner_id"/>
+                </xpath>
+
+                <field name="move_type" position="after">
+                    <field name="employee_id" widget="many2one_avatar_employee"/>
+                    <field name="analytic_account_id"/>
+                    <field name="picking_type_code" invisible="1"/>
+                </field>
+<!--                 <xpath expr="//field[@name='move_ids_without_package']" position="attributes">-->
+<!--                    <attribute name="attrs">{'readonly': [('picking_type_code', 'not in', 'internal')]}</attribute>-->
+<!--                 </xpath>-->
+<!--                <xpath expr="//field[@name='move_line_ids_without_package']" position="attributes">-->
+<!--                    <attribute name="attrs">{'readonly': [('picking_type_code', 'not in', 'internal')]}</attribute>-->
+<!--                 </xpath>-->
+                <xpath expr="//field[@name='move_ids']/list/field[1]" position="before">
+                    <field name="procure_method" optional="show"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="vpicktree_inherit" model="ir.ui.view">
+            <field name="name">vpicktree_inherit</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.vpicktree"/>
+            <field name="arch" type="xml">
+                <field name="scheduled_date" position="after">
+                    <field name="employee_id" widget="many2one_avatar_employee"/>
+                </field>
+            </field>
+        </record>
+
+<!--        <record id="view_stock_move_line_detailed_operation_tree_inherit" model="ir.ui.view">-->
+<!--            <field name="name">view_stock_move_line_detailed_operation_tree_inherit</field>-->
+<!--            <field name="model">stock.move.line</field>-->
+<!--            <field name="inherit_id" ref="stock.view_stock_move_line_detailed_operation_tree"/>-->
+<!--            <field name="arch" type="xml">-->
+
+<!--                <xpath expr="//tree" position="attributes">-->
+<!--                    <attribute name="create">false</attribute>-->
+<!--                </xpath>-->
+<!--            </field>-->
+<!--        </record>-->
+    </data>
+</odoo>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_move_search_inherit" model="ir.ui.view">
+            <field name="name">view_move_search_inherit</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='by_product']" position="after">
+                    <filter string="Brand" name="by_brand_id" domain="[]" context="{'group_by': 'brand_id'}"/>
+                </xpath>
+                <xpath expr="//field[@name='product_id']" position="after">
+                    <field name="brand_id"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="stock_move_line_view_search_inherit" model="ir.ui.view">
+            <field name="name">stock_move_line_view_search_inherit</field>
+            <field name="model">stock.move.line</field>
+            <field name="inherit_id" ref="stock.stock_move_line_view_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='groupby_product_id']" position="after">
+                    <filter string="Brand" name="by_brand_id" domain="[]" context="{'group_by': 'brand_id'}"/>
+                </xpath>
+                <xpath expr="//field[@name='product_id']" position="after">
+                    <field name="brand_id"/>
+                </xpath>
+            </field>
+        </record>
+<!--        <record id="view_inventory_valuation_search_inherit" model="ir.ui.view">-->
+<!--            <field name="name">view_inventory_valuation_search_inherit</field>-->
+<!--            <field name="model">stock.valuation.layer</field>-->
+<!--            <field name="inherit_id" ref="stock_account.view_inventory_valuation_search"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <xpath expr="//filter[@name='group_by_product_id']" position="after">-->
+<!--                    <filter string="Brand" name="by_brand_id" domain="[]" context="{'group_by': 'brand_id'}"/>-->
+<!--                </xpath>-->
+<!--                <xpath expr="//field[@name='product_id']" position="after">-->
+<!--                    <field name="brand_id"/>-->
+<!--                </xpath>-->
+<!--            </field>-->
+<!--        </record>-->
+        <record id="quant_search_view_inherit" model="ir.ui.view">
+            <field name="name">quant_search_view_inherit</field>
+            <field name="model">stock.quant</field>
+            <field name="inherit_id" ref="stock.quant_search_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='productgroup']" position="after">
+                    <filter string="Brand" name="by_brand_id" domain="[]" context="{'group_by': 'brand_id'}"/>
+                </xpath>
+                <xpath expr="//field[@name='product_id']" position="after">
+                    <field name="brand_id"/>
+                </xpath>
+            </field>
+        </record>
+<!--        <record id="stock_report_view_search_inherit" model="ir.ui.view">-->
+<!--            <field name="name">stock_report_view_search_inherit</field>-->
+<!--            <field name="model">report.stock.quantity</field>-->
+<!--            <field name="inherit_id" ref="stock.stock_report_view_search"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <xpath expr="//filter[@name='groupby_date']" position="before">-->
+<!--                    <filter string="Brand" name="by_brand_id" domain="[]" context="{'group_by': 'brand_id'}"/>-->
+<!--                </xpath>-->
+<!--                <xpath expr="//field[@name='product_id']" position="after">-->
+<!--                    <field name="brand_id"/>-->
+<!--                </xpath>-->
+<!--            </field>-->
+<!--        </record>-->
+    </data>
+</odoo>

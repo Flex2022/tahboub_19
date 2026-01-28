@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <record id="view_res_company_form_inherit" model="ir.ui.view">
+            <field name="name">view_res_company_form_inherit</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                         <page string="CRM Required Fields" name="required_field">
+                            <field name="ab_required_fields_ids">
+                                <list widget="one2many" editable="bottom">
+                                     <field name="name"/>
+                                </list>
+                            </field>
+                        </page>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

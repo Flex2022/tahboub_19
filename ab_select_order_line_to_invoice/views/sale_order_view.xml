@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- ============================================= -->
+        <!-- Replace Create Invoice Button -->
+        <!-- ============================================= -->
+        <record id="replace_create_invoice_button" model="ir.ui.view">
+            <field name="name">sale.order.replace.create.invoice.button</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//button[@name='%(sale.action_view_sale_advance_payment_inv)d']"
+                       position="replace">
+
+                    <button
+                        name="%(ab_select_order_line_to_invoice.action_view_sale_advance_payment_inv)d"
+                        string="Create Invoice"
+                        type="action"
+                        class="btn-primary"
+                        data-hotkey="q"
+                        invisible="invoice_status != 'to invoice'"
+                    />
+
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>
+
+
+
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<odoo>-->
+<!--    <data>-->
+
+<!--        <record id="replace_create_invoice_button" model="ir.ui.view">-->
+<!--            <field name="name">replace.create.invoice.button</field>-->
+<!--            <field name="model">sale.order</field>-->
+<!--            <field name="inherit_id" ref="sale.view_order_form"/>-->
+<!--            <field name="arch" type="xml">-->
+
+<!--                <xpath expr="//button[@name='%(sale.action_view_sale_advance_payment_inv)d']" position="replace">-->
+<!--                    &lt;!&ndash;                     <button name="%(sale.action_view_sale_advance_payment_inv)d" string="Create Invoice"&ndash;&gt;-->
+<!--                    &lt;!&ndash;                        type="action" class="btn-primary" data-hotkey="q"&ndash;&gt;-->
+<!--                    &lt;!&ndash;                        attrs="{'invisible': [('invoice_status', '!=', 'to invoice')]}"/>&ndash;&gt;-->
+<!--                    <button name="%(ab_select_order_line_to_invoice.action_view_sale_advance_payment_inv)d" string="Create Invoice"-->
+<!--                            type="action" class="btn-primary" data-hotkey="q"-->
+<!--                            invisible="invoice_status != 'to invoice'"/>-->
+<!--                </xpath>-->
+
+<!--            </field>-->
+<!--        </record>-->
+
+<!--    </data>-->
+<!--</odoo>-->

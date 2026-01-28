@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_users_form_restrict_journals" model="ir.ui.view">
+        <field name="name">view_users_form_restrict_journals</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <group name="other_preferences" position="after">
+                <group>
+                    <div colspan="2">
+                        <field name="restrict_journals" class="oe_inline" nolabel="1"/>
+                        <label for="restrict_journals" class="font-weight-bold"/>
+                    </div>
+                    <field name="allowed_journals"
+                           widget="many2many_tags"
+                           options="{'no_create': True}"
+                           domain="[('type', 'in', ['cash', 'bank'])]"
+                           invisible="not restrict_journals"/>
+                </group>
+            </group>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,746 @@
+<odoo>
+    <data>
+        <template id="sale_spec_report">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <div style="width: 100%;">
+                        <table style="table-layout:fixed">
+                            <table style="border: 1px solid black;border-collapse: collapse;margin:auto;width:100%;height:200px;table-layout:fixed">
+                                <tr style="border: 1px solid black;border-collapse: collapse;">
+                                    <td style="border: 1px solid black;border-collapse: collapse;width:25%;text-align:center;vertical-align:middle;table-layout:fixed">
+                                        Order date
+                                    </td>
+                                    <td style="border: 1px solid black;border-collapse: collapse;height:10%;width:15%;text-align:center;vertical-align:middle;table-layout:fixed">
+                                        sales order number
+                                    </td>
+                                    <td style="border: 1px solid black;border-collapse: collapse;width:40%;text-align:center;vertical-align:middle;table-layout:fixed ">
+                                        Customer
+                                    </td>
+                                    <!--                                     <td rowspan="3" style="border: 1px solid black;border-collapse: collapse;"> -->
+                                    <!--                                     </td> -->
+                                </tr>
+                                <t t-foreach="docs" t-as="o">
+                                    <tr style="border: 1px solid black;border-collapse: collapse;">
+                                        <td style="border: 1px solid black;height:10%;border-collapse: collapse; text-align:center;vertical-align:middle;table-layout:fixed">
+                                            <span style="text-align:center" t-field="o.date_order"/>
+                                        </td>
+                                        <td style="border: 1px solid black;border-collapse: collapse; text-align:center;vertical-align:middle;table-layout:fixed">
+                                            <span t-field="o.name"/>
+                                        </td>
+                                        <td style="border: 1px solid black;border-collapse: collapse; text-align:center;vertical-align:middle;table-layout:fixed">
+                                            <span style="text-align:center" t-field="o.partner_id"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                                <!--                                 <tr style="border: 1px solid black;border-collapse: collapse;"> -->
+                                <!--                                     <td style="border: 1px solid black;border-collapse: collapse;"></td> -->
+                                <!--                                     <td style="border: 1px solid black;border-collapse: collapse;"></td> -->
+                                <!--                                     <td style="border: 1px solid black;border-collapse: collapse;"></td> -->
+                                <!--                                 </tr> -->
+                            </table>
+                            <table style="border: 1px solid black;border-collapse: collapse;margin:auto;width:100%;height:30px;text-align:center;background-color:rgb(193, 190, 190);color:black;table-layout:fixed">
+                                <tr style="border: 1px solid black;border-collapse: collapse;">
+                                    <td colspan="4" style="border: 1px solid black;border-collapse: collapse;">
+                                        <b>Wood and Wooden Supplementary</b>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table style="border: 1px solid black;border-collapse: collapse;margin:auto;width:100%;height:300px;margin-top:-4px;table-layout:fixed">
+                                <tr style="border: 1px solid black;border-collapse: collapse;height:50px;">
+                                    <td style="border: 1px solid black;border-collapse: collapse;width:25%;text-align:center;vertical-align:middle;table-layout:fixed">
+                                        <span t-field="o.door_model_id.name"/>
+                                    </td>
+                                    <td style="border: 1px solid black;border-collapse: collapse;width:15% ;text-align:center;vertical-align:middle;table-layout:fixed">
+                                        Door Model
+                                    </td>
+                                    <td style="border: 1px solid black;border-collapse: collapse;width:40% ; text-align:center;vertical-align:middle;table-layout:fixed">
+                                        <span t-field="o.kitchen_type_id.name"/>
+                                    </td>
+                                    <td style="border: 1px solid black;border-collapse: collapse; text-align:center;vertical-align:middle;table-layout:fixed">
+                                        Kitchen Type
+                                    </td>
+                                </tr>
+                                <tr style="border: 1px solid black;border-collapse: collapse;height:50px; text-align:center">
+                                    <td style="border: 1px solid black;border-collapse: collapse;text-align:center;vertical-align:middle;table-layout:fixed ">
+                                        <span t-field="o.laminate_grains_id.name"/>
+                                    </td>
+                                    <td style="border: 1px solid black;border-collapse: collapse;text-align:center;vertical-align:middle;table-layout:fixed">
+                                        Laminate Grains
+                                    </td>
+                                    <td style="border: 1px solid black;border-collapse: collapse;text-align:center;vertical-align:middle;table-layout:fixed">
+                                        <span t-field="o.pillar_sold_id.name"/>
+                                    </td>
+                                    <td style="border: 1px solid black;border-collapse: collapse;text-align:center;vertical-align:middle;table-layout:fixed">
+                                        Sold
+                                        Column
+                                    </td>
+                                </tr>
+                                <tr style="border: 1px solid black;border-collapse: collapse;">
+                                    <td colspan="2"
+                                        style="border: 1px solid black;border-collapse: collapse;text-align:center;vertical-align:middle;table-layout:fixed">
+                                        <span t-field="o.wood_color_id.name"/>
+                                    </td>
+                                    <td style="border: 1px solid black;border-collapse: collapse;text-align:center;vertical-align:middle;table-layout:fixed">
+                                        <span t-field="o.wood_color2_id.name"/>
+                                    </td>
+                                    <td rowspan="2"
+                                        style="border: 1px solid black;border-collapse: collapse;text-align:center;vertical-align:middle;table-layout:fixed">
+                                        Color
+                                    </td>
+                                </tr>
+                                <tr style="border: 1px solid black;border-collapse: collapse;">
+                                    <td colspan="2"
+                                        style="border: 1px solid black;border-collapse: collapse;text-align:center;vertical-align:middle;table-layout:fixed">
+                                        <span t-field="o.wood_color3_id.name"/>
+                                    </td>
+                                    <td style="border: 1px solid black;border-collapse: collapse;text-align:center;vertical-align:middle;table-layout:fixed">
+                                        <span t-field="o.wood_color4_id.name"/>
+                                    </td>
+                                </tr>
+                                <tr style="border: 1px solid black;border-collapse: collapse;height:50px;">
+                                    <td style="border: 1px solid black;border-collapse: collapse;height:50px;text-align:center;vertical-align:middle;table-layout:fixed">
+                                        <span t-field="o.light_pelmets_id.name"/>
+                                    </td>
+                                    <td style="border: 1px solid black;border-collapse: collapse;vertical-align:middle;text-align:center;vertical-align:middle;table-layout:fixed">
+                                        Light Pelmets
+                                    </td>
+                                    <td style="border: 1px solid black;border-collapse: collapse; vertical-align:middle;text-align:center;vertical-align:middle;table-layout:fixed">
+                                        <span t-field="o.cornice_type_id.name"/>
+                                    </td>
+                                    <td style="border: 1px solid black;border-collapse: collapse; vertical-align:middle;text-align:center;vertical-align:middle;table-layout:fixed">
+                                        Cornice Type
+                                    </td>
+                                </tr>
+                                <tr style="border: 1px solid black;border-collapse: collapse;height:50px;">
+                                    <td style="border: 1px solid black;border-collapse: collapse;text-align:center;vertical-align:middle;table-layout:fixed">
+                                        <span t-field="o.glass_color_id.name"/>
+                                    </td>
+                                    <td style="border: 1px solid black;border-collapse: collapse;text-align:center;vertical-align:middle;table-layout:fixed">
+                                        Glass Color
+                                    </td>
+                                    <td style="border: 1px solid black;border-collapse: collapse;text-align:center;vertical-align:middle;table-layout:fixed">
+                                        <span t-field="o.glass_cabinets_type_id.name"/>
+                                    </td>
+                                    <td style="border: 1px solid black;border-collapse: collapse;text-align:center;vertical-align:middle;table-layout:fixed">
+                                        Glass Cabinets Type
+                                    </td>
+                                </tr>
+                            </table>
+                            <table style="border: 1px solid black;border-collapse: collapse;margin:auto;width:100%;height:70px;table-layout:fixed">
+                                <tr style="border: 1px solid black;border-collapse: collapse;margin:auto;width:100%;height:70px;">
+                                    <td colspan="2"
+                                        style="border: 1px solid black;text-align:center;vertical-align:middle;table-layout:fixed">
+                                        <span style="text-align:center;position:relative;transform:translateY(-50px);top:31px;"
+                                              t-field="o.chairs"/>
+                                        <table align="right">
+                                            <td style="margin-right:-2px;border: 1px solid black;width: 120px;height: 80px;text-align: center;vertical-align:middle;table-layout:fixed">
+                                                Chairs
+                                            </td>
+                                        </table>
+                                    </td>
+                                    <td style="border: 1px solid black;text-align:center;vertical-align:middle;table-layout:fixed">
+                                        <span t-field="o.bench_upholstery_id.name"/>
+                                    </td>
+                                    <td style="border: 1px solid black;text-align:center;vertical-align:middle;table-layout:fixed">
+                                        Bench-Upholstery
+                                    </td>
+                                </tr>
+                            </table>
+                        </table>
+                    </div>
+                    <div>
+                        <table style="border: 1px solid black;border-collapse: collapse;margin:auto;width:100%;height:30px;text-align:center;background-color:rgb(193, 190, 190);color:black;table-layout:fixed">
+                            <tr style="border: 1px solid black;border-collapse: collapse;">
+                                <td colspan="4" style="border: 1px solid black;border-collapse: collapse;">
+                                    <b>Worktop , Sinks and Mixers</b>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div style="border:1px solid;margin:auto;width:100%;">
+                        <table style="margin:auto;width:100%;height:500px;border-collapse: collapse;text-align:center;vertical-align:middle;table-layout:fixed">
+                            <tr>
+                                <td style="border: 1px solid black;width:350px;text-align:center;vertical-align:middle;table-layout:fixed">
+                                    <span t-field="o.worktop_color_id.name"/>
+                                </td>
+                                <td style="border: 1px solid black;width: 13%;text-align:center;vertical-align:middle;table-layout:fixed">
+                                    <span t-field="o.worktop_thickness_id.name"/>
+
+                                </td>
+                                <td style="border: 1px solid black;width: 13%;text-align:center;vertical-align:middle;table-layout:fixed">
+                                    <span t-field="o.worktop_edge_id.name"/>
+
+
+                                </td>
+                                <td style="border: 1px solid black;width: 13%;text-align:center;vertical-align:middle;table-layout:fixed">
+                                    <span t-field="o.worktop_type_id.name"/>
+
+
+                                </td>
+                                <td style="border: 1px solid black;text-align:center;vertical-align:middle">worktop 1
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black;text-align:center;vertical-align:middle;table-layout:fixed">
+                                    <span t-field="o.worktop_color_id.name"/>
+                                </td>
+                                <td style="border: 1px solid black;text-align:center;vertical-align:middle;table-layout:fixed">
+                                    <span t-field="o.worktop_thickness_id.name"/>
+                                </td>
+                                <td style="border: 1px solid black;text-align:center;vertical-align:middle;table-layout:fixed">
+                                    <span t-field="o.worktop_edge_id.name"/>
+                                </td>
+                                <td style="border: 1px solid black;text-align:center;vertical-align:middle;table-layout:fixed">
+                                    <span t-field="o.worktop_type_id.name"/>
+                                </td>
+                                <td style="border: 1px solid black;text-align:center;vertical-align:middle;table-layout:fixed">
+                                    WorkTop2
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black;text-align:center;vertical-align:middle;table-layout:fixed">
+                                    <span t-field="o.worktop_color_id.name"/>
+                                </td>
+                                <td style="border: 1px solid black;text-align:center;vertical-align:middle;table-layout:fixed">
+                                    <span t-field="o.worktop_thickness_id.name"/>
+                                </td>
+                                <td style="border: 1px solid black;text-align:center;vertical-align:middle;table-layout:fixed">
+                                    <span t-field="o.worktop_edge_id.name"/>
+                                </td>
+                                <td style="border: 1px solid black;text-align:center;vertical-align:middle;table-layout:fixed">
+                                    <span t-field="o.worktop_type_id.name"/>
+                                </td>
+                                <td style="border: 1px solid black;text-align:center;vertical-align:middle;table-layout:fixed">
+                                    WorkTop3
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"
+                                    style="border: 1px solid black;text-align:center;vertical-align:middle;table-layout:fixed">
+                                    <span t-field="o.table_base_id.name"/>
+                                </td>
+                                <td style="border: 1px solid black;text-align:center;vertical-align:middle;table-layout:fixed">
+                                    Table Base
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid black;width: 180px;height: 60px;text-align: center;">
+                                <td style="border: 1px solid black;width: 180px;height: 60px;table-layout:fixed">
+
+                                    <div style="float:left;text-align:center;vertical-align:middle;margin-left:40px;">
+                                        <span style="text-align:center;position:relative;transform:translateY(-50px);top:16px;left:30px;"
+                                              t-field="o.installation_method_id.name"/>
+                                    </div>
+
+                                    <div style="float:right;border: 1px solid black;width: 180px;height: 60px;text-align: center;vertical-align:middle;">
+                                        <p style="position:relative;transform:translateY(-50px);top:16px;">Installation
+                                            Method
+                                        </p>
+                                    </div>
+                                </td>
+                                <td colspan="3"
+                                    style="border: 1px solid black;text-align:center;vertical-align:middle;table-layout:fixed">
+                                    <span t-field="o.sink_id"/>
+                                </td>
+                                <td style="border: 1px solid black;text-align:center;vertical-align:middle">Sink 1</td>
+                            </tr>
+                            <tr style="border: 1px solid black;width: 180px;height: 60px;text-align: center;">
+                                <td style="border: 1px solid black;width: 180px;height: 60px;table-layout:fixed">
+
+                                    <div style="float:left;text-align:center;vertical-align:middle;margin-left:40px;">
+                                        <span style="text-align:center;position:relative;transform:translateY(-50px);top:16px;left:30px;"
+                                              t-field="o.installation_method_id.name"/>
+                                    </div>
+
+                                    <div style="float:right;border: 1px solid black;width: 180px;height: 60px;text-align: center;vertical-align:middle;">
+                                        <p style="position:relative;transform:translateY(-50px);top:16px;">Installation
+                                            Method
+                                        </p>
+                                    </div>
+                                </td>
+                                <td colspan="3"
+                                    style="border: 1px solid black;text-align:center;vertical-align:middle;table-layout:fixed">
+                                    <span t-field="o.sink_id"/>
+                                </td>
+                                <td style="border: 1px solid black;text-align:center;vertical-align:middle">Sink 2</td>
+                            </tr>
+                            <tr style="border: 1px solid black;width: 180px;height: 60px;text-align: center;vertical-align:middle;table-layout:fixed">
+                                <td style="border: 1px solid black;text-align:center;vertical-align:middle;table-layout:fixed">
+
+                                    <div style="float:left;text-align:center;vertical-align:middle;margin-left:40px;">
+                                        <span style="text-align:center;position:relative;transform:translateY(-50px);top:16px;left:30px;"
+                                              t-field="o.mixer_id.name"/>
+                                    </div>
+
+                                    <div style="float:right;border: 1px solid black;width: 180px;height: 60px;text-align: center;vertical-align:middle">
+                                        <p style="position:relative;transform:translateY(-50px);top:16px;">Mixer 1</p>
+                                    </div>
+                                </td>
+                                <td colspan="3"
+                                    style="border: 1px solid black;text-align:center;vertical-align:middle;table-layout:fixed">
+                                    <span style="text-align:center;vertical-align:middle"
+                                          t-field="o.mixer_id.name"/>
+                                </td>
+                                <td style="border: 1px solid black;text-align:center;vertical-align:middle">Mixer 2</td>
+                            </tr>
+                            <tr style="border: 1px solid black;width: 180px;height: 60px;text-align: center;table-layout:fixed">
+                                <td colspan="3"
+                                    style="border: 1px solid black;width: 180px;height: 60px;table-layout:fixed">
+                                    <div style="float:left;text-align:center;vertical-align:middle;margin-left:80px;">
+                                        <span style="text-align:center;position:relative;transform:translateY(-50px);top:16px;left:50px;"
+                                              t-field="o.panel_color_id.name"/>
+                                    </div>
+                                    <div style="float:right;border: 1px solid black;width: 180px;height: 60px;text-align:center;vertical-align:middle">
+                                        <p style="position:relative;transform:translateY(-50px);top:16px;">panel color
+                                        </p>
+                                    </div>
+                                </td>
+                                <td style="border: 1px solid black;text-align:center;vertical-align:middle;table-layout:fixed">
+                                    <span style="text-align:center;vertical-align:middle"
+                                          t-field="o.panel_color_id.name"/>
+                                </td>
+                                <td style="border: 1px solid black;text-align:center;vertical-align:middle;table-layout:fixed">
+                                    Panel Type
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <table style="border: 1px solid black;border-collapse: collapse;margin:auto;width:100%;height:30px;text-align:center;background-color:rgb(193, 190, 190);color:black;table-layout:fixed">
+                            <tr style="border: 1px solid black;border-collapse: collapse;">
+                                <td colspan="4" style="border: 1px solid black;border-collapse: collapse;">
+                                    <b>Electric Hardware</b>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <table style="border: 1px solid black;border-collapse: collapse;margin:auto;width:100%;height:60px;table-layout:fixed">
+                            <tr style="border: 1px solid black;border-collapse: collapse;margin:auto;width:100%;height:60px;table-layout:fixed">
+                                <td colspan="2" style="border: 1px solid black;height:60px;table-layout:fixed">
+                                    <div style="float:left;text-align:center;vertical-align:middle;margin-left:80px;">
+                                        <span style="text-align:center;position:relative;transform:translateY(-50px);top:16px;left:50px;"
+                                              t-field="o.panel_color_id.name"/>
+                                    </div>
+                                    <div style="float:right;border: 1px solid black;width: 120px;height: 60px;text-align:center;vertical-align:middle;table-layout:fixed">
+                                        <p style="position:relative;transform:translateY(-50px);top:16px;">quantity</p>
+                                    </div>
+                                </td>
+                                <td style="border: 1px solid black;text-align: center;vertical-align:middle;table-layout:fixed">
+                                    <span style="text-align:center;vertical-align:middle"
+                                          t-field="o.panel_color_id.name"/>
+                                    <!--                                    <span style="text-align:center;vertical-align:middle"-->
+                                    <!--                                          t-field="o.electronic_order_line.product_id"/>-->
+                                </td>
+                                <td style="border: 1px solid black;text-align: center;vertical-align:middle;">Product
+                                    Name
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <table style="border: 1px solid black;border-collapse: collapse;margin:auto;width:100%;height:30px;text-align:center;background-color:rgb(193, 190, 190);color:black;table-layout:fixed">
+                            <tr style="border: 1px solid black;border-collapse: collapse;">
+                                <td colspan="4" style="border: 1px solid black;border-collapse: collapse;">
+                                    <b>Accessories</b>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <table style="border: 1px solid black;border-collapse: collapse;margin:auto;width:100%;height:75px;table-layout:fixed">
+                            <tr style="border: 1px solid black;border-collapse: collapse;margin:auto;width:100%;height:75px;table-layout:fixed">
+                                <td colspan="2"
+                                    style="border: 1px solid black;height:75px;text-align:center;vertical-align:middle;table-layout:fixed">
+                                    <span style="text-align:center;vertical-align:middle"
+                                          t-field="o.installation_id"/>
+                                </td>
+                                <td style="border: 1px solid black;text-align:center;vertical-align:middle;table-layout:fixed">
+
+                                    <span style="text-align:center;vertical-align:middle"
+                                          t-field="o.installation_id"/>
+                                </td>
+                                <td style="border: 1px solid black;text-align: center;vertical-align:middle;table-layout:fixed">
+                                    <span style="text-align:center;vertical-align:middle"
+                                          t-field="o.hands_type_id"/>
+                                </td>
+                                <td colspan="2" style="border: 1px solid black;text-align: center;table-layout:fixed">
+                                    Handle 1
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid black;border-collapse: collapse;margin:auto;width:100%;height:75px;table-layout:fixed">
+                                <td colspan="2"
+                                    style="border: 1px solid black;height:75px;table-layout:fixed;vertical-align:middle;text-align:center"></td>
+                                <td style="border: 1px solid black;table-layout:fixed;text-align:center;vertical-align:middle;text-align:center"></td>
+                                <td style="border: 1px solid black;text-align: center;table-layout:fixed;vertical-align:middle;text-align:center"></td>
+                                <td colspan="2"
+                                    style="border: 1px solid black;text-align: center;table-layout:fixed;text-align:center;vertical-align:middle">
+                                    Handle 2
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid black;border-collapse: collapse;margin:auto;width:100%;height:75px;table-layout:fixed;vertical-align:middle;text-align:center">
+                                <td colspan="2"
+                                    style="border: 1px solid black;height:75px;table-layout:fixed;vertical-align:middle;text-align:center"></td>
+                                <td style="border: 1px solid black;table-layout:fixed;vertical-align:middle;text-align:center"></td>
+                                <td style="border: 1px solid black;text-align: center;table-layout:fixed;vertical-align:middle;text-align:center"></td>
+                                <td colspan="2"
+                                    style="border: 1px solid black;text-align: center;table-layout:fixed;vertical-align:middle;text-align:center">
+                                    Handle 3
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid black;border-collapse: collapse;text-align:center;table-layout:fixed;vertical-align:middle;">
+                                <td>Count</td>
+                                <td colspan="4"
+                                    style="border: 1px solid black;border-collapse: collapse;text-align:center;margin-left:5px;table-layout:fixed;vertical-align:middle;">
+                                    Accessory Type
+                                </td>
+                                <td rowspan="2"
+                                    style="border: 1px solid black;border-collapse: collapse;height: 90px;text-align:center;table-layout:fixed;vertical-align:middle;">
+                                    Accessory 1
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid black;border-collapse: collapse;table-layout:fixed;vertical-align:middle;">
+                                <td style="text-align:center;vertical-align:middle;table-layout:fixed;text-align:center">
+                                    <span style="text-align:center;vertical-align:middle"
+                                          t-field="o.installation_id"/>
+                                </td>
+                                <td colspan="4"
+                                    style="border: 1px solid black;border-collapse: collapse;text-align:center;vertical-align:middle;table-layout:fixed;">
+                                    <span style="text-align:center;vertical-align:middle"
+                                          t-field="o.installation_id"/>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid black;border-collapse: collapse;height:50px;table-layout:fixed;vertical-align:middle;text-align:center">
+                                <td style="border: 1px solid black;border-collapse: collapse;height:50px;table-layout:fixed;vertical-align:middle;text-align:center">
+                                    <span style="text-align:center;vertical-align:middle"
+                                          t-field="o.installation_id"/>
+                                </td>
+
+
+                                <td colspan="4"
+                                    style="border: 1px solid black;border-collapse: collapse;table-layout:fixed;vertical-align:middle;text-align:center">
+                                    <span style="text-align:center;vertical-align:middle"
+                                          t-field="o.installation_id"/>
+                                </td>
+                                <td style="border: 1px solid black;border-collapse: collapse;text-align:center;table-layout:fixed;vertical-align:middle;text-align:center">
+                                    Accessory 2
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black;border-collapse: collapse;height:50px;table-layout:fixed;vertical-align:middle;text-align:center">
+                                    <span style="text-align:center;vertical-align:middle"
+                                          t-field="o.installation_id"/>
+                                </td>
+
+                                <td colspan="4"
+                                    style="border: 1px solid black;border-collapse: collapse;table-layout:fixed;vertical-align:middle;"></td>
+                                <td style="border: 1px solid black;border-collapse: collapse;text-align:center;table-layout:fixed;vertical-align:middle;">
+                                    Accessory 3
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid black;border-collapse: collapse;height:50px;table-layout:fixed;vertical-align:middle;text-align:center"></td>
+
+                                <td colspan="4"
+                                    style="border: 1px solid black;border-collapse: collapse;table-layout:fixed;vertical-align:middle;"></td>
+                                <td style="border: 1px solid black;border-collapse: collapse;text-align:center;table-layout:fixed;vertical-align:middle;">
+                                    Accessory 4
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid black;border-collapse: collapse;height:50px;table-layout:fixed;vertical-align:middle;text-align:center">
+                                <td style="border: 1px solid black;border-collapse: collapse;height:50px;table-layout:fixed;vertical-align:middle;text-align:center"></td>
+
+
+                                <td colspan="4"
+                                    style="border: 1px solid black;border-collapse: collapse;table-layout:fixed;vertical-align:middle;text-align:center"></td>
+                                <td style="border: 1px solid black;border-collapse: collapse;text-align:center;table-layout:fixed;vertical-align:middle">
+                                    Accessory 5
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid black;border-collapse: collapse;height:50px;table-layout:fixed;vertical-align:middle;text-align:center">
+                                <td style="border: 1px solid black;border-collapse: collapse;height:50px;table-layout:fixed;vertical-align:middle;text-align:center"></td>
+
+
+                                <td colspan="4"
+                                    style="border: 1px solid black;border-collapse: collapse;table-layout:fixed;vertical-align:middle;text-align:center"></td>
+                                <td style="border: 1px solid black;border-collapse: collapse;text-align:center;table-layout:fixed;vertical-align:middle;">
+                                    Accessory 6
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid black;border-collapse: collapse;height:50px;table-layout:fixed;vertical-align:middle;text-align:center">
+                                <td style="border: 1px solid black;border-collapse: collapse;height:50px;table-layout:fixed;vertical-align:middle;text-align:center"></td>
+
+
+                                <td colspan="4"
+                                    style="border: 1px solid black;border-collapse: collapse;table-layout:fixed;vertical-align:middle;text-align:center"></td>
+                                <td style="border: 1px solid black;border-collapse: collapse;text-align:center;table-layout:fixed;vertical-align:middle">
+                                    Accessory 7
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid black;border-collapse: collapse;height:50px;table-layout:fixed;vertical-align:middle;text-align:center">
+                                <td style="border: 1px solid black;border-collapse: collapse;height:50px;table-layout:fixed;vertical-align:middle;text-align:center"></td>
+
+
+                                <td colspan="4"
+                                    style="border: 1px solid black;border-collapse: collapse;table-layout:fixed;vertical-align:middle;text-align:center"></td>
+                                <td style="border: 1px solid black;border-collapse: collapse;text-align:center;table-layout:fixed;vertical-align:middle;">
+                                    Accessory 8
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <table style="border: 1px solid black;border-collapse: collapse;margin:auto;width:100%;height:30px;text-align:center;background-color:rgb(193, 190, 190);color:black;table-layout:fixed">
+                            <tr style="border: 1px solid black;border-collapse: collapse;table-layout:fixed;vertical-align:middle;text-align:center">
+                                <td colspan="4"
+                                    style="border: 1px solid black;border-collapse: collapse;table-layout:fixed;vertical-align:middle;text-align:center">
+                                    <b>luminance</b>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <table style="border: 1px solid black;border-collapse: collapse;margin:auto;width:100%;height:75px;table-layout:fixed;">
+                            <tr style="border: 1px solid black;border-collapse: collapse;text-align:center;table-layout:fixed;vertical-align:middle;">
+                                <td>Count</td>
+                                <td colspan="4"
+                                    style="border: 1px solid black;border-collapse: collapse;text-align:center;table-layout:fixed;vertical-align:middle;table-layout:fixed;">
+                                    Luminance Type
+                                </td>
+                                <td rowspan="7"
+                                    style="border: 1px solid black;border-collapse: collapse;text-align:center;vertical-align:middle;table-layout:fixed;">
+                                    Lighting the upper and lower cabinets
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid black;border-collapse: collapse;table-layout:fixed;vertical-align:middle;text-align:center;height:50px;">
+                                <td style="border: 1px solid black;border-collapse: collapse;vertical-align:middle;text-align:center;">
+                                    <span style="text-align:center;vertical-align:middle"
+                                          t-field="o.installation_id"/>
+                                </td>
+
+                                <td colspan="4"
+                                    style="border: 1px solid black;border-collapse: collapse;text-align:center;vertical-align:middle;table-layout:fixed">
+                                    <span style="text-align:center;vertical-align:middle"
+                                          t-field="o.installation_id"/>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid black;border-collapse: collapse;height:50px;table-layout:fixed;vertical-align:middle">
+                                <td style="border: 1px solid black;border-collapse: collapse;table-layout:fixed;vertical-align:middle;text-align:center;">
+                                    <span style="text-align:center;vertical-align:middle"
+                                          t-field="o.installation_id"/>
+                                </td>
+
+                                <td colspan="4"
+                                    style="border: 1px solid black;border-collapse: collapse;table-layout:fixed;vertical-align:middle;text-align:center;">
+                                    <span style="text-align:center;vertical-align:middle"
+                                          t-field="o.installation_id"/>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid black;border-collapse: collapse;height:50px;table-layout:fixed;vertical-align:middle;text-align:center;">
+                                <td style="border: 1px solid black;border-collapse: collapse;table-layout:fixed;vertical-align:middle;text-align:center;">
+                                    <span style="text-align:center;vertical-align:middle"
+                                          t-field="o.installation_id"/>
+                                </td>
+
+                                <td colspan="4"
+                                    style="border: 1px solid black;border-collapse: collapse;table-layout:fixed;vertical-align:middle;text-align:center;">
+                                    <span style="text-align:center;vertical-align:middle"
+                                          t-field="o.installation_id"/>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid black;border-collapse: collapse;height:50px;table-layout:fixed;vertical-align:middle;text-align:center;">
+                                <td style="border: 1px solid black;border-collapse: collapse;table-layout:fixed;vertical-align:middle;text-align:center;">
+                                    <span style="text-align:center;vertical-align:middle"
+                                          t-field="o.installation_id"/>
+                                </td>
+
+                                <td colspan="4"
+                                    style="border: 1px solid black;border-collapse: collapse;table-layout:fixed;vertical-align:middle;text-align:center;">
+                                    <span style="text-align:center;vertical-align:middle"
+                                          t-field="o.installation_id"/>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid black;border-collapse: collapse;height:50px;table-layout:fixed;vertical-align:middle;text-align:center">
+                                <td style="border: 1px solid black;border-collapse: collapse;table-layout:fixed;vertical-align:middle;text-align:center;">
+                                    <span style="text-align:center;vertical-align:middle"
+                                          t-field="o.installation_id"/>
+                                </td>
+
+                                <td colspan="4"
+                                    style="border: 1px solid black;border-collapse: collapse;table-layout:fixed;vertical-align:middle;text-align:center;">
+                                    <span style="text-align:center;vertical-align:middle"
+                                          t-field="o.installation_id"/>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid black;border-collapse: collapse;height:50px;table-layout:fixed;vertical-align:middle;text-align:center;">
+                                <td style="border: 1px solid black;border-collapse: collapse;table-layout:fixed;vertical-align:middle;text-align:center;">
+                                    <span style="text-align:center;vertical-align:middle"
+                                          t-field="o.installation_id"/>
+                                </td>
+
+                                <td colspan="4"
+                                    style="border: 1px solid black;border-collapse: collapse;table-layout:fixed;vertical-align:middle;text-align:center;">
+                                    <span style="text-align:center;vertical-align:middle"
+                                          t-field="o.installation_id"/>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid black;border-collapse: collapse;height:50px;table-layout:fixed;vertical-align:middle;text-align:center;table-layout:fixed">
+                                <td style="border: 1px solid black;border-collapse: collapse;table-layout:fixed;vertical-align:middle;text-align:center;table-layout:fixed;">
+                                    <span style="text-align:center;vertical-align:middle"
+                                          t-field="o.installation_id"/>
+                                </td>
+
+                                <td colspan="4"
+                                    style="border: 1px solid black;border-collapse: collapse;table-layout:fixed;vertical-align:middle;text-align:center;table-layout:fixed">
+                                    <span style="text-align:center;vertical-align:middle"
+                                          t-field="o.installation_id"/>
+                                </td>
+                                <td rowspan="2"
+                                    style="border: 1px solid black;border-collapse: collapse;text-align:center;vertical-align:middle;table-layout:fixed;">
+                                    Panel lighting
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid black;border-collapse: collapse;height:50px;table-layout:fixed;vertical-align:middle;text-align:center;table-layout:fixed">
+                                <td style="border: 1px solid black;border-collapse: collapse;table-layout:fixed;vertical-align:middle;text-align:center;table-layout:fixed;"></td>
+
+                                <td colspan="4"
+                                    style="border: 1px solid black;border-collapse: collapse;table-layout:fixed;vertical-align:middle;text-align:center;table-layout:fixed"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <table style="border: 1px solid black;border-collapse: collapse;margin:auto;width:100%;height:30px;text-align:center;background-color:rgb(193, 190, 190);color:black;table-layout:fixed">
+                            <tr style="border: 1px solid black;border-collapse: collapse;table-layout:fixed;vertical-align:middle;text-align:center">
+                                <td colspan="4"
+                                    style="border: 1px solid black;border-collapse: collapse;table-layout:fixed;vertical-align:middle;text-align:center">
+                                    <b>installations</b>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <table style="border: 1px solid black;border-collapse: collapse;margin:auto;width:100%;height:75px;table-layout:fixed;">
+                            <tr>
+                                <td colspan="2"
+                                    style="border: 1px solid black;height:75px;font-size:12px;table-layout:fixed;vertical-align:middle;">
+                                    Establishing and finishing electricity :
+                                    <br/>
+
+                                    <br/>
+                                    <span style="text-align:center;vertical-align:middle;margin-left:2px;"
+                                          t-field="o.partner_id"/>
+                                    <table align="right"
+                                           style="margin-right: -2px;margin-top: -35px;table-layout:fixed;vertical-align:middle;text-align:center">
+                                        <td style="border: 1px solid black;width: 140px;height: 75px;text-align: center;table-layout:fixed;">
+                                            duct drill
+                                            <br/>
+
+                                            <br/>
+                                            <span style="text-align:center;vertical-align:middle"
+                                                  t-field="o.partner_id"/>
+
+                                        </td>
+                                    </table>
+                                </td>
+                                <td style="border: 1px solid black;table-layout:fixed;vertical-align:middle;text-align:center">
+
+                                    <span style="text-align:center;vertical-align:middle;"
+                                          t-field="o.panel_color_id.name"/>
+                                </td>
+                                <td style="border: 1px solid black;text-align: center;table-layout:fixed;vertical-align:middle;text-align:center">
+                                    Gas Installation
+                                </td>
+                                <td style="border: 1px solid black;text-align: center;table-layout:fixed;vertical-align:middle;text-align:center">
+                                    installations :
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <table style="border: 1px solid black;border-collapse: collapse;margin:auto;width:100%;height:30px;text-align:center;background-color:rgb(193, 190, 190);color:black;table-layout:fixed">
+                            <tr style="border: 1px solid black;border-collapse: collapse;table-layout:fixed;vertical-align:middle;text-align:center">
+                                <td colspan="4"
+                                    style="border: 1px solid black;border-collapse: collapse;table-layout:fixed;vertical-align:middle;text-align:center">
+                                    <b>Notes</b>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <table style="border: 1px solid black;border-collapse: collapse;margin:auto;width:100%;height:30px;table-layout:fixed;">
+                            <tr style="border: 1px solid black;border-collapse: collapse;;height: 30px;table-layout:fixed;vertical-align:middle;text-align:center">
+                                <td colspan="5"
+                                    style="border: 1px solid black;border-collapse: collapse;table-layout:fixed;vertical-align:middle;text-align:center"></td>
+                                <td style="border: 1px solid black;border-collapse: collapse;text-align: center;table-layout:fixed;vertical-align:middle;">
+                                    Other
+                                    Notes :
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid black;border-collapse: collapse;;height: 30px;table-layout:fixed;vertical-align:middle;text-align:center">
+                                <td colspan="3"
+                                    style="border: 1px solid black;border-collapse: collapse;text-align: center;">
+                                    Customer
+                                </td>
+                                <td colspan="3"
+                                    style="border: 1px solid black;border-collapse: collapse;text-align: center;table-layout:fixed;vertical-align:middle;">
+                                    Company : Tahboub Brothers for wooden industries
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid black;border-collapse: collapse;;height: 30px;table-layout:fixed;vertical-align:middle;text-align:center">
+                                <td colspan="3"
+                                    style="border: 1px solid black;border-collapse: collapse;text-align:center;table-layout:fixed;vertical-align:middle;">
+                                    <span style="text-align:center" t-field="o.partner_id"/>
+                                </td>
+                                <td colspan="3"
+                                    style="border: 1px solid black;border-collapse: collapse;text-align: center;table-layout:fixed;vertical-align:middle;"></td>
+                            </tr>
+                            <tr style="border: 1px solid black;border-collapse: collapse;;height: 8px;table-layout:fixed;vertical-align:middle;text-align:center">
+                                <td colspan="3"
+                                    style="border: 1px solid black;border-collapse: collapse;text-align:center;table-layout:fixed;vertical-align:middle;text-align:center">
+                                    Signature
+                                </td>
+                                <td colspan="3"
+                                    style="border: 1px solid black;border-collapse: collapse;table-layout:fixed;vertical-align:middle;text-align:center">
+                                    <div style="float:left;height:0px;">
+                                        <p style="position:relative;transform:translateY(-50px);top:6px;left:35px;">
+                                            Signature
+                                        </p>
+                                    </div>
+                                    <table align="right"
+                                           style="border: 1px solid black;border-collapse: collapse;margin-left:120px;width:65%;height:40px;table-layout:fixed;vertical-align:middle;text-align:center">
+                                        <tr style="border: 1px solid black;border-collapse: collapse;table-layout:fixed;vertical-align:middle;text-align:center">
+                                            <td style="text-align:center;vertical-align:middle">Sales Person</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr style="border: 1px solid black;border-collapse: collapse;;height: 30px;table-layout:fixed;vertical-align:middle;text-align:center">
+                                <td colspan="3"
+                                    style="border: 1px solid black;border-collapse: collapse;table-layout:fixed;vertical-align:middle;text-align:center"></td>
+                                <td colspan="3"
+                                    style="border: 1px solid black;border-collapse: collapse;text-align: center;table-layout:fixed;vertical-align:middle;text-align:center">
+                                    <table align="right"
+                                           style="border: 1px solid black;border-collapse: collapse;margin-left:120px;width:65%;height:40px;table-layout:fixed;vertical-align:middle;text-align:center">
+                                        <tr style="border: 1px solid black;border-collapse: collapse;text-align:center;table-layout:fixed;vertical-align:middle;">
+                                            <td style="table-layout:fixed;vertical-align:middle;text-align:center">
+                                                <span style="text-align:center" t-field="o.user_id"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </template>
+        <record id="action_sale_specs_report" model="ir.actions.report">
+            <field name="name">Specification Form</field>
+            <field name="model">sale.order</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">flex_sale_spec.sale_spec_report</field>
+            <field name="report_file">flex_sale_spec.sale_spec_report</field>
+            <field name="binding_model_id" ref="sale.model_sale_order"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

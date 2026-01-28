@@ -1,0 +1,356 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_jo_edi_istd
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-21 11:25+0000\n"
+"PO-Revision-Date: 2024-07-21 11:25+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_jo_edi_istd
+#: model_terms:ir.ui.view,arch_db:l10n_jo_edi_istd.res_config_settings_view_form_jo_istd
+msgid ""
+"<span class=\"o_form_label\">ISTD API Integration</span>\n"
+"                            <span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-specific.\" aria-label=\"Values set here are company-specific.\" groups=\"base.group_multi_company\" role=\"img\"/>"
+msgstr ""
+
+#. module: l10n_jo_edi_istd
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_res_company__l10n_jo_activity_number
+msgid "Activity Number"
+msgstr "رقم النشاط"
+
+#. module: l10n_jo_edi_istd
+#: model:ir.model.fields,help:l10n_jo_edi_istd.field_res_company__l10n_jo_activity_number
+msgid "Activity Number In ISTD Portal"
+msgstr "رقم النشاط في بوابة ISTD"
+
+#. module: l10n_jo_edi_istd
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_bank_statement_line__l10n_jo_amount_b4_discount
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_move__l10n_jo_amount_b4_discount
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_payment__l10n_jo_amount_b4_discount
+msgid "Amount Before Discount JO"
+msgstr "المبلغ قبل الخصم"
+
+#. module: l10n_jo_edi_istd
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_res_company__l10n_jo_client_id
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_res_config_settings__l10n_jo_client_id
+msgid "Client ID"
+msgstr "معرف العميل"
+
+#. module: l10n_jo_edi_istd
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_res_company__l10n_jo_client_secret
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_res_config_settings__l10n_jo_client_secret
+msgid "Client Secret"
+msgstr "سر العميل"
+
+#. module: l10n_jo_edi_istd
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_fiscal_position__code_l10n_jo
+msgid "Code"
+msgstr "شفرة"
+
+#. module: l10n_jo_edi_istd
+#: model:ir.model.fields,help:l10n_jo_edi_istd.field_account_fiscal_position__code_l10n_jo
+msgid "Code In ISTD Portal"
+msgstr "الكود في بوابة ISTD"
+
+#. module: l10n_jo_edi_istd
+#. odoo-python
+#: code:addons/l10n_jo_edi_istd/models/account_move.py:0
+#, python-format
+msgid "Code is Unkown, code_l10n_jo is empty"
+msgstr "الرمز غير معروف، code_l10n_jo فارغ"
+
+#. module: l10n_jo_edi_istd
+#: model:ir.model,name:l10n_jo_edi_istd.model_res_company
+msgid "Companies"
+msgstr "الشركات"
+
+#. module: l10n_jo_edi_istd
+#: model:ir.model,name:l10n_jo_edi_istd.model_res_config_settings
+msgid "Config Settings"
+msgstr "تهيئة الإعدادات "
+
+#. module: l10n_jo_edi_istd
+#: model:ir.model,name:l10n_jo_edi_istd.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: l10n_jo_edi_istd
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_move_line__l10n_jo_discount
+msgid "Discount Amount JO"
+msgstr "مقدار الخصم"
+
+#. module: l10n_jo_edi_istd
+#. odoo-python
+#: code:addons/l10n_jo_edi_istd/models/account_move.py:0
+#, python-format
+msgid "Each invoice must contain one and only one tax per line"
+msgstr "يجب أن تحتوي كل فاتورة على ضريبة واحدة فقط في كل سطر"
+
+#. module: l10n_jo_edi_istd
+#: model:account.fiscal.position,name:l10n_jo_edi_istd.dep_fiscal_position_111
+msgid "Export cash income invoice"
+msgstr "تصدير فاتورة الدخل النقدي"
+
+#. module: l10n_jo_edi_istd
+#: model:account.fiscal.position,name:l10n_jo_edi_istd.dep_fiscal_position_113
+msgid "Export cash special sales invoice"
+msgstr "تصدير فاتورة المبيعات النقدية الخاصة"
+
+#. module: l10n_jo_edi_istd
+#: model:account.fiscal.position,name:l10n_jo_edi_istd.dep_fiscal_position_121
+msgid "Export income invoice"
+msgstr "فاتورة دخل التصدير"
+
+#. module: l10n_jo_edi_istd
+#: model:ir.model,name:l10n_jo_edi_istd.model_account_fiscal_position
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_res_partner__property_account_position_id
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_res_users__property_account_position_id
+msgid "Fiscal Position"
+msgstr "الوضع المالي "
+
+#. module: l10n_jo_edi_istd
+#: model:account.fiscal.position,name:l10n_jo_edi_istd.dep_fiscal_position_122
+msgid "General sales invoice for export receivables"
+msgstr "فاتورة المبيعات العامة لمستحقات التصدير"
+
+#. module: l10n_jo_edi_istd
+#: model:account.fiscal.position,name:l10n_jo_edi_istd.dep_fiscal_position_212
+msgid "General sales invoice, cash, development areas"
+msgstr "فاتورة المبيعات العامة، النقدية، مناطق التطوير"
+
+#. module: l10n_jo_edi_istd
+#: model:account.fiscal.position,name:l10n_jo_edi_istd.dep_fiscal_position_112
+msgid "General sales invoice, cash, export"
+msgstr "فاتورة المبيعات العامة نقدا تصدير"
+
+#. module: l10n_jo_edi_istd
+#: model:account.fiscal.position,name:l10n_jo_edi_istd.dep_fiscal_position_222
+msgid "General sales invoice, export receivables, development areas"
+msgstr ""
+
+#. module: l10n_jo_edi_istd
+#: model:account.fiscal.position,name:l10n_jo_edi_istd.dep_fiscal_position_022
+msgid "General sales invoice, local receivables"
+msgstr "فاتورة المبيعات العامة، ذمم التصدير، مناطق التطوير"
+
+#. module: l10n_jo_edi_istd
+#: model_terms:ir.ui.view,arch_db:l10n_jo_edi_istd.res_config_settings_view_form_jo_istd
+msgid ""
+"ISTD\n"
+"                    E-Invoicing Settings"
+msgstr "إعدادات الفواتير الإلكترونية"
+
+#. module: l10n_jo_edi_istd
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_bank_statement_line__istd_einvoice
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_move__istd_einvoice
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_payment__istd_einvoice
+msgid "ISTD E-Invoice"
+msgstr "ISTD الفاتورة الإلكترونية"
+
+#. module: l10n_jo_edi_istd
+#: model:ir.actions.server,name:l10n_jo_edi_istd.ir_cron_send_invoices_to_istd_ir_actions_server
+#: model:ir.cron,cron_name:l10n_jo_edi_istd.ir_cron_send_invoices_to_istd
+msgid "ISTD Integration: Send Daily Invoices"
+msgstr "تكامل ISTD: إرسال الفواتير اليومية"
+
+#. module: l10n_jo_edi_istd
+#: model:ir.actions.server,name:l10n_jo_edi_istd.action_server_send_invoices_istd
+msgid "ISTD: Send Invoices"
+msgstr "ISTD: إرسال الفواتير"
+
+#. module: l10n_jo_edi_istd
+#: model:ir.model.fields.selection,name:l10n_jo_edi_istd.selection__account_fiscal_position__l10n_jo_tax_company_type__1
+#: model:ir.model.fields.selection,name:l10n_jo_edi_istd.selection__res_company__l10n_jo_tax_company_type__1
+msgid "Income"
+msgstr "دخل"
+
+#. module: l10n_jo_edi_istd
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_bank_statement_line__istd_date_sent
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_move__istd_date_sent
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_payment__istd_date_sent
+msgid "Invoice Sending Time"
+msgstr "وقت إرسال الفاتورة"
+
+#. module: l10n_jo_edi_istd
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_bank_statement_line__istd_invoice_sent
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_move__istd_invoice_sent
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_payment__istd_invoice_sent
+msgid "Invoice Sent"
+msgstr "تم إرسال الفاتورة"
+
+#. module: l10n_jo_edi_istd
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_bank_statement_line__l10n_jo_uuid
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_move__l10n_jo_uuid
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_payment__l10n_jo_uuid
+msgid "Invoice UUID"
+msgstr "UUID للفاتورة"
+
+#. module: l10n_jo_edi_istd
+#: model:ir.model,name:l10n_jo_edi_istd.model_account_move
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: l10n_jo_edi_istd
+#: model:ir.model,name:l10n_jo_edi_istd.model_account_move_line
+msgid "Journal Item"
+msgstr "عنصر المجلة"
+
+#. module: l10n_jo_edi_istd
+#: model:account.fiscal.position,name:l10n_jo_edi_istd.dep_fiscal_position_012
+msgid "Local cash general sales invoice"
+msgstr "فاتورة المبيعات العامة النقدية المحلية"
+
+#. module: l10n_jo_edi_istd
+#: model:account.fiscal.position,name:l10n_jo_edi_istd.dep_fiscal_position_013
+msgid "Local cash special sales invoice"
+msgstr "فاتورة المبيعات الخاصة نقداً محلياً"
+
+#. module: l10n_jo_edi_istd
+#: model:account.fiscal.position,name:l10n_jo_edi_istd.dep_fiscal_position_021
+msgid "Local receivables income invoice"
+msgstr "فاتورة دخل المستحقات المحلية"
+
+#. module: l10n_jo_edi_istd
+#: model_terms:ir.ui.view,arch_db:l10n_jo_edi_istd.res_config_settings_view_form_jo_istd
+msgid "Once invoice is confirmed, it will be sent to ISTD portal."
+msgstr "بمجرد تأكيد الفاتورة، سيتم إرسالها إلى بوابة ISTD."
+
+#. module: l10n_jo_edi_istd
+#: model:ir.model.fields.selection,name:l10n_jo_edi_istd.selection__account_fiscal_position__l10n_jo_tax_company_type__3
+#: model:ir.model.fields.selection,name:l10n_jo_edi_istd.selection__res_company__l10n_jo_tax_company_type__3
+msgid "Privet"
+msgstr "خاص"
+
+#. module: l10n_jo_edi_istd
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_bank_statement_line__istd_qrcode
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_move__istd_qrcode
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_payment__istd_qrcode
+msgid "QR Code"
+msgstr "رمز الاستجابة السريعة"
+
+#. module: l10n_jo_edi_istd
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_res_company__l10n_jo_send_invoices_at_confirm
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_res_config_settings__l10n_jo_send_invoices_at_confirm
+msgid "Send Invoices At Confirm"
+msgstr "إرسال الفواتير عند التأكيد"
+
+#. module: l10n_jo_edi_istd
+#: model_terms:ir.ui.view,arch_db:l10n_jo_edi_istd.res_config_settings_view_form_jo_istd
+msgid "Set your portal ISTD API credentials to enable ISTD E-Invoicing."
+msgstr "قم بتعيين بيانات اعتماد ISTD API الخاصة بالبوابة الإلكترونية لتمكين ISTD E-Invoicing."
+
+#. module: l10n_jo_edi_istd
+#: model:account.fiscal.position,name:l10n_jo_edi_istd.dep_fiscal_position_123
+msgid "Special sales invoice for export receivables"
+msgstr "فاتورة مبيعات خاصة لمستحقات التصدير"
+
+#. module: l10n_jo_edi_istd
+#: model:account.fiscal.position,name:l10n_jo_edi_istd.dep_fiscal_position_223
+msgid "Special sales invoice for export receivables from development areas"
+msgstr "فاتورة مبيعات خاصة لمستحقات التصدير من مناطق التطوير"
+
+#. module: l10n_jo_edi_istd
+#: model:account.fiscal.position,name:l10n_jo_edi_istd.dep_fiscal_position_023
+msgid "Special sales invoice for local receivables"
+msgstr "فاتورة مبيعات خاصة للذمم المحلية"
+
+#. module: l10n_jo_edi_istd
+#: model:account.fiscal.position,name:l10n_jo_edi_istd.dep_fiscal_position_213
+msgid "Special sales invoice, cash, development areas"
+msgstr "فاتورة مبيعات خاصة نقدا مناطق التطوير"
+
+#. module: l10n_jo_edi_istd
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_move_line__l10n_jo_subtotal
+msgid "Subtotal JO"
+msgstr "المجموع الفرعي"
+
+#. module: l10n_jo_edi_istd
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_bank_statement_line__l10n_jo_amount_tax
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_move__l10n_jo_amount_tax
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_move_line__l10n_jo_tax
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_payment__l10n_jo_amount_tax
+msgid "Tax Amount JO"
+msgstr "قيمة الضريبة"
+
+#. module: l10n_jo_edi_istd
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_fiscal_position__l10n_jo_tax_company_type
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_res_company__l10n_jo_tax_company_type
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_res_config_settings__l10n_jo_tax_company_type
+msgid "Tax Company Type"
+msgstr "نوع شركة الضرائب"
+
+#. module: l10n_jo_edi_istd
+#: model_terms:ir.ui.view,arch_db:l10n_jo_edi_istd.res_config_settings_view_form_jo_istd
+msgid "The client ID of the ISTD e-invoicing portal"
+msgstr "معرف العميل لبوابة الفواتير الإلكترونية ISTD"
+
+#. module: l10n_jo_edi_istd
+#: model:ir.model.fields,help:l10n_jo_edi_istd.field_res_partner__property_account_position_id
+#: model:ir.model.fields,help:l10n_jo_edi_istd.field_res_users__property_account_position_id
+msgid ""
+"The fiscal position will determine taxes and accounts used for the partner."
+msgstr ""
+"يحدِّد الوضع المالي الضرائب/الحسابات المستخدمة لجهة الاتصال المُختارة. "
+
+#. module: l10n_jo_edi_istd
+#: model_terms:ir.ui.view,arch_db:l10n_jo_edi_istd.res_config_settings_view_form_jo_istd
+msgid "The secret key of the ISTD e-invoicing portal"
+msgstr "المفتاح السري لبوابة الفواتير الإلكترونية ISTD"
+
+#. module: l10n_jo_edi_istd
+#: model:ir.model.fields,help:l10n_jo_edi_istd.field_account_fiscal_position__l10n_jo_tax_company_type
+#: model:ir.model.fields,help:l10n_jo_edi_istd.field_res_company__l10n_jo_tax_company_type
+#: model:ir.model.fields,help:l10n_jo_edi_istd.field_res_config_settings__l10n_jo_tax_company_type
+msgid "The type of the company for tax purposes."
+msgstr "نوع الشركة للأغراض الضريبية."
+
+#. module: l10n_jo_edi_istd
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_bank_statement_line__l10n_jo_amount_total
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_move__l10n_jo_amount_total
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_payment__l10n_jo_amount_total
+msgid "Total Amount JO"
+msgstr "المبلغ الإجمالي"
+
+#. module: l10n_jo_edi_istd
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_bank_statement_line__l10n_jo_amount_discount
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_move__l10n_jo_amount_discount
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_payment__l10n_jo_amount_discount
+msgid "Total Discount JO"
+msgstr "إجمالي الخصم"
+
+#. module: l10n_jo_edi_istd
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_move_line__l10n_jo_total
+msgid "Total JO"
+msgstr "المجموع"
+
+#. module: l10n_jo_edi_istd
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_move_line__l10n_jo_price_unit
+msgid "Unit Price JO"
+msgstr "سعر الوحدة"
+
+#. module: l10n_jo_edi_istd
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_bank_statement_line__l10n_jo_amount_untaxed
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_move__l10n_jo_amount_untaxed
+#: model:ir.model.fields,field_description:l10n_jo_edi_istd.field_account_payment__l10n_jo_amount_untaxed
+msgid "Untaxed Amount JO"
+msgstr "المبلغ غير الخاضع للضريبة"
+
+#. module: l10n_jo_edi_istd
+#: model:ir.model.fields.selection,name:l10n_jo_edi_istd.selection__account_fiscal_position__l10n_jo_tax_company_type__2
+#: model:ir.model.fields.selection,name:l10n_jo_edi_istd.selection__res_company__l10n_jo_tax_company_type__2
+msgid "sales"
+msgstr "مبيعات"
+
+#. module: l10n_jo_edi_istd
+#: model:account.fiscal.position,name:l10n_jo_edi_istd.dep_fiscal_position_011
+msgid "فاتورة دخل نقدي محلية"
+msgstr ""

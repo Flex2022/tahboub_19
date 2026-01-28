@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="sale_detailed_pdf">
+            <t t-call="web.external_layout">
+                <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)"/>
+                <t t-set="forced_vat"
+                   t-value="doc.fiscal_position_id.foreign_vat"/> <!-- So that it appears in the footer of the report instead of the company VAT if it's set -->
+                <t t-set="address">
+                    <!--                    <div t-field="doc.partner_id"-->
+                    <!--                         t-options='{"widget": "contact", "fields": ["address", "name", "mobile"], "no_marker": True}' />-->
+                    <p>
+                        <strong>Client Name:</strong>
+                        <span t-field="doc.partner_id.name"/>
+                    </p>
+                    <p>
+                        <strong>Project Name:</strong>
+                        <span t-field="doc.customer_project_id.name"/>
+                    </p>
+                    <p t-if="doc.partner_id.vat"><t
+                            t-esc="doc.company_id.account_fiscal_country_id.vat_label or 'Tax ID'"/>:
+                        <span t-field="doc.partner_id.vat"/>
+                    </p>
+                </t>
+                <t t-if="doc.partner_shipping_id == doc.partner_invoice_id
+                             and doc.partner_invoice_id != doc.partner_id
+                             or doc.partner_shipping_id != doc.partner_invoice_id">
+                    <t t-set="information_block">
+                        <strong t-if="doc.partner_shipping_id == doc.partner_invoice_id">Invoicing and Shipping
+                            Address:
+                        </strong>
+                        <strong t-if="doc.partner_shipping_id != doc.partner_invoice_id">Invoicing Address:</strong>
+                        <div t-field="doc.partner_invoice_id"
+                             t-options='{"widget": "contact", "fields": ["address", "name", "phone"], "no_marker": True, "phone_icons": True}'/>
+                        <t t-if="doc.partner_shipping_id != doc.partner_invoice_id">
+                            <strong>Shipping Address:</strong>
+                            <div t-field="doc.partner_shipping_id"
+                                 t-options='{"widget": "contact", "fields": ["address", "name", "phone"], "no_marker": True, "phone_icons": True}'/>
+                        </t>
+                    </t>
+                </t>
+                <div class="page">
+                    <div class="oe_structure"/>
+
+                    <h2 class="mt16">
+                        <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
+                            <span t-if="doc.state not in ['draft','sent']">Order #</span>
+                            <span t-if="doc.state in ['draft','sent']">Quotation #</span>
+                        </t>
+                        <t t-if="env.context.get('proforma', False) or is_pro_forma">
+                            <span>Pro-Forma Invoice #</span>
+                        </t>
+                        <span t-field="doc.name"/>
+                    </h2>
+
+                    <div class="row mt32 mb32" id="informations">
+                        <div t-if="doc.client_order_ref" class="col-auto col-3 mw-100 mb-2">
+                            <strong>Your Reference:</strong>
+                            <p class="m-0" t-field="doc.client_order_ref"/>
+                        </div>
+                        <div t-if="doc.date_order and doc.state not in ['draft','sent']"
+                             class="col-auto col-3 mw-100 mb-2">
+                            <strong>Order Date:</strong>
+                            <p class="m-0" t-field="doc.date_order"/>
+                        </div>
+                        <div t-if="doc.date_order and doc.state in ['draft','sent']" class="col-auto col-3 mw-100 mb-2">
+                            <strong>Quotation Date:</strong>
+                            <p class="m-0" t-field="doc.date_order" t-options='{"widget": "date"}'/>
+                        </div>
+                        <div t-if="doc.validity_date and doc.state in ['draft', 'sent']"
+                             class="col-auto col-3 mw-100 mb-2" name="expiration_date">
+                            <strong>Expiration:</strong>
+                            <p class="m-0" t-field="doc.validity_date"/>
+                        </div>
+                        <div t-if="doc.user_id.name" class="col-auto col-3 mw-100 mb-2">
+                            <strong>Salesperson:</strong>
+                            <p class="m-0" t-field="doc.user_id"/>
+                        </div>
+                    </div>
+
+
+                    <table class="table table-sm o_main_table">
+                        <thead style="display: table-row-group">
+                            <tr>
+                                <th class="text-left">Description</th>
+                                <th class="text-right">Quantity</th>
+                                <th class="text-right">Unit Price</th>
+                                <th class="text-right">Taxes</th>
+                                <th class="text-right">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody class="sale_tbody">
+                            <!--
+                            wood_order_line
+                            bedroom_order_line
+                            accessory_order_line
+                            mixer_order_line
+                            electronic_order_line
+                            worktop_order_line
+                            service_order_line
+                            appliance_order_line
+                            -->
+
+                            <tr t-if="doc.wood_order_line" class="bg-200 font-weight-bold o_line_section">
+                                <td colspan="4">Wood</td>
+                                <td class="text-right">
+                                    <span t-field="doc.wood_untaxed"
+                                          t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                </td>
+                            </tr>
+                            <tr t-foreach="doc.wood_order_line" t-as="line">
+                                <!--                                <tr t-if="not line.display_type">-->
+                                <td>
+                                    <span t-field="line.name"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="line.product_uom_qty"/>
+                                    <span t-field="line.product_uom_id"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="line.price_unit"/>
+                                </td>
+                                <td name="td_taxes" class="text-right">
+                                    <span t-esc="', '.join(map(lambda x: (x.description or x.name), line.tax_ids))"/>
+                                </td>
+                                <td class="text-right o_price_total">
+                                    <span t-field="line.price_subtotal"/>
+                                </td>
+                            </tr>
+
+
+                            <tr t-if="doc.bedroom_order_line" class="bg-200 font-weight-bold o_line_section">
+                                <td colspan="4">Bedrooms</td>
+                                <td class="text-right">
+                                    <span t-field="doc.bedroom_untaxed"
+                                          t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                </td>
+                            </tr>
+                            <tr t-foreach="doc.bedroom_order_line" t-as="line">
+                                <td>
+                                    <span t-field="line.name"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="line.product_uom_qty"/>
+                                    <span t-field="line.product_uom_id"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="line.price_unit"/>
+                                </td>
+                                <td name="td_taxes" class="text-right">
+                                    <span t-esc="', '.join(map(lambda x: (x.description or x.name), line.tax_ids))"/>
+                                </td>
+                                <td class="text-right o_price_total">
+                                    <span t-field="line.price_subtotal"/>
+                                </td>
+                            </tr>
+
+
+                            <tr t-if="doc.accessory_order_line" class="bg-200 font-weight-bold o_line_section">
+                                <td colspan="4">Accessories</td>
+                                <td class="text-right">
+                                    <span t-field="doc.accessory_untaxed"
+                                          t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                </td>
+                            </tr>
+                            <tr t-foreach="doc.accessory_order_line" t-as="line">
+                                <td>
+                                    <span t-field="line.name"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="line.product_uom_qty"/>
+                                    <span t-field="line.product_uom_idg"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="line.price_unit"/>
+                                </td>
+                                <td name="td_taxes" class="text-right">
+                                    <span t-esc="', '.join(map(lambda x: (x.description or x.name), line.tax_ids))"/>
+                                </td>
+                                <td class="text-right o_price_total">
+                                    <span t-field="line.price_subtotal"/>
+                                </td>
+                            </tr>
+
+
+                            <tr t-if="doc.mixer_order_line" class="bg-200 font-weight-bold o_line_section">
+                                <td colspan="4">Sinks &amp; Mixers</td>
+                                <td class="text-right">
+                                    <span t-field="doc.mixer_untaxed"
+                                          t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                </td>
+                            </tr>
+                            <tr t-foreach="doc.mixer_order_line" t-as="line">
+                                <td>
+                                    <span t-field="line.name"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="line.product_uom_qty"/>
+                                    <span t-field="line.product_uom_id"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="line.price_unit"/>
+                                </td>
+                                <td name="td_taxes" class="text-right">
+                                    <span t-esc="', '.join(map(lambda x: (x.description or x.name), line.tax_ids))"/>
+                                </td>
+                                <td class="text-right o_price_total">
+                                    <span t-field="line.price_subtotal"/>
+                                </td>
+                            </tr>
+
+
+                            <tr t-if="doc.electronic_order_line" class="bg-200 font-weight-bold o_line_section">
+                                <td colspan="4">Electromechanical Work</td>
+                                <td class="text-right">
+                                    <span t-field="doc.electronic_untaxed"
+                                          t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                </td>
+                            </tr>
+                            <tr t-foreach="doc.electronic_order_line" t-as="line">
+                                <td>
+                                    <span t-field="line.name"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="line.product_uom_qty"/>
+                                    <span t-field="line.product_uom_id"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="line.price_unit"/>
+                                </td>
+                                <td name="td_taxes" class="text-right">
+                                    <span t-esc="', '.join(map(lambda x: (x.description or x.name), line.tax_ids))"/>
+                                </td>
+                                <td class="text-right o_price_total">
+                                    <span t-field="line.price_subtotal"/>
+                                </td>
+                            </tr>
+
+
+                            <tr t-if="doc.worktop_order_line" class="bg-200 font-weight-bold o_line_section">
+                                <td colspan="4">Worktops</td>
+                                <td class="text-right">
+                                    <span t-field="doc.worktop_untaxed"
+                                          t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                </td>
+                            </tr>
+                            <tr t-foreach="doc.worktop_order_line" t-as="line">
+                                <td>
+                                    <span t-field="line.name"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="line.product_uom_qty"/>
+                                    <span t-field="line.product_uom_id"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="line.price_unit"/>
+                                </td>
+                                <td name="td_taxes" class="text-right">
+                                    <span t-esc="', '.join(map(lambda x: (x.description or x.name), line.tax_ids))"/>
+                                </td>
+                                <td class="text-right o_price_total">
+                                    <span t-field="line.price_subtotal"/>
+                                </td>
+                            </tr>
+
+
+                            <tr t-if="doc.service_order_line" class="bg-200 font-weight-bold o_line_section">
+                                <td colspan="4">Services</td>
+                                <td class="text-right">
+                                    <span t-field="doc.service_untaxed"
+                                          t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                </td>
+                            </tr>
+                            <tr t-foreach="doc.service_order_line" t-as="line">
+                                <td>
+                                    <span t-field="line.name"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="line.product_uom_qty"/>
+                                    <span t-field="line.product_uom_id"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="line.price_unit"/>
+                                </td>
+                                <td name="td_taxes" class="text-right">
+                                    <span t-esc="', '.join(map(lambda x: (x.description or x.name), line.tax_ids))"/>
+                                </td>
+                                <td class="text-right o_price_total">
+                                    <span t-field="line.price_subtotal"/>
+                                </td>
+                            </tr>
+
+
+                            <tr t-if="doc.appliance_order_line" class="bg-200 font-weight-bold o_line_section">
+                                <td colspan="4">Electric Hardware</td>
+                                <td class="text-right">
+                                    <span t-field="doc.appliance_untaxed"
+                                          t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                </td>
+                            </tr>
+                            <tr t-foreach="doc.appliance_order_line" t-as="line">
+                                <td>
+                                    <span t-field="line.name"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="line.product_uom_qty"/>
+                                    <span t-field="line.product_uom_id"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="line.price_unit"/>
+                                </td>
+                                <td name="td_taxes" class="text-right">
+                                    <span t-esc="', '.join(map(lambda x: (x.description or x.name), line.tax_ids))"/>
+                                </td>
+                                <td class="text-right o_price_total">
+                                    <span t-field="line.price_subtotal"/>
+                                </td>
+                            </tr>
+
+
+                            <t t-set="categ_lines"
+                               t-value="doc.wood_order_line + doc.bedroom_order_line + doc.accessory_order_line + doc.mixer_order_line + doc.electronic_order_line + doc.worktop_order_line + doc.service_order_line + doc.appliance_order_line"/>
+                            <t t-set="other_lines"
+                               t-value="doc.order_line.filtered(lambda l: l.id not in categ_lines.ids)"/>
+                            <t t-set="other_untaxed" t-value="round(sum(other_lines.mapped('price_subtotal')), 2)"/>
+                            <!--                            <t t-set="other_tax" t-value="round(sum(other_lines.mapped('price_tax')), 2)"/>-->
+                            <!--                            <t t-set="other_total" t-value="round(other_untaxed + other_tax, 2)"/>-->
+
+                            <tr t-if="other_lines" class="bg-200 font-weight-bold o_line_section">
+                                <td colspan="4">Others</td>
+                                <td class="text-right">
+                                    <span t-esc="other_untaxed"
+                                          t-options="{'widget': 'monetary', 'display_currency': doc.currency_id}"/>
+                                </td>
+                            </tr>
+                            <tr t-foreach="other_lines" t-as="line">
+                                <td>
+                                    <span t-field="line.name"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="line.product_uom_qty"/>
+                                    <span t-field="line.product_uom_id"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="line.price_unit"/>
+                                </td>
+                                <td name="td_taxes" class="text-right">
+                                    <span t-esc="', '.join(map(lambda x: (x.description or x.name), line.tax_ids))"/>
+                                </td>
+                                <td class="text-right o_price_total">
+                                    <span t-field="line.price_subtotal"/>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+
+                    <div class="clearfix" name="so_total_summary">
+                        <div id="total" class="row" name="total">
+                            <div t-attf-class="#{'col-6' if report_type != 'html' else 'col-sm-7 col-md-6'} ml-auto">
+                                <table class="table table-sm">
+                                                                        <!-- Tax totals -->
+                                    <t t-call="account.document_tax_totals">
+                                        <t t-set="tax_totals" t-value="doc.tax_totals"/>
+                                        <t t-set="currency" t-value="doc.currency_id"/>
+                                    </t>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div t-if="doc.signature" class="mt32 ml64 mr4" name="signature">
+                        <div class="offset-8">
+                            <strong>Signature</strong>
+                        </div>
+                        <div class="offset-8">
+                            <img t-att-src="image_data_uri(doc.signature)" style="max-height: 4cm; max-width: 8cm;"/>
+                        </div>
+                        <div class="offset-8 text-center">
+                            <p t-field="doc.signed_by"/>
+                        </div>
+                    </div>
+
+                    <div class="oe_structure"/>
+
+                    <p t-field="doc.note"/>
+                    <p t-if="not is_html_empty(doc.payment_term_id.note)">
+                        <span t-field="doc.payment_term_id.note"/>
+                    </p>
+                    <p id="fiscal_position_remark"
+                       t-if="doc.fiscal_position_id and not is_html_empty(doc.fiscal_position_id.sudo().note)">
+                        <strong>Fiscal Position Remark:</strong>
+                        <span t-field="doc.fiscal_position_id.sudo().note"/>
+                    </p>
+                </div>
+            </t>
+        </template>
+
+
+        <template id="report_sale_detailed">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="hz_sale_custom.sale_detailed_pdf" t-lang="doc.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+
+
+        <record id="action_report_sale_detailed" model="ir.actions.report">
+            <field name="name">Detailed Price Quotation / Order</field>
+            <field name="model">sale.order</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">hz_sale_custom.report_sale_detailed</field>
+            <field name="report_file">hz_sale_custom.report_sale_detailed</field>
+            <field name="print_report_name">(object.state in ('draft', 'sent') and 'Detailed Price Quotation - %s' %
+                (object.name)) or 'Detailed Price Order - %s' % (object.name)
+            </field>
+            <field name="binding_model_id" ref="sale.model_sale_order"/>
+            <field name="binding_type">report</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_order_form_inherit" model="ir.ui.view">
+            <field name="name">view_order_form_inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet" position="before">
+                    <field name="amount_invoiced" invisible="1"/>
+                    <field name="amount_paid" invisible="1"/>
+                    <field name="amount_remaining" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_quotation_tree_inherit" model="ir.ui.view">
+            <field name="name">view_quotation_tree_inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//list" position="inside">
+                    <field name="amount_invoiced" optional="show" sum="Total Invoiced Amount"/>
+                    <field name="amount_paid" optional="show"/>
+                    <field name="amount_remaining" optional="show" sum="Total Remaining Amount"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!--    replace advance payment button to be of type object to push allowed journals in context    -->
+        <record id="bi_sale_order_view_inherit_inherit" model="ir.ui.view">
+            <field name="name">bi_sale_order_view_inherit_inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="bi_sale_advance_payment.sale_order_view_inherit"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='%(bi_sale_advance_payment.action_advance_payment_wizard_form)d']"
+                       position="replace">
+                    <button name="bi_action_advance_payment_wizard_form" type="object"
+                            string="Advance Payment" class="oe_highlight"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

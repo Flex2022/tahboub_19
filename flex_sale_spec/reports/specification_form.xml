@@ -1,0 +1,859 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="sale_spec_report">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+
+                   <style>
+                          table.table-bordered {
+                            border: 2px solid black;
+                          }
+                         table.table-bordered th,
+                          table.table-bordered td {
+                            border: 2px solid black; /* Ensures all cell borders are darkened */
+                           font-weight: bold;
+                          }
+                           span {
+                                font-size: 25px; /* or any size you prefer */
+                            }
+
+                            strong {
+                                font-size: 25px;
+                                font-weight: bold;
+                            }
+
+
+                    </style>
+
+                    <div class="page" dir="rtl">
+                        <div class="row">
+                            <table class="table table-bordered" style="width: 100%;height: 170px;">
+                            <tr>
+                               <td rowspan="2" style="width: 420px; height: 170px;">
+                                   <img t-att-src="image_data_uri(o.company_id.logo)"
+                                        style="width: 420px; height: 170px;object-fit: cover;"/>
+                                </td>
+                                 <td style="height: 85px;text-align: right;">
+                                    <strong>إسم العميل:</strong>
+                                     <div t-field="o.partner_id.name"/>
+                                </td>
+                                 <td rowspan="2" class="text-center" style="vertical-align: middle;">
+                                     <strong>
+                                         نموذج التفاصيل
+                                           <br/>
+                                            Kitchen
+                                     </strong>
+<!--                                     <strong>Customer Name:</strong>-->
+<!--                                    <span t-field="o.partner_id.name"/>-->
+                                </td>
+                                <td rowspan="2"  class="text-center" style="vertical-align: middle;">
+                                    <strong>
+                                        اليوم والتاريخ:
+                                    </strong>
+                                    <div t-field="o.date_order" t-options='{"widget": "date"}'/>
+                                    <div t-field="o.date_order_day"/>
+<!--                                  <strong>Customer Name:</strong>-->
+<!--                                    <span t-field="o.partner_id.name"/>-->
+                                </td>
+
+                            </tr>
+                            <tr>
+                                 <td class="text-start" style="height: 85px;text-align: right;">
+                                  <strong>موقع المخطط:</strong>
+                                    <div t-field="o.plan_location"/>
+                                </td>
+<!--                                 <td>-->
+<!--                                   555-->
+<!--                                </td>-->
+<!--                                 <td  class="text-center">-->
+<!--                                    0-->
+<!--                                </td>-->
+<!--                                <td colspan="2" class="text-center">-->
+<!--                                    <h3>Customer Name: <span t-field="o.partner_id.name"/></h3>-->
+<!--                                </td>-->
+                            </tr>
+                            <!-- Add your custom fields here -->
+                        </table>
+                        </div>
+                        <div class="row text-center" style="border:2px solid black;height: 40px;margin-top: -20px;">
+                             <div class="col-12 text-center">
+                                    <h4>
+
+                                         <strong>الخشب</strong>
+                                    </h4>
+                             </div>
+
+
+
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>خشب الدرف:</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.sliding_wood_id"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                 <h5>
+                                    <strong>موديل الباب:</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.door_model_id"/>
+                            </div>
+                        </div>
+                         <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>عمود الصولد:</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.pillar_sold_id"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                 <h5>
+                                    <strong>عرق اللامنيت :</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.laminate_grains_id"/>
+                            </div>
+
+                        </div>
+                        <div class="row" style="text-align: right;">
+                         <table class="table table-bordered">
+                                 <tr>
+                                     <td rowspan="2" style="vertical-align: middle;">
+                                         <h5>
+                                            <strong>لون الخشب:</strong>
+                                         </h5>
+                                     </td>
+                                     <td>
+                                          <h5>
+                                            <strong>اللون 1:</strong>
+                                              <strong style="margin-right:10px;" t-field="o.wood_color_id"/>
+                                         </h5>
+                                     </td>
+                                     <td>
+                                          <h5>
+                                            <strong>اللون 2:</strong>
+                                                <strong style="margin-right:10px;" t-field="o.wood_color2_id"/>
+                                         </h5>
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                         <td>
+                                             <h5>
+                                            <strong>اللون 3:</strong>
+                                                <strong style="margin-right:10px;" t-field="o.wood_color3_id"/>
+                                         </h5>
+                                         </td>
+                                     <td>
+                                          <h5>
+                                            <strong>اللون 4:</strong>
+                                                <strong style="margin-right:10px;" t-field="o.wood_color4_id"/>
+                                         </h5>
+                                     </td>
+                                 </tr>
+                             </table>
+                        </div>
+                        <div class="row text-center" style="margin-top: -20px;">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>موديل الكورنيش:</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.cornice_type_id"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                 <h5>
+                                    <strong>حاجب الانارة :</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.light_pelmets_id"/>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>موديل خزائن الزجاج: </strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.glass_cabinets_type_id"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                 <h5>
+                                    <strong>لون الزجاج : </strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.glass_color_id"/>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>البنش:  </strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.bench_upholstery_id"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+<!--                                 <h5>-->
+<!--                                    <strong>لون الزجاج : </strong>-->
+<!--                                </h5>-->
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+<!--                                <span t-field="o.glass_color_id"/>-->
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>نوع البانيل: </strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.panel_type_id"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                 <h5>
+                                    <strong>لون البانيل: </strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.panel_color_id"/>
+                            </div>
+                        </div>
+                        <div class="row text-center" style="border:2px solid black;height: 40px;">
+                            <div class="col-12 text-center">
+                                    <h4>
+                                        <strong>الأجهزة</strong>
+                                    </h4>
+                            </div>
+                        </div>
+<!--                        Devices-->
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>النوع</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                               <h5>
+                                    <strong>التصميم</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                    <h5>
+                                        <strong>النوع</strong>
+                                    </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <h5>
+                                    <strong>التصميم</strong>
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>الفرامة</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.chopper"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                    <h5>
+                                        <strong>الفلتر :</strong>
+                                    </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.filter"/>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>فرن:</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.oven"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                    <h5>
+                                        <strong>فريزر:</strong>
+                                    </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.freezer"/>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>مسطح:</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.cooktop"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                    <h5>
+                                        <strong>كولر</strong>
+                                    </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.water_cooler"/>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>بوتجاز:</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.stove"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                    <h5>
+                                        <strong>سخان :</strong>
+                                    </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.heater"/>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>شفاط:</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.extractor_fan"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                    <h5>
+                                        <strong>درج تسخين:</strong>
+                                    </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.warming_drawer"/>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>مايكرويف:</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.microwave"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                    <h5>
+                                        <strong>ماكينة قهوة:</strong>
+                                    </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.coffee_maker"/>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>غسالة اطباق:</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.dishwasher"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                    <h5>
+                                        <strong>قلاية / شواية: </strong>
+                                    </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.grill_fryer"/>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>ثلاجة:</strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.refrigerator"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+<!--                                    <h5>-->
+<!--                                        <strong>قلاية / شواية: </strong>-->
+<!--                                    </h5>-->
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+<!--                                <span t-field="o.grill_fryer"/>-->
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>ملاحظات:</strong>
+                                </h5>
+                            </div>
+                            <div class="col-9" style="border:2px solid black;">
+                                <strong t-field="o.note_device"/>
+                            </div>
+<!--                            <div class="col-3" style="border:2px solid black;">-->
+<!--&lt;!&ndash;                                    <h5>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <strong>قلاية / شواية: </strong>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </h5>&ndash;&gt;-->
+<!--                            </div>-->
+<!--                            <div class="col-3" style="border:2px solid black;">-->
+<!--&lt;!&ndash;                                <span t-field="o.grill_fryer"/>&ndash;&gt;-->
+<!--                            </div>-->
+                        </div>
+<!--                 Accc       -->
+                        <div class="row text-center" style="border:2px solid black;height: 40px;">
+                            <div class="col-12 text-center">
+                                    <h4>
+                                        <strong>الأيادي والإكسسوارات </strong>
+                                    </h4>
+                            </div>
+                        </div>
+                        <div class="row" style="text-align: right;">
+                         <table class="table table-bordered">
+                                 <tr>
+                                     <td rowspan="2" style="vertical-align: middle;">
+                                         <h5>
+                                            <strong>الأيادي 1  : </strong>
+                                             <strong style="margin-right:10px;" t-field="o.hands_type_id"/>
+                                         </h5>
+                                     </td>
+                                     <td>
+                                          <h5>
+                                            <strong>المورد:</strong>
+                                              <strong style="margin-right:10px;" t-field="o.supplier_id_hand1_text"/>
+                                         </h5>
+                                     </td>
+                                     <td>
+                                          <h5>
+                                            <strong>طريقة التركيب: </strong>
+                                                <strong style="margin-right:10px;" t-field="o.installation_method_id"/>
+                                         </h5>
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                         <td>
+                                             <h5>
+                                            <strong>مكان التركيب:</strong>
+                                                <strong style="margin-right:10px;" t-field="o.handle_installation_text"/>
+                                         </h5>
+                                         </td>
+                                     <td>
+                                          <h5>
+                                            <strong>العدد:</strong>
+                                                <strong style="margin-right:10px;" t-field="o.count"/>
+                                         </h5>
+                                     </td>
+                                 </tr>
+                             </table>
+                        </div>
+                        <div class="row" style="text-align: right;">
+                         <table class="table table-bordered">
+                                 <tr>
+                                     <td rowspan="2" style="vertical-align: middle;">
+                                         <h5>
+                                            <strong>الأيادي 2  : </strong>
+                                                <strong style="margin-right:10px;" t-field="o.handle2_id"/>
+                                         </h5>
+                                     </td>
+                                     <td>
+                                          <h5>
+                                            <strong>المورد:</strong>
+                                              <strong style="margin-right:10px;" t-field="o.supplier_id_hand2_text"/>
+                                         </h5>
+                                     </td>
+                                     <td>
+                                          <h5>
+                                            <strong>طريقة التركيب: </strong>
+                                                <strong style="margin-right:10px;" t-field="o.installation_method_id2"/>
+                                         </h5>
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                         <td>
+                                             <h5>
+                                            <strong>مكان التركيب:</strong>
+                                                <strong style="margin-right:10px;" t-field="o.handle_installation2_text"/>
+                                         </h5>
+                                         </td>
+                                     <td>
+                                          <h5>
+                                            <strong>العدد:</strong>
+                                                <strong style="margin-right:10px;" t-field="o.count2"/>
+                                         </h5>
+                                     </td>
+                                 </tr>
+                             </table>
+                        </div>
+                          <br/>
+                        <br/>
+                         <br/>
+                        <br/>
+                        <div class="row" style="text-align: right;">
+
+                         <table class="table table-bordered">
+                                 <tr>
+                                     <td rowspan="2" style="vertical-align: middle;">
+                                         <h5>
+                                            <strong>الأيادي 3  : </strong>
+                                                <strong style="margin-right:10px;" t-field="o.handle3_id"/>
+                                         </h5>
+                                     </td>
+                                     <td>
+                                          <h5>
+                                            <strong>المورد:</strong>
+                                              <strong style="margin-right:10px;" t-field="o.supplier_id_hand3_text"/>
+                                         </h5>
+                                     </td>
+                                     <td>
+                                          <h5>
+                                            <strong>طريقة التركيب: </strong>
+                                                <strong style="margin-right:10px;" t-field="o.installation_method_id3"/>
+                                         </h5>
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                         <td>
+                                             <h5>
+                                            <strong>مكان التركيب:</strong>
+                                                <strong style="margin-right:10px;" t-field="o.handle_installation3_text"/>
+                                         </h5>
+                                         </td>
+                                     <td>
+                                          <h5>
+                                            <strong>العدد:</strong>
+                                                <strong style="margin-right:10px;" t-field="o.count3"/>
+                                         </h5>
+                                     </td>
+                                 </tr>
+                             </table>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>الإكسسوار 1 : </strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.accessories"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                    <h5>
+                                        <strong> العدد </strong>
+                                    </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.accessories_count"/>
+                            </div>
+                        </div>
+
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>الإكسسوار 2 : </strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.accessories2"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                    <h5>
+                                        <strong> العدد </strong>
+                                    </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.accessories_count2"/>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>الإكسسوار 3 : </strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.accessories3"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                    <h5>
+                                        <strong> العدد </strong>
+                                    </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.accessories_count3"/>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>الإكسسوار 4 : </strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.accessories4"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                    <h5>
+                                        <strong> العدد </strong>
+                                    </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.accessories_count4"/>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>الإكسسوار 5 : </strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.accessories5"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                    <h5>
+                                        <strong> العدد </strong>
+                                    </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.accessories_count5"/>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>الإكسسوار 6 : </strong>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.accessories6"/>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                    <h5>
+                                        <strong> العدد </strong>
+                                    </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.accessories_count6"/>
+                            </div>
+                        </div>
+                         <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>ملاحظات اضافية : </strong>
+                                </h5>
+                            </div>
+                            <div class="col-9" style="border:2px solid black;">
+                                <strong t-field="o.accessories_note"/>
+                            </div>
+                        </div>
+<!--                        Lighting-->
+                        <div class="row text-center" style="border:2px solid black;height: 40px;">
+                            <div class="col-12 text-center">
+                                    <h4>
+                                        <strong>الإنارة  </strong>
+                                    </h4>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong> نوع الإنارة 1: </strong>
+                                     <strong t-field="o.lighting1"/>
+
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                 <h5>
+                                    <strong> مكان التركيب: </strong>
+                                     <strong t-field="o.lighting1_installation_text"/>
+                                </h5>
+
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                    <h5>
+                                        <strong> العدد </strong>
+                                    </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.lighting1_count"/>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong> نوع الإنارة 2: </strong>
+                                    <strong t-field="o.lighting2"/>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                  <h5>
+                                    <strong> مكان التركيب: </strong>
+                                     <strong t-field="o.lighting2_installation_text"/>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                    <h5>
+                                        <strong> العدد </strong>
+                                    </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.lighting2_count"/>
+                            </div>
+                    </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong> نوع الإنارة 3: </strong>
+                                     <strong t-field="o.lighting3"/>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                  <h5>
+                                    <strong> مكان التركيب: </strong>
+                                     <strong t-field="o.lighting3_installation"/>
+                                </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                    <h5>
+                                        <strong> العدد </strong>
+                                    </h5>
+                            </div>
+                            <div class="col-3" style="border:2px solid black;">
+                                <strong t-field="o.lighting3_count"/>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-3 " style="border:2px solid black;">
+                                <h5>
+                                    <strong>ملاحظات أخرى:</strong>
+                                </h5>
+                            </div>
+                            <div class="col-9" style="border:2px solid black;">
+                                <strong t-field="o.lighting_note"/>
+                            </div>
+<!--                            <div class="col-3" style="border:2px solid black;">-->
+<!--&lt;!&ndash;                                    <h5>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <strong>قلاية / شواية: </strong>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </h5>&ndash;&gt;-->
+<!--                            </div>-->
+<!--                            <div class="col-3" style="border:2px solid black;">-->
+<!--&lt;!&ndash;                                <span t-field="o.grill_fryer"/>&ndash;&gt;-->
+<!--                            </div>-->
+                        </div>
+                        <div class="row text-center" >
+                            <div class="col-8 text-center" style="border:2px solid black;height: 40px;">
+                                    <h4>
+                                        <strong>الفريق الاول :  </strong>
+                                        <strong style="margin-right: 10px;" t-field="o.company_id.name"/>
+                                    </h4>
+
+                            </div>
+                             <div class="col-4 text-center" style="border:2px solid black;height: 40px;">
+                                    <h4>
+                                        <strong>الفريق الثاني   </strong>
+                                    </h4>
+                            </div>
+                        </div>
+                        <div class="row text-center" >
+                            <div class="col-3 text-center" style="border:2px solid black;height:100px;">
+                                    <h4>
+                                        <br/>
+
+                                        <strong>إسم المهندس المسؤول: </strong>
+                                    </h4>
+                            </div>
+                             <div class="col-3 text-center" style="border:2px solid black;height:100px;">
+
+                            </div>
+                             <div class="col-3 text-center" style="border:2px solid black;height: 100px;">
+                                    <h4>
+                                        <br/>
+                                        <strong>إسم العميل او من ينوب عنه: </strong>
+                                    </h4>
+                            </div>
+                             <div class="col-3 text-center" style="border:2px solid black;height: 100px;">
+<!--                                    <h4>-->
+<!--                                        <strong>الإنارة  </strong>-->
+<!--                                    </h4>-->
+                            </div>
+                        </div>
+                        <div class="row text-center" >
+                            <div class="col-3 text-center" style="border:2px solid black;height:100px;">
+                                    <h4>
+                                        <br/>
+
+                                        <strong>توقيع المهندس المسؤول:</strong>
+                                    </h4>
+                            </div>
+                             <div class="col-3 text-center" style="border:2px solid black;height:100px;">
+
+                            </div>
+                             <div class="col-3 text-center" style="border:2px solid black;height: 100px;">
+                                    <h4>
+                                        <br/>
+                                        <strong>توقيع العميل أو من ينوب عنه: </strong>
+                                    </h4>
+                            </div>
+                             <div class="col-3 text-center" style="border:2px solid black;height: 100px;">
+<!--                                    <h4>-->
+<!--                                        <strong>الإنارة  </strong>-->
+<!--                                    </h4>-->
+                            </div>
+                        </div>
+                    </div>
+
+                </t>
+                </t>
+            </t>
+    </template>
+    <record id="paperformat_specs_report" model="report.paperformat">
+            <field name="name">A4 - Specification Form</field>
+            <field name="default" eval="True" />
+            <field name="format">custom</field>
+            <field name="page_height">300</field>
+            <field name="page_width">350</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">0</field>
+            <field name="margin_bottom">0</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">35</field>
+            <field name="dpi">90</field>
+        </record>
+    <record id="action_sale_specs_report" model="ir.actions.report">
+            <field name="name">Specification Form</field>
+            <field name="model">sale.order</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">flex_sale_spec.sale_spec_report</field>
+            <field name="report_file">flex_sale_spec.sale_spec_report</field>
+            <field name="binding_model_id" ref="sale.model_sale_order"/>
+            <field name="binding_type">report</field>
+            <field name="paperformat_id" ref="flex_sale_spec.paperformat_specs_report"/>
+        </record>
+</odoo>

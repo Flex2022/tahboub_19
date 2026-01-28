@@ -1,0 +1,19 @@
+<odoo>
+    <data>
+        <record id="view_pdc_actual_date_wizard_form" model="ir.ui.view">
+            <field name="name">pdc.actual.date.wizard.form</field>
+            <field name="model">pdc.actual.date.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Add Actual Date">
+                    <group>
+                        <field name="actual_date"/>
+                    </group>
+                    <footer>
+                        <button name="action_done" string="Done" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="z"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

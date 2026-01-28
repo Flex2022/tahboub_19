@@ -1,0 +1,473 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* flex_currencies_reports
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e-20221020\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-21 14:59+0000\n"
+"PO-Revision-Date: 2023-08-21 14:59+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: flex_currencies_reports
+#: model:ir.actions.report,print_report_name:flex_currencies_reports.action_report_saleorder
+msgid ""
+"\n"
+"                (object.state in ('draft', 'sent') and 'Quotation - %s' % (object.name)) or 'Order - %s' % (object.name)\n"
+"            "
+msgstr ""
+"(object.state in ('draft', 'sent') and 'الطلب - %s' % (object.name)) or "
+"'الطلب - %s' % (object.name)"
+
+#. module: flex_currencies_reports
+#: model:ir.actions.report,print_report_name:flex_currencies_reports.action_report_purchase_order
+msgid ""
+"\n"
+"                (object.state in ('draft', 'sent') and 'Request for Quotation - %s' % (object.name) or 'Purchase Order - %s' % (object.name))\n"
+"            "
+msgstr ""
+"(object.state in ('draft', 'sent') and 'الطلب  - %s' % (object.name)"
+" or 'أمر شراء - %s' % (object.name))"
+
+#. module: flex_currencies_reports
+#: model:ir.actions.report,print_report_name:flex_currencies_reports.account_invoices
+msgid "(object._get_report_base_filename())"
+msgstr ""
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_invoice_document
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_saleorder_document
+msgid ""
+"<span groups=\"account.group_show_line_subtotals_tax_excluded\">Amount</span>\n"
+"                                    <span groups=\"account.group_show_line_subtotals_tax_included\">Total Price</span>"
+msgstr ""
+"<span groups=\"account.group_show_line_subtotals_tax_excluded\">المبلغ</span>\n"
+"                                    <span groups=\"account.group_show_line_subtotals_tax_included\">السعر الإجمالي</span>"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_invoice_document
+msgid "<span>Description</span>"
+msgstr "<span>اسم المادة</span>"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_invoice_document
+msgid "<span>Internal Note</span>"
+msgstr "<span>الوصف</span>"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_invoice_document
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_saleorder_document
+msgid "<span>Disc.%</span>"
+msgstr "<span>الخصم %</span>"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_saleorder_document
+msgid "<span>Pro-Forma Invoice #</span>"
+msgstr "<span>فاتورة شكلية رقم </span>"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_invoice_document
+msgid "<span>Quantity</span>"
+msgstr "<span>الكمية</span>"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_invoice_document
+msgid "<span>Taxes</span>"
+msgstr "<span>الضرائب</span>"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_invoice_document
+msgid "<span>Unit Price</span>"
+msgstr "<span>سعر الوحدة</span>"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_invoice_document
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_saleorder_document
+msgid "<strong class=\"mr16\">Subtotal</strong>"
+msgstr "<strong class=\"mr16\">الإجمالي الفرعي</strong>"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_invoice_document
+msgid ""
+"<strong class=\"text-center\">Scan me with your banking app.</strong>\n"
+"                            <br/>\n"
+"                            <br/>"
+msgstr ""
+"<strong class=\"text-center\">قم بإجراء المسح الضوئي عن طريق تطبيقك "
+"البنكي.</strong><br/><br/>"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_invoice_document
+msgid "<strong>Amount Due</strong>"
+msgstr "<strong>المبلغ المستحق</strong>"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_purchaseorder_document
+msgid "<strong>Amount</strong>"
+msgstr "<strong>المبلغ</strong> "
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_invoice_document
+msgid "<strong>Credit Note Date:</strong>"
+msgstr "<strong>تاريخ سند الخصم:</strong>"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_invoice_document
+msgid "<strong>Customer Code:</strong>"
+msgstr "<strong>كود العميل:</strong>"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_purchaseorder_document
+msgid "<strong>Date Req.</strong>"
+msgstr "<strong>تاريخ الطلب</strong>"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_invoice_document
+msgid "<strong>Date:</strong>"
+msgstr "<strong>التاريخ:</strong>"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_purchaseorder_document
+msgid "<strong>Description</strong>"
+msgstr "<strong>الوصف:</strong>"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_invoice_document
+msgid "<strong>Due Date:</strong>"
+msgstr "<strong>تاريخ الاستحقاق:</strong>"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_saleorder_document
+msgid "<strong>Expiration:</strong>"
+msgstr "<strong>انتهاء الصلاحية:</strong> "
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_saleorder_document
+msgid "<strong>Fiscal Position Remark:</strong>"
+msgstr "<strong>ملاحظات الوضع المالي:</strong> "
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_invoice_document
+msgid "<strong>Incoterm:</strong>"
+msgstr ""
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_invoice_document
+msgid "<strong>Invoice Date:</strong>"
+msgstr "<strong>تاريخ الفاتورة:</strong>"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_saleorder_document
+msgid "<strong>Order Date:</strong>"
+msgstr "<strong>تاريخ الأمر:</strong>"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_purchaseorder_document
+msgid "<strong>Purchase Representative:</strong>"
+msgstr "<strong>مندوب المشتريات:</strong> "
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_purchaseorder_document
+msgid "<strong>Qty</strong>"
+msgstr "<strong>الكمية</strong> "
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_saleorder_document
+msgid "<strong>Quotation Date:</strong>"
+msgstr "<strong>تاريخ الطلب: </strong>"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_invoice_document
+msgid "<strong>Receipt Date:</strong>"
+msgstr "<strong>تاريخ الإيصال:</strong> "
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_invoice_document
+msgid "<strong>Reference:</strong>"
+msgstr "<strong>الرقم المرجعي:</strong>"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_saleorder_document
+msgid "<strong>Salesperson:</strong>"
+msgstr "<strong>مندوب المبيعات:</strong>"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_saleorder_document
+msgid "<strong>Shipping Address:</strong>"
+msgstr "<strong>عنوان الشحن:</strong> "
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_purchaseorder_document
+msgid "<strong>Shipping address:</strong>"
+msgstr "<strong>عنوان الشحن:</strong> "
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_saleorder_document
+msgid "<strong>Signature</strong>"
+msgstr "<strong>التوقيع</strong>"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_invoice_document
+msgid "<strong>Source:</strong>"
+msgstr "<strong>المصدر:</strong>"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_purchaseorder_document
+msgid "<strong>Taxes</strong>"
+msgstr "<strong>الضرائب</strong>"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_purchaseorder_document
+msgid "<strong>Unit Price</strong>"
+msgstr "<strong>سعر الوحدة</strong>"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_purchaseorder_document
+msgid "<strong>Your Order Reference:</strong>"
+msgstr "<strong>الرقم المرجعي لطلبك:</strong> "
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_saleorder_document
+msgid "<strong>Your Reference:</strong>"
+msgstr "<strong>مرجعك:</strong>"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_invoice_document
+msgid "<strong>المبلغ الإجمالي : </strong>"
+msgstr ""
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_purchaseorder_document
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_saleorder_document
+msgid "<strong>المبلغ الإجمالي :</strong>"
+msgstr ""
+
+#. module: flex_currencies_reports
+#: model:ir.model.fields,field_description:flex_currencies_reports.field_account_bank_statement_line__additional_currency_rate_access
+#: model:ir.model.fields,field_description:flex_currencies_reports.field_account_move__additional_currency_rate_access
+#: model:ir.model.fields,field_description:flex_currencies_reports.field_account_payment__additional_currency_rate_access
+#: model:ir.model.fields,field_description:flex_currencies_reports.field_purchase_order__additional_currency_rate_access
+#: model:ir.model.fields,field_description:flex_currencies_reports.field_sale_order__additional_currency_rate_access
+msgid "Additional Currency Rate Access"
+msgstr ""
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_invoice_document
+msgid "Cancelled Invoice"
+msgstr "فاتورة ملغاة"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_purchaseorder_document
+msgid "Cancelled Purchase Order #"
+msgstr "رقم أمر الشراء الملغي "
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_invoice_document
+msgid "Credit Note"
+msgstr "إشعار دائن "
+
+#. module: flex_currencies_reports
+#: model:ir.model.fields,field_description:flex_currencies_reports.field_account_bank_statement_line__additional_currency_rate
+#: model:ir.model.fields,field_description:flex_currencies_reports.field_account_move__additional_currency_rate
+#: model:ir.model.fields,field_description:flex_currencies_reports.field_account_payment__additional_currency_rate
+#: model:ir.model.fields,field_description:flex_currencies_reports.field_purchase_order__additional_currency_rate
+#: model:ir.model.fields,field_description:flex_currencies_reports.field_sale_order__additional_currency_rate
+msgid "Currency Rate"
+msgstr "سعر صرف العملة"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_saleorder_document
+msgid "Description"
+msgstr "اسم المادة"
+
+#. module: flex_currencies_reports
+#: model:ir.model.fields,field_description:flex_currencies_reports.field_sale_order_line__discount
+msgid "Discount (%)"
+msgstr "الخصم (%)"
+
+#. module: flex_currencies_reports
+#: model:res.groups,name:flex_currencies_reports.group_display_currency_rate
+msgid "Display Currency Rate"
+msgstr ""
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_invoice_document
+msgid "Draft Invoice"
+msgstr "مسودة فاتورة"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_invoice_document
+msgid "Invoice"
+msgstr "فاتورة"
+
+#. module: flex_currencies_reports
+#: model:ir.actions.report,name:flex_currencies_reports.account_invoices
+msgid "Invoices (IQD)"
+msgstr "فاتورة (دينار العراقي)"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_saleorder_document
+msgid "Invoicing Address:"
+msgstr "عنوان الفوترة: "
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_saleorder_document
+msgid ""
+"Invoicing and Shipping\n"
+"                                Address:"
+msgstr "عنوان الفاتورة والشحن:"
+
+#. module: flex_currencies_reports
+#: model:ir.model,name:flex_currencies_reports.model_account_move
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: flex_currencies_reports
+#: model:ir.model,name:flex_currencies_reports.model_account_move_line
+msgid "Journal Item"
+msgstr "عنصر اليومية"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_saleorder_document
+msgid "Order #"
+msgstr "رقم الطلب  "
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_invoice_document
+msgid "Paid on"
+msgstr "دفعت في"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_invoice_document
+msgid "Please use the following communication for your payment :"
+msgstr "الرجاء استخدام البلاغات التالية للدفع: "
+
+#. module: flex_currencies_reports
+#: model:ir.model.fields,field_description:flex_currencies_reports.field_account_move_line__price_subtotal_iqd
+#: model:ir.model.fields,field_description:flex_currencies_reports.field_purchase_order_line__price_subtotal_iqd
+#: model:ir.model.fields,field_description:flex_currencies_reports.field_sale_order_line__price_subtotal_iqd
+msgid "Price Subtotal (IQD)"
+msgstr ""
+
+#. module: flex_currencies_reports
+#: model:ir.model.fields,field_description:flex_currencies_reports.field_account_move_line__price_total_iqd
+#: model:ir.model.fields,field_description:flex_currencies_reports.field_purchase_order_line__price_total_iqd
+#: model:ir.model.fields,field_description:flex_currencies_reports.field_sale_order_line__price_total_iqd
+msgid "Price Total (IQD)"
+msgstr ""
+
+#. module: flex_currencies_reports
+#: model:ir.model.fields,field_description:flex_currencies_reports.field_account_move_line__price_unit_iqd
+#: model:ir.model.fields,field_description:flex_currencies_reports.field_purchase_order_line__price_unit_iqd
+#: model:ir.model.fields,field_description:flex_currencies_reports.field_sale_order_line__price_unit_iqd
+msgid "Price unit (IQD)"
+msgstr ""
+
+#. module: flex_currencies_reports
+#: model:ir.model,name:flex_currencies_reports.model_purchase_order
+msgid "Purchase Order"
+msgstr "أمر شراء"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_purchaseorder_document
+msgid "Purchase Order #"
+msgstr "رقم أمر شراء "
+
+#. module: flex_currencies_reports
+#: model:ir.actions.report,name:flex_currencies_reports.action_report_purchase_order
+msgid "Purchase Order (IQD)"
+msgstr "أمر شراء (دينار العراقي)"
+
+#. module: flex_currencies_reports
+#: model:ir.model,name:flex_currencies_reports.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr "بند أمر الشراء"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_saleorder_document
+msgid "Quantity"
+msgstr "الكمية"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_saleorder_document
+msgid "Quotation #"
+msgstr "رقم الطلب "
+
+#. module: flex_currencies_reports
+#: model:ir.actions.report,name:flex_currencies_reports.action_report_saleorder
+msgid "Quotation / Order (IQD)"
+msgstr "الطلب / الطلب (دينار العراقي)"
+
+#. module: flex_currencies_reports
+#: model:ir.model.fields,field_description:flex_currencies_reports.field_account_bank_statement_line__additional_currency
+#: model:ir.model.fields,field_description:flex_currencies_reports.field_account_move__additional_currency
+#: model:ir.model.fields,field_description:flex_currencies_reports.field_account_move_line__additional_currency
+#: model:ir.model.fields,field_description:flex_currencies_reports.field_account_payment__additional_currency
+#: model:ir.model.fields,field_description:flex_currencies_reports.field_purchase_order__additional_currency
+#: model:ir.model.fields,field_description:flex_currencies_reports.field_purchase_order_line__additional_currency
+#: model:ir.model.fields,field_description:flex_currencies_reports.field_sale_order__additional_currency
+#: model:ir.model.fields,field_description:flex_currencies_reports.field_sale_order_line__additional_currency
+msgid "Report Currency"
+msgstr ""
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_purchaseorder_document
+msgid "Request for Quotation #"
+msgstr "رقم طلب عرض سعر "
+
+#. module: flex_currencies_reports
+#: model:ir.model,name:flex_currencies_reports.model_sale_advance_payment_inv
+msgid "Sales Advance Payment Invoice"
+msgstr "فاتورة الدفعة المقدمة للمبيعات"
+
+#. module: flex_currencies_reports
+#: model:ir.model,name:flex_currencies_reports.model_sale_order
+msgid "Sales Order"
+msgstr "أمر البيع"
+
+#. module: flex_currencies_reports
+#: model:ir.model,name:flex_currencies_reports.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "بند أمر المبيعات"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_invoice_document
+msgid "Tax ID"
+msgstr "معرف الضريبة"
+
+#. module: flex_currencies_reports
+#: model:ir.model.fields,field_description:flex_currencies_reports.field_account_bank_statement_line__tax_totals_json_iqd
+#: model:ir.model.fields,field_description:flex_currencies_reports.field_account_move__tax_totals_json_iqd
+#: model:ir.model.fields,field_description:flex_currencies_reports.field_account_payment__tax_totals_json_iqd
+#: model:ir.model.fields,field_description:flex_currencies_reports.field_purchase_order__tax_totals_json_iqd
+#: model:ir.model.fields,field_description:flex_currencies_reports.field_sale_order__tax_totals_json_iqd
+msgid "Tax Totals Json Iqd"
+msgstr ""
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_saleorder_document
+msgid "Taxes"
+msgstr "الضرائب"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_saleorder_document
+msgid "Unit Price"
+msgstr "سعر الوحدة"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_invoice_document
+msgid "Vendor Bill"
+msgstr "فاتورة المورد"
+
+#. module: flex_currencies_reports
+#: model_terms:ir.ui.view,arch_db:flex_currencies_reports.report_invoice_document
+msgid "Vendor Credit Note"
+msgstr "إشعار المورد الدائن "
