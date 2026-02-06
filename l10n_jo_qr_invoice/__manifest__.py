@@ -1,0 +1,15 @@
+{
+    'name': 'L10n Jo QR Invoice',
+    'version': '1.0',
+    'summary': '',
+    'description': '',
+    'category': '',
+    'author': '',
+    'website': '',
+    'license': '',
+    'depends': ['l10n_jo_edi_istd'],
+    'data': ['reports/invoice.xml'],
+    'demo': [''],
+    'installable': True,
+    'auto_install': False,
+}

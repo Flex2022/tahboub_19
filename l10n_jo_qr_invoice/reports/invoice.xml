@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_invoice_document" inherit_id="account.report_invoice_document">
+            <xpath expr="//h2" position="before">
+                <p t-if="o.istd_qrcode" style="text-align: left;">
+
+<!--                    <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' %('QR', o.istd_qrcode, 500, 500)" style="max-height: 150px"/>-->
+                    <img t-att-src="'data:image/png;base64,%s' % o.qr_code_base64" alt="QR Code" style="max-height: 150px"/>
+
+<!--                    <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' %('QR', o.istd_qrcode, 500, 500)" style="max-height: 155px"/>-->
+                </p>
+            </xpath>
+        </template>
+    </data>
+</odoo>
