@@ -145,15 +145,6 @@
                                 <notebook>
                                     <page string="Attachments">
                                         <field name="attachment_ids" widget="many2many_binary"/>
-                                        <!-- <field name="attachment_ids" attrs="{'readonly':[('state','not in',['draft','bounced','registered','returned'])]}">
-                                            <tree string="Attachments">
-                                                <field name="name"/>
-                                                <field name="type"/>
-                                                <field name="company_id" groups="base.group_multi_company"/>
-                                                <field name="create_uid"/>
-                                                <field name="create_date"/>
-                                            </tree>
-                                        </field> -->
                                     </page>
                                 </notebook>
                             </sheet>

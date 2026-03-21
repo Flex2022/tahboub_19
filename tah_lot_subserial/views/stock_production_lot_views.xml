@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_production_lot_form_subserial" model="ir.ui.view">
+        <field name="name">stock.production.lot.form.subserial</field>
+        <field name="model">stock.lot</field>
+        <field name="inherit_id" ref="stock.view_production_lot_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Sub Serials" name="sub_serials" groups="stock.group_production_lot">
+                    <field name="sub_serial_ids" nolabel="1" context="{'default_lot_id': active_id}">
+                        <list editable="bottom">
+                            <field name="name"/>
+                            <field name="state" readonly="1"/>
+                            <field name="used_picking_id" readonly="1" optional="show"/>
+                            <field name="used_move_line_id" readonly="1" optional="hide"/>
+                            <field name="product_id" readonly="1" optional="hide"/>
+                            <field name="company_id" readonly="1" optional="hide" groups="base.group_multi_company"/>
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

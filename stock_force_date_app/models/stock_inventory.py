@@ -62,10 +62,8 @@ class StockQuant(models.Model):
 		self.write({'force_date': False})
 
 
-class StockValuationLayer(models.Model):
-	_inherit = 'stock.valuation.layer'
-
-	create_date = fields.Datetime(related='stock_move_id.date', store=True)
+# Odoo 19 no longer exposes stock.valuation.layer as a regular model at registry load time.
+# Keeping this inheritance crashes module loading, so it is removed for compatibility.
 
 
 class StockPicking(models.Model):

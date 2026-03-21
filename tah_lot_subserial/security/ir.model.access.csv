@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_stock_lot_subserial_user,stock.lot.subserial user,model_stock_lot_subserial,stock.group_stock_user,1,1,1,0
+access_stock_lot_subserial_manager,stock.lot.subserial manager,model_stock_lot_subserial,stock.group_stock_manager,1,1,1,1
+

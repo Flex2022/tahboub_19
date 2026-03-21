@@ -6,15 +6,15 @@
     'category': '',
     'author': 'Sohaib Alamleh ||Flex-ops',
     'website': '',
-    'license': '',
-    'depends': ['base', 'stock', 'product',],
+    'license': 'LGPL-3',
+    'depends': ['base', 'stock', 'product', 'flexi_crm'],
     'data': [
         'views/stock.xml',
         'views/product.xml',
         # 'views/res_company.xml',
         'reports/delivery_slip.xml'
     ],
-    'demo': [''],
+    'demo': [],
     'installable': True,
     'auto_install': False,
 }

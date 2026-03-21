@@ -1,5 +1,6 @@
 from odoo import models, api, fields, _
 from odoo.exceptions import UserError
+from odoo.tools.sql import column_exists, create_column
 
 
 class ResPartner(models.Model):
@@ -7,6 +8,17 @@ class ResPartner(models.Model):
 
     warn_mobile_exist = fields.Boolean(compute='_get_warn_mobile_exist')
     mobile = fields.Char()
+
+    def _auto_init(self):
+        if not column_exists(self.env.cr, self._table, 'mobile'):
+            create_column(self.env.cr, self._table, 'mobile', 'varchar')
+        return super()._auto_init()
+
+    def _register_hook(self):
+        # Ensure runtime reads on res.partner never fail if legacy DB missed this column.
+        if not column_exists(self.env.cr, self._table, 'mobile'):
+            create_column(self.env.cr, self._table, 'mobile', 'varchar')
+        return super()._register_hook()
 
     @api.onchange('state_id')
     def _onchange_state_id(self):

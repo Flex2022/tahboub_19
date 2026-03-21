@@ -1,0 +1,23 @@
+{
+    'name': 'Biotime Server Integration',
+    'version': '19.0.1.0.0',
+    'category': 'Generic Modules/Human Resources',
+    'author': 'Ryad Abderrahim',
+    'depends': ['hr', 'hr_attendance', 'resource', 'hr_work_entry', 'hr_work_entry_contract', 'hr_payroll'],
+    'data': [
+        'security/ir.model.access.csv',
+
+        'views/biotime_server.xml',
+        'views/biotime_transaction.xml',
+        'views/biotime_shift.xml',
+        'views/hr_employee.xml',
+        'views/hr_attendance.xml',
+        'views/hr_payslip.xml',
+
+        'wizards/biotime_period.xml',
+    ],
+    'images': ['static/description/banner.gif'],
+    'demo': [],
+    'installable': True,
+    'auto_install': False,
+}

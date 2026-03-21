@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="hr_attendance_view_attendance_tree_inherit_biotime">
+        <field name="name">hr.attendance.tree</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.view_attendance_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='worked_hours']" position="after">
+                <field name="undertime" widget="float_time"/>
+                <field name="hours_deduction" widget="float_time"/>
+                <!-- <button string="Confirmer" name="confirm_undertime" type="object" attrs="{'invisible': [('undertime', '=', 0)]}"/> -->
+                <field name="overtime" widget="float_time"/>
+                <!-- <button string="Confirmer" name="confirm_overtime" type="object" attrs="{'invisible': [('overtime', '=', 0)]}"/> -->
+            </xpath>
+            <xpath expr="//field[@name='check_in']" position="attributes">
+                <attribute name="required">1</attribute>
+            </xpath>
+
+            <xpath expr="/list" position="attributes">
+                <attribute name="default_order">check_out desc</attribute>
+            </xpath>
+            <xpath expr="//list" position="inside">
+                <field name="state" widget="badge" decoration-success="state == 'confirm'"/>
+                <button name="action_confirm" string="Confirm" type="object" icon="fa-check" invisible="state != 'draft'"/>
+                <button name="action_draft" string="Set Draft" type="object" icon="fa-times" invisible="state != 'confirm'"
+                        groups="hr_attendance.group_hr_attendance_manager"/>
+            </xpath>
+            <xpath expr="//list/field[1]" position="before">
+                <header>
+                    <button name="action_confirm" string="Confirm" type="object" icon="fa-check" class="btn-primary ms-1"/>
+                    <button name="action_draft" string="Set Draft" type="object" icon="fa-times" class="ms-1"
+                            groups="hr_attendance.group_hr_attendance_manager"/>
+                </header>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
