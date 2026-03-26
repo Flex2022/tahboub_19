@@ -1,0 +1,13 @@
+.o_kanban_view.o_sh_all_import_fullwidth .o_kanban_renderer {
+    display: block;
+}
+
+.o_kanban_view.o_sh_all_import_fullwidth .o_kanban_record {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+.o_kanban_view.o_sh_all_import_fullwidth .o_kanban_record > div {
+    width: 100%;
+}
+

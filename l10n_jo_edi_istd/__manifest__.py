@@ -1,7 +1,7 @@
 {
     'name': 'Jordan E-Invoice Integration',
     'summary': """ISTD Jordan E-Invoice Integration""",
-    'version': '19.0',
+    'version': '19.0.1.0.0',
     'description': 'This module integrate odoo with jordan ISTD to send invoices',
     'live_test_url': 'https://www.youtube.com/watch?v=7lLL8eSl6l4',
     'category': '',

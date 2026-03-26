@@ -73,7 +73,7 @@ class StockPicking(models.Model):
                     'type': 'ir.actions.act_window',
                     'res_model': 'stock.picking',
                     'view_type':'form',
-                    'view_mode' : 'tree',
+                    'view_mode' : 'list',
                     'res_id': self.id,
                 }
 

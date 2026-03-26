@@ -41,4 +41,16 @@ class SaleOrder(models.Model):
         if self.env.user.restrict_pricelist and self.pricelist_id not in self.env.user.allowed_pricelists:
             self.pricelist_id = False
 
-
+    def sh_import_sol(self):
+        """Legacy compatibility action for old import button references."""
+        self.ensure_one()
+        return {
+            'type': 'ir.actions.client',
+            'tag': 'display_notification',
+            'params': {
+                'title': _('Legacy Import'),
+                'message': _('The legacy SO line import action is not available in this migration package.'),
+                'type': 'warning',
+                'sticky': False,
+            },
+        }

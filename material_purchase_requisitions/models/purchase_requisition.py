@@ -125,6 +125,13 @@ class MaterialPurchaseRequisition(models.Model):
         readonly=True,
         copy=False,
     )
+    # Compatibility alias for old custom views/filters that still reference `userrapp_date`.
+    userrapp_date = fields.Date(
+        string='Approved Date (Legacy)',
+        related='userapp_date',
+        store=True,
+        readonly=True,
+    )
     receive_date = fields.Date(
         string='Received Date',
         readonly=True,

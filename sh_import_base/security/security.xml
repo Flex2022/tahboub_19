@@ -9,15 +9,15 @@
             <field name="number_increment">1</field>
         </record>
 
-        <record id="sh_import_store_cron" model="ir.cron">
-            <field name="name">The Import From Store</field>
-            <field name="interval_number">5</field>
-            <field name="interval_type">minutes</field>
-            <field name="numbercall">-1</field>
-            <field name="doall" eval="False" />
-            <field name="model_id" ref="sh_import_base.model_sh_import_store" />
-            <field name="code">model.action_perform()</field>
-            <field name="state">code</field>
-        </record>
+<!--        <record id="sh_import_store_cron" model="ir.cron">-->
+<!--            <field name="name">The Import From Store</field>-->
+<!--            <field name="interval_number">5</field>-->
+<!--            <field name="interval_type">minutes</field>-->
+<!--            <field name="numbercall">-1</field>-->
+<!--            <field name="doall" eval="False" />-->
+<!--            <field name="model_id" ref="sh_import_base.model_sh_import_store" />-->
+<!--            <field name="code">model.action_perform()</field>-->
+<!--            <field name="state">code</field>-->
+<!--        </record>-->
     </data>
 </odoo>

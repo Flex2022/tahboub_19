@@ -44,7 +44,7 @@ Odoo sale splitting
 
     """,
     'summary': 'odoo app allow Split Orders in sale, purchase, delivery, receipt, split sale order, split purchase order, split rfq, split delivery order, split quotation, sale split, purchase split, rfq split, quotation split, delivery split, split sale, order split',
-    'depends': ['sale_management', 'purchase', 'stock'],
+    'depends': ['sale_management', 'purchase', 'stock', 'stock_account'],
     'data': [
         'security/ir.model.access.csv',
         'views/dev_split_sale_view.xml',

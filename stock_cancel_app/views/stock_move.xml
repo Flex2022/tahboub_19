@@ -5,7 +5,7 @@
 
         <record id="action_cancel_picking" model="ir.actions.server">
             <field name="name">Cancel</field>
-            <field name="groups_id" eval="[(4, ref('stock_cancel_app.group_cancel_stock_move'))]"/>
+            <field name="group_ids" eval="[(4, ref('stock_cancel_app.group_cancel_stock_move'))]"/>
             <field name="model_id" ref="stock.model_stock_move"/>
             <field name="binding_model_id" ref="stock.model_stock_move"/>
             <field name="binding_view_types">list</field>
@@ -18,7 +18,7 @@
 
         <record id="action_draft_picking" model="ir.actions.server">
             <field name="name">Reset to Draft</field>
-            <field name="groups_id" eval="[(4, ref('stock_cancel_app.group_cancel_stock_move'))]"/>
+            <field name="group_ids" eval="[(4, ref('stock_cancel_app.group_cancel_stock_move'))]"/>
             <field name="model_id" ref="stock.model_stock_move"/>
             <field name="binding_model_id" ref="stock.model_stock_move"/>
             <field name="binding_view_types">list</field>
@@ -31,7 +31,7 @@
 
         <record id="action_delete_picking" model="ir.actions.server">
             <field name="name">Cancel and Delete</field>
-            <field name="groups_id" eval="[(4, ref('stock_cancel_app.group_cancel_stock_move'))]"/>
+            <field name="group_ids" eval="[(4, ref('stock_cancel_app.group_cancel_stock_move'))]"/>
             <field name="model_id" ref="stock.model_stock_move"/>
             <field name="binding_model_id" ref="stock.model_stock_move"/>
             <field name="binding_view_types">list</field>

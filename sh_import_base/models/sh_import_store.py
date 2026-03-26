@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 # Part of Softhealer Technologies.
 
-from email.policy import default
-from odoo import fields, models, _, api
+from odoo import fields, models, api
 from odoo.exceptions import UserError
 
 
@@ -26,6 +25,29 @@ class ImportStore(models.Model):
     on_error = fields.Selection(
         related="base_id.on_error", string="On Error", readonly=False)
     received_error = fields.Boolean("Received Error", default=False)
+    sh_import_product_img_boolean = fields.Boolean("Legacy Product Image Import")
+    sh_import_supplier_info_boolean = fields.Boolean("Legacy Supplier Import")
+    import_type = fields.Selection([('csv', 'CSV File'), ('excel', 'Excel File')], default='csv')
+    product_by = fields.Selection([
+        ('name', 'Name'),
+        ('int_ref', 'Internal Reference'),
+        ('barcode', 'Barcode'),
+    ], default='name')
+    product_model = fields.Selection([
+        ('product_template', 'Product Template'),
+        ('product_product', 'Product Variant'),
+    ], default='product_product')
+    sh_import_type_supplier = fields.Selection([('csv', 'CSV File'), ('excel', 'Excel File')], default='csv')
+    sh_method_supplier = fields.Selection([('create', 'Create'), ('update', 'Update')], default='create')
+    sh_product_by_supplier = fields.Selection([
+        ('name', 'Name'),
+        ('int_ref', 'Internal Reference'),
+        ('barcode', 'Barcode'),
+    ], default='name')
+    sh_product_model_supplier = fields.Selection([
+        ('product_template', 'Product Template'),
+        ('product_product', 'Product Variant'),
+    ], default='product_product')
 
     @api.model
     def create(self, vals):

@@ -150,7 +150,7 @@
         <field name="arch" type="xml">
             <list>
                 <field name="currency_id"/>
-                <field name="parent_id" invisible="parent_id == False"/>
+                <field name="parent_id" optional="hide"/>
                 <field name="payment_date"/>
                 <field name="name"/>
                 <field name="reference"/>

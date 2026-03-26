@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import fields, models, api
+from odoo import fields, models, api, _
 
 ARABIC_WEEKDAYS = {
     0: 'الاثنين',
@@ -308,11 +308,19 @@ class SaleOrder(models.Model):
     lighting_two_installation_place = fields.Char(string="Lighting Two Installation Place")
     additional_lighting_note = fields.Text(string="Additional Lighting Note")
 
-
-
-
-
-
+    def sh_import_sol(self):
+        """Compatibility hook for legacy SO line import buttons in inherited views."""
+        self.ensure_one()
+        return {
+            'type': 'ir.actions.client',
+            'tag': 'display_notification',
+            'params': {
+                'title': _('Import Sale Order Lines'),
+                'message': _('Legacy SO line import feature is not installed in this environment.'),
+                'type': 'warning',
+                'sticky': False,
+            },
+        }
 
 class SaleSpec(models.Model):
     _name = 'sale.spec'

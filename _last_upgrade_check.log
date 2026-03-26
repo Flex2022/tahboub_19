@@ -1,0 +1,1339 @@
+2026-03-21 05:10:50,203 99606 WARNING ? odoo.tools.config: option db_host reads 'False' in the config file at /opt/odoo19/odoo/odoo.conf but isn't a boolean option, skip 
+2026-03-21 05:10:50,203 99606 WARNING ? odoo.tools.config: missing --http-interface/http_interface, using 0.0.0.0 by default, will change to 127.0.0.1 in 20.0 
+2026-03-21 05:10:50,205 99606 INFO ? odoo: Odoo version 19.0 
+2026-03-21 05:10:50,205 99606 INFO ? odoo: Using configuration file at /opt/odoo19/odoo/odoo.conf 
+2026-03-21 05:10:50,205 99606 INFO ? odoo: addons paths: _NamespacePath(['/opt/odoo19/odoo/odoo/addons', '/home/mohsen/.local/share/Odoo/addons/19.0', '/opt/odoo19/odoo/addons', '/opt/odoo19/odoo/enterprise', '/opt/odoo19/odoo/tahb_upgrade']) 
+2026-03-21 05:10:50,206 99606 INFO ? odoo: database: odoo19@default:5432 
+2026-03-21 05:10:51,139 99606 INFO tah_upgrade odoo.modules.loading: loading 1 modules... 
+2026-03-21 05:10:51,155 99606 INFO tah_upgrade odoo.modules.loading: 1 modules loaded in 0.02s, 0 queries (+0 extra) 
+2026-03-21 05:10:51,261 99606 INFO tah_upgrade odoo.modules.loading: updating modules list 
+2026-03-21 05:10:51,272 99606 INFO tah_upgrade odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user admin #1 via n/a 
+2026-03-21 05:10:53,177 99606 WARNING tah_upgrade odoo.modules.module: Missing `license` key in manifest for 'brand', defaulting to LGPL-3 
+2026-03-21 05:10:53,180 99606 WARNING tah_upgrade odoo.modules.module: Missing `license` key in manifest for 'brand', defaulting to LGPL-3 
+2026-03-21 05:10:53,210 99606 WARNING tah_upgrade odoo.modules.module: Missing `license` key in manifest for 'chart_of_account_mapping', defaulting to LGPL-3 
+2026-03-21 05:10:53,211 99606 WARNING tah_upgrade odoo.modules.module: Missing `license` key in manifest for 'chart_of_account_mapping', defaulting to LGPL-3 
+2026-03-21 05:10:53,468 99606 WARNING tah_upgrade odoo.modules.module: Missing `license` key in manifest for 'dev_all_split_order', defaulting to LGPL-3 
+2026-03-21 05:10:53,470 99606 WARNING tah_upgrade odoo.modules.module: Missing `license` key in manifest for 'dev_all_split_order', defaulting to LGPL-3 
+2026-03-21 05:10:53,474 99606 WARNING tah_upgrade odoo.modules.module: Missing `license` key in manifest for 'dev_hr_loan', defaulting to LGPL-3 
+2026-03-21 05:10:53,477 99606 WARNING tah_upgrade odoo.modules.module: Missing `license` key in manifest for 'dev_hr_loan', defaulting to LGPL-3 
+2026-03-21 05:10:53,761 99606 WARNING tah_upgrade odoo.modules.module: Missing `license` key in manifest for 'flex_customer_stock', defaulting to LGPL-3 
+2026-03-21 05:10:53,763 99606 WARNING tah_upgrade odoo.modules.module: Missing `license` key in manifest for 'flex_customer_stock', defaulting to LGPL-3 
+2026-03-21 05:10:53,800 99606 WARNING tah_upgrade odoo.modules.module: Missing `license` key in manifest for 'flex_product_label', defaulting to LGPL-3 
+2026-03-21 05:10:53,803 99606 WARNING tah_upgrade odoo.modules.module: Missing `license` key in manifest for 'flex_product_label', defaulting to LGPL-3 
+2026-03-21 05:10:53,807 99606 WARNING tah_upgrade odoo.modules.module: Missing `license` key in manifest for 'flex_product_vendor_security', defaulting to LGPL-3 
+2026-03-21 05:10:53,810 99606 WARNING tah_upgrade odoo.modules.module: Missing `license` key in manifest for 'flex_product_vendor_security', defaulting to LGPL-3 
+2026-03-21 05:10:53,839 99606 WARNING tah_upgrade odoo.modules.module: Missing `license` key in manifest for 'flex_sale_without_brand', defaulting to LGPL-3 
+2026-03-21 05:10:53,843 99606 WARNING tah_upgrade odoo.modules.module: Missing `license` key in manifest for 'flex_sale_without_brand', defaulting to LGPL-3 
+2026-03-21 05:10:54,351 99606 WARNING tah_upgrade odoo.modules.module: The module hspl_user_simulation has an incompatible version, setting installable=False 
+2026-03-21 05:10:54,353 99606 WARNING tah_upgrade odoo.modules.module: The module hspl_user_simulation has an incompatible version, setting installable=False 
+2026-03-21 05:10:55,864 99606 WARNING tah_upgrade odoo.modules.module: The module l10n_jo_edi_istd has an incompatible version, setting installable=False 
+2026-03-21 05:10:55,865 99606 WARNING tah_upgrade odoo.modules.module: The module l10n_jo_edi_istd has an incompatible version, setting installable=False 
+2026-03-21 05:10:55,878 99606 WARNING tah_upgrade odoo.modules.module: Missing `author` key in manifest for 'l10n_jo_qr_invoice', defaulting to '' 
+2026-03-21 05:10:55,879 99606 WARNING tah_upgrade odoo.modules.module: Missing `license` key in manifest for 'l10n_jo_qr_invoice', defaulting to LGPL-3 
+2026-03-21 05:10:55,880 99606 WARNING tah_upgrade odoo.modules.module: Missing `author` key in manifest for 'l10n_jo_qr_invoice', defaulting to '' 
+2026-03-21 05:10:55,880 99606 WARNING tah_upgrade odoo.modules.module: Missing `license` key in manifest for 'l10n_jo_qr_invoice', defaulting to LGPL-3 
+2026-03-21 05:10:58,146 99606 WARNING tah_upgrade odoo.modules.module: Missing `license` key in manifest for 'sale_project_custom', defaulting to LGPL-3 
+2026-03-21 05:10:58,148 99606 WARNING tah_upgrade odoo.modules.module: Missing `license` key in manifest for 'sale_project_custom', defaulting to LGPL-3 
+2026-03-21 05:10:58,878 99606 WARNING tah_upgrade odoo.modules.module: Missing `license` key in manifest for 'unique_internal_reference_in_product', defaulting to LGPL-3 
+2026-03-21 05:10:58,879 99606 WARNING tah_upgrade odoo.modules.module: Missing `license` key in manifest for 'unique_internal_reference_in_product', defaulting to LGPL-3 
+2026-03-21 05:10:59,373 99606 INFO tah_upgrade odoo.addons.base.models.ir_module: ALLOW access to module.button_upgrade on ['Flex Manufacturing', 'Sales Workflow'] to user admin #1 via n/a 
+2026-03-21 05:10:59,373 99606 INFO tah_upgrade odoo.addons.base.models.ir_module: ALLOW access to module.update_list on ['Flex Manufacturing', 'Sales Workflow'] to user admin #1 via n/a 
+2026-03-21 05:11:00,242 99606 WARNING tah_upgrade odoo.modules.module: Missing `license` key in manifest for 'brand', defaulting to LGPL-3 
+2026-03-21 05:11:00,259 99606 WARNING tah_upgrade odoo.modules.module: Missing `license` key in manifest for 'chart_of_account_mapping', defaulting to LGPL-3 
+2026-03-21 05:11:00,379 99606 WARNING tah_upgrade odoo.modules.module: Missing `license` key in manifest for 'dev_all_split_order', defaulting to LGPL-3 
+2026-03-21 05:11:00,383 99606 WARNING tah_upgrade odoo.modules.module: Missing `license` key in manifest for 'dev_hr_loan', defaulting to LGPL-3 
+2026-03-21 05:11:00,511 99606 WARNING tah_upgrade odoo.modules.module: Missing `license` key in manifest for 'flex_customer_stock', defaulting to LGPL-3 
+2026-03-21 05:11:00,529 99606 WARNING tah_upgrade odoo.modules.module: Missing `license` key in manifest for 'flex_product_label', defaulting to LGPL-3 
+2026-03-21 05:11:00,532 99606 WARNING tah_upgrade odoo.modules.module: Missing `license` key in manifest for 'flex_product_vendor_security', defaulting to LGPL-3 
+2026-03-21 05:11:00,546 99606 WARNING tah_upgrade odoo.modules.module: Missing `license` key in manifest for 'flex_sale_without_brand', defaulting to LGPL-3 
+2026-03-21 05:11:00,828 99606 WARNING tah_upgrade odoo.modules.module: The module hspl_user_simulation has an incompatible version, setting installable=False 
+2026-03-21 05:11:02,105 99606 WARNING tah_upgrade odoo.modules.module: The module l10n_jo_edi_istd has an incompatible version, setting installable=False 
+2026-03-21 05:11:02,117 99606 WARNING tah_upgrade odoo.modules.module: Missing `author` key in manifest for 'l10n_jo_qr_invoice', defaulting to '' 
+2026-03-21 05:11:02,117 99606 WARNING tah_upgrade odoo.modules.module: Missing `license` key in manifest for 'l10n_jo_qr_invoice', defaulting to LGPL-3 
+2026-03-21 05:11:03,986 99606 WARNING tah_upgrade odoo.modules.module: Missing `license` key in manifest for 'sale_project_custom', defaulting to LGPL-3 
+2026-03-21 05:11:04,563 99606 WARNING tah_upgrade odoo.modules.module: Missing `license` key in manifest for 'unique_internal_reference_in_product', defaulting to LGPL-3 
+2026-03-21 05:11:04,956 99606 INFO tah_upgrade odoo.addons.base.models.ir_module: ALLOW access to module.button_install on [] to user admin #1 via n/a 
+2026-03-21 05:11:05,067 99606 WARNING tah_upgrade odoo.modules.module_graph: module theme_common: not installable, skipped 
+2026-03-21 05:11:05,068 99606 WARNING tah_upgrade odoo.modules.module_graph: module l10n_jo_edi_istd: not installable, skipped 
+2026-03-21 05:11:05,069 99606 WARNING tah_upgrade odoo.modules.module_graph: module theme_loftspace: not installable, skipped 
+2026-03-21 05:11:05,069 99606 WARNING tah_upgrade odoo.modules.module_graph: module account_add_gln: not installable, skipped 
+2026-03-21 05:11:05,070 99606 WARNING tah_upgrade odoo.modules.module_graph: module hspl_user_simulation: not installable, skipped 
+2026-03-21 05:11:05,071 99606 WARNING tah_upgrade odoo.modules.module_graph: module flex_fiscal_position_domain: not installable, skipped 
+2026-03-21 05:11:05,075 99606 INFO tah_upgrade odoo.modules.module_graph: module l10n_jo_qr_invoice: some depends are not loaded, skipped 
+2026-03-21 05:11:05,088 99606 INFO tah_upgrade odoo.modules.loading: loading 434 modules... 
+2026-03-21 05:11:05,117 99606 WARNING tah_upgrade odoo.addons.attachment_indexation.models.ir_attachment: Attachment indexation of PDF documents is unavailable because the 'pdfminer.six' Python library cannot be found on the system. You may install it from https://pypi.org/project/pdfminer.six/ (e.g. `pip3 install pdfminer.six`) 
+2026-03-21 05:11:05,174 99606 WARNING tah_upgrade py.warnings: /opt/odoo19/odoo/odoo/osv/__init__.py:4: DeprecationWarning: Since 19.0, odoo.osv is deprecated use odoo.fields.Domain
+  File "/opt/odoo19/odoo/./odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "/opt/odoo19/odoo/odoo/cli/command.py", line 133, in main
+    command().run(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 127, in run
+    main(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1600, in start
+    rc = server.run(preload, stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 668, in run
+    rc = preload_registries(preload)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1514, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 186, in new
+    load_modules(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 456, in load_modules
+    load_module_graph(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 170, in load_module_graph
+    load_openerp_module(package.name)
+  File "/opt/odoo19/odoo/odoo/modules/module.py", line 505, in load_openerp_module
+    __import__(qualname)
+  File "/opt/odoo19/odoo/tahb_upgrade/date_range/__init__.py", line 1, in <module>
+    from . import models
+  File "/opt/odoo19/odoo/tahb_upgrade/date_range/models/__init__.py", line 3, in <module>
+    from . import date_range_search_mixin
+  File "/opt/odoo19/odoo/tahb_upgrade/date_range/models/date_range_search_mixin.py", line 6, in <module>
+    from odoo.osv.expression import FALSE_DOMAIN, NEGATIVE_TERM_OPERATORS, TRUE_DOMAIN
+  File "/opt/odoo19/odoo/odoo/osv/__init__.py", line 4, in <module>
+    warnings.warn("Since 19.0, odoo.osv is deprecated use odoo.fields.Domain", DeprecationWarning)
+ 
+2026-03-21 05:11:05,177 99606 WARNING tah_upgrade odoo.registry: Model attribute '_sql_constraints' is no longer supported, please define model.Constraint on the model. 
+2026-03-21 05:11:05,178 99606 WARNING tah_upgrade odoo.registry: Model attribute '_sql_constraints' is no longer supported, please define model.Constraint on the model. 
+2026-03-21 05:11:06,599 99606 WARNING tah_upgrade odoo.registry: Model attribute '_sql_constraints' is no longer supported, please define model.Constraint on the model. 
+2026-03-21 05:11:06,658 99606 WARNING tah_upgrade odoo.registry: The model chart.of.account.mapping has no _description 
+2026-03-21 05:11:07,043 99606 WARNING tah_upgrade odoo.registry: The model import.journal.entry has no _description 
+2026-03-21 05:11:07,096 99606 WARNING tah_upgrade odoo.registry: Model attribute '_sql_constraints' is no longer supported, please define model.Constraint on the model. 
+2026-03-21 05:11:07,096 99606 WARNING tah_upgrade odoo.registry: Model attribute '_sql_constraints' is no longer supported, please define model.Constraint on the model. 
+2026-03-21 05:11:07,096 99606 WARNING tah_upgrade odoo.registry: Model attribute '_sql_constraints' is no longer supported, please define model.Constraint on the model. 
+2026-03-21 05:11:07,119 99606 WARNING tah_upgrade odoo.registry: Model attribute '_sql_constraints' is no longer supported, please define model.Constraint on the model. 
+2026-03-21 05:11:07,125 99606 WARNING tah_upgrade odoo.registry: The model tax.payment.adjustment.wizard has no _description 
+2026-03-21 05:11:07,126 99606 WARNING tah_upgrade odoo.registry: The model vat.report.wizard has no _description 
+2026-03-21 05:11:07,174 99606 WARNING tah_upgrade odoo.registry: The model vat.report.wizard has no _description 
+2026-03-21 05:11:07,174 99606 WARNING tah_upgrade odoo.registry: The model vat.report.wizard has no _description 
+2026-03-21 05:11:07,175 99606 WARNING tah_upgrade odoo.registry: The model chart.of.account.mapping has no _description 
+2026-03-21 05:11:07,176 99606 WARNING tah_upgrade odoo.registry: The model import.journal.entry has no _description 
+2026-03-21 05:11:07,176 99606 WARNING tah_upgrade odoo.registry: The model tax.payment.adjustment.wizard has no _description 
+2026-03-21 05:11:07,201 99606 WARNING tah_upgrade odoo.registry: The model vat.report.wizard has no _description 
+2026-03-21 05:11:07,201 99606 WARNING tah_upgrade odoo.registry: The model vat.report.wizard has no _description 
+2026-03-21 05:11:07,202 99606 WARNING tah_upgrade odoo.registry: The model chart.of.account.mapping has no _description 
+2026-03-21 05:11:07,204 99606 WARNING tah_upgrade odoo.registry: The model import.journal.entry has no _description 
+2026-03-21 05:11:07,205 99606 WARNING tah_upgrade odoo.registry: The model tax.payment.adjustment.wizard has no _description 
+2026-03-21 05:11:07,232 99606 WARNING tah_upgrade odoo.registry: The model vat.report.wizard has no _description 
+2026-03-21 05:11:07,233 99606 WARNING tah_upgrade odoo.registry: The model vat.report.wizard has no _description 
+2026-03-21 05:11:07,233 99606 WARNING tah_upgrade odoo.registry: The model chart.of.account.mapping has no _description 
+2026-03-21 05:11:07,235 99606 WARNING tah_upgrade odoo.registry: The model import.journal.entry has no _description 
+2026-03-21 05:11:07,235 99606 WARNING tah_upgrade odoo.registry: The model tax.payment.adjustment.wizard has no _description 
+2026-03-21 05:11:07,697 99606 WARNING tah_upgrade odoo.registry: The model brand has no _description 
+2026-03-21 05:11:08,059 99606 WARNING tah_upgrade odoo.registry: Model attribute '_sql_constraints' is no longer supported, please define model.Constraint on the model. 
+2026-03-21 05:11:08,060 99606 WARNING tah_upgrade odoo.registry: The model biotime.server has no _description 
+2026-03-21 05:11:08,060 99606 WARNING tah_upgrade odoo.registry: The model biotime.transaction has no _description 
+2026-03-21 05:11:08,060 99606 WARNING tah_upgrade odoo.registry: Model attribute '_sql_constraints' is no longer supported, please define model.Constraint on the model. 
+2026-03-21 05:11:08,060 99606 WARNING tah_upgrade odoo.registry: The model biotime.shift has no _description 
+2026-03-21 05:11:08,060 99606 WARNING tah_upgrade odoo.registry: The model biotime.shift.line has no _description 
+2026-03-21 05:11:08,060 99606 WARNING tah_upgrade odoo.registry: Model attribute '_sql_constraints' is no longer supported, please define model.Constraint on the model. 
+2026-03-21 05:11:08,069 99606 WARNING tah_upgrade odoo.registry: The model split.po.order.confirm has no _description 
+2026-03-21 05:11:08,070 99606 WARNING tah_upgrade odoo.registry: The model split.so.order.confirm has no _description 
+2026-03-21 05:11:08,070 99606 WARNING tah_upgrade odoo.registry: The model split.transfer.confirm has no _description 
+2026-03-21 05:11:08,082 99606 WARNING tah_upgrade odoo.registry: The model import.loan has no _description 
+2026-03-21 05:11:08,083 99606 WARNING tah_upgrade odoo.registry: The model import.logs has no _description 
+2026-03-21 05:11:08,112 99606 WARNING tah_upgrade odoo.registry: The model lead.category has no _description 
+2026-03-21 05:11:08,378 99606 WARNING tah_upgrade odoo.registry: The model custom.rate has no _description 
+2026-03-21 05:11:08,520 99606 INFO tah_upgrade odoo.modules.loading: Loading module flex_mrp_custom (407/434) 
+2026-03-21 05:11:09,198 99606 WARNING tah_upgrade odoo.fields: stock.scrap.state: selection=[('draft', 'Draft'), ('done', 'Done'), ('cancel', 'Cancel')] overrides existing selection; use selection_add instead 
+2026-03-21 05:11:09,471 99606 WARNING tah_upgrade odoo.fields: stock.landed.cost.lines.split_method: selection=[('equal', 'Equal'), ('by_quantity', 'By Quantity'), ('by_current_cost_price', 'By Current Cost'), ('by_weight', 'By Weight'), ('by_volume', 'By Volume'), ('some_products', 'Some Products')] overrides existing selection; use selection_add instead 
+2026-03-21 05:11:09,641 99606 WARNING tah_upgrade py.warnings: /opt/odoo19/odoo/odoo/orm/fields.py:547: UserWarning: Property hr.employee.loan_request.required should be a boolean (1).
+  File "/opt/odoo19/odoo/./odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "/opt/odoo19/odoo/odoo/cli/command.py", line 133, in main
+    command().run(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 127, in run
+    main(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1600, in start
+    rc = server.run(preload, stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 668, in run
+    rc = preload_registries(preload)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1514, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 186, in new
+    load_modules(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 456, in load_modules
+    load_module_graph(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 165, in load_module_graph
+    registry._setup_models__(env.cr, [])  # incremental setup
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 475, in _setup_models__
+    model_classes.setup_model_classes(env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 323, in setup_model_classes
+    _setup_fields(model_cls, env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 517, in _setup_fields
+    field.setup(model)
+  File "/opt/odoo19/odoo/odoo/orm/fields.py", line 547, in setup
+    warnings.warn(f'Property {self}.required should be a boolean ({self.required}).', stacklevel=1)
+ 
+2026-03-21 05:11:09,645 99606 WARNING tah_upgrade py.warnings: /opt/odoo19/odoo/odoo/orm/fields.py:547: UserWarning: Property hr.employee.public.loan_request.required should be a boolean (1).
+  File "/opt/odoo19/odoo/./odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "/opt/odoo19/odoo/odoo/cli/command.py", line 133, in main
+    command().run(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 127, in run
+    main(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1600, in start
+    rc = server.run(preload, stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 668, in run
+    rc = preload_registries(preload)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1514, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 186, in new
+    load_modules(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 456, in load_modules
+    load_module_graph(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 165, in load_module_graph
+    registry._setup_models__(env.cr, [])  # incremental setup
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 475, in _setup_models__
+    model_classes.setup_model_classes(env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 323, in setup_model_classes
+    _setup_fields(model_cls, env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 517, in _setup_fields
+    field.setup(model)
+  File "/opt/odoo19/odoo/odoo/orm/fields.py", line 547, in setup
+    warnings.warn(f'Property {self}.required should be a boolean ({self.required}).', stacklevel=1)
+ 
+2026-03-21 05:11:09,681 99606 WARNING tah_upgrade odoo.fields: Field hr.attendance.late_minutes: unknown parameter 'pre_compute', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:09,681 99606 WARNING tah_upgrade odoo.fields: Field hr.attendance.deduction_amount: unknown parameter 'pre_compute', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:09,682 99606 WARNING tah_upgrade odoo.fields: Field hr.attendance.display_late_minutes: unknown parameter 'pre_compute', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:09,701 99606 WARNING tah_upgrade odoo.fields: Field stock.request.name: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:09,702 99606 WARNING tah_upgrade odoo.fields: Field stock.request.warehouse_id: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:09,702 99606 WARNING tah_upgrade odoo.fields: Field stock.request.location_id: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:09,702 99606 WARNING tah_upgrade odoo.fields: Field stock.request.product_id: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:09,702 99606 WARNING tah_upgrade odoo.fields: Field stock.request.company_id: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:09,702 99606 WARNING tah_upgrade odoo.fields: Field stock.request.product_uom_id: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:09,702 99606 WARNING tah_upgrade odoo.fields: Field stock.request.product_uom_qty: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:09,702 99606 WARNING tah_upgrade odoo.fields: Field stock.request.procurement_group_id: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:09,702 99606 WARNING tah_upgrade odoo.fields: Field stock.request.route_id: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:09,702 99606 WARNING tah_upgrade odoo.fields: Field stock.request.expected_date: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:09,702 99606 WARNING tah_upgrade odoo.fields: Field stock.request.picking_policy: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:09,703 99606 WARNING tah_upgrade odoo.fields: Field stock.request.order.name: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:09,703 99606 WARNING tah_upgrade odoo.fields: Field stock.request.order.warehouse_id: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:09,703 99606 WARNING tah_upgrade odoo.fields: Field stock.request.order.location_id: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:09,703 99606 WARNING tah_upgrade odoo.fields: Field stock.request.order.company_id: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:09,703 99606 WARNING tah_upgrade odoo.fields: Field stock.request.order.procurement_group_id: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:09,703 99606 WARNING tah_upgrade odoo.fields: Field stock.request.order.expected_date: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:09,703 99606 WARNING tah_upgrade odoo.fields: Field stock.request.order.picking_policy: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:09,710 99606 WARNING tah_upgrade py.warnings: /opt/odoo19/odoo/odoo/orm/fields.py:550: UserWarning: Property material.purchase.requisition.name.readonly should be a boolean (1).
+  File "/opt/odoo19/odoo/./odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "/opt/odoo19/odoo/odoo/cli/command.py", line 133, in main
+    command().run(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 127, in run
+    main(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1600, in start
+    rc = server.run(preload, stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 668, in run
+    rc = preload_registries(preload)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1514, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 186, in new
+    load_modules(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 456, in load_modules
+    load_module_graph(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 165, in load_module_graph
+    registry._setup_models__(env.cr, [])  # incremental setup
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 475, in _setup_models__
+    model_classes.setup_model_classes(env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 323, in setup_model_classes
+    _setup_fields(model_cls, env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 517, in _setup_fields
+    field.setup(model)
+  File "/opt/odoo19/odoo/odoo/orm/fields.py", line 550, in setup
+    warnings.warn(f'Property {self}.readonly should be a boolean ({self.readonly}).', stacklevel=1)
+ 
+2026-03-21 05:11:09,717 99606 WARNING tah_upgrade odoo.fields: Field sa.attendance.rule.line.currency_id: unknown parameter 'tracking', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:09,720 99606 WARNING tah_upgrade odoo.fields: Field sale.order.customer_project_id: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:09,721 99606 WARNING tah_upgrade odoo.fields: Field sale.order.wood_order_line: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:09,721 99606 WARNING tah_upgrade odoo.fields: Field sale.order.accessory_order_line: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:09,721 99606 WARNING tah_upgrade odoo.fields: Field sale.order.mixer_order_line: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:09,721 99606 WARNING tah_upgrade odoo.fields: Field sale.order.electronic_order_line: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:09,721 99606 WARNING tah_upgrade odoo.fields: Field sale.order.worktop_order_line: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:09,721 99606 WARNING tah_upgrade odoo.fields: Field sale.order.service_order_line: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:09,721 99606 WARNING tah_upgrade odoo.fields: Field sale.order.appliance_order_line: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:09,721 99606 WARNING tah_upgrade odoo.fields: Field sale.order.bedroom_order_line: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:09,733 99606 WARNING tah_upgrade py.warnings: /opt/odoo19/odoo/odoo/orm/fields.py:550: UserWarning: Property pdc.wizard.name.readonly should be a boolean (1).
+  File "/opt/odoo19/odoo/./odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "/opt/odoo19/odoo/odoo/cli/command.py", line 133, in main
+    command().run(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 127, in run
+    main(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1600, in start
+    rc = server.run(preload, stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 668, in run
+    rc = preload_registries(preload)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1514, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 186, in new
+    load_modules(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 456, in load_modules
+    load_module_graph(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 165, in load_module_graph
+    registry._setup_models__(env.cr, [])  # incremental setup
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 475, in _setup_models__
+    model_classes.setup_model_classes(env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 323, in setup_model_classes
+    _setup_fields(model_cls, env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 517, in _setup_fields
+    field.setup(model)
+  File "/opt/odoo19/odoo/odoo/orm/fields.py", line 550, in setup
+    warnings.warn(f'Property {self}.readonly should be a boolean ({self.readonly}).', stacklevel=1)
+ 
+2026-03-21 05:11:09,734 99606 WARNING tah_upgrade py.warnings: /opt/odoo19/odoo/odoo/orm/fields.py:547: UserWarning: Property pdc.wizard.payment_date.required should be a boolean (1).
+  File "/opt/odoo19/odoo/./odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "/opt/odoo19/odoo/odoo/cli/command.py", line 133, in main
+    command().run(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 127, in run
+    main(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1600, in start
+    rc = server.run(preload, stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 668, in run
+    rc = preload_registries(preload)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1514, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 186, in new
+    load_modules(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 456, in load_modules
+    load_module_graph(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 165, in load_module_graph
+    registry._setup_models__(env.cr, [])  # incremental setup
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 475, in _setup_models__
+    model_classes.setup_model_classes(env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 323, in setup_model_classes
+    _setup_fields(model_cls, env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 517, in _setup_fields
+    field.setup(model)
+  File "/opt/odoo19/odoo/odoo/orm/fields.py", line 547, in setup
+    warnings.warn(f'Property {self}.required should be a boolean ({self.required}).', stacklevel=1)
+ 
+2026-03-21 05:11:09,739 99606 WARNING tah_upgrade py.warnings: /opt/odoo19/odoo/odoo/orm/fields.py:547: UserWarning: Property employee.loan.type.name.required should be a boolean (1).
+  File "/opt/odoo19/odoo/./odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "/opt/odoo19/odoo/odoo/cli/command.py", line 133, in main
+    command().run(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 127, in run
+    main(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1600, in start
+    rc = server.run(preload, stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 668, in run
+    rc = preload_registries(preload)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1514, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 186, in new
+    load_modules(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 456, in load_modules
+    load_module_graph(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 165, in load_module_graph
+    registry._setup_models__(env.cr, [])  # incremental setup
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 475, in _setup_models__
+    model_classes.setup_model_classes(env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 323, in setup_model_classes
+    _setup_fields(model_cls, env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 517, in _setup_fields
+    field.setup(model)
+  File "/opt/odoo19/odoo/odoo/orm/fields.py", line 547, in setup
+    warnings.warn(f'Property {self}.required should be a boolean ({self.required}).', stacklevel=1)
+ 
+2026-03-21 05:11:09,740 99606 WARNING tah_upgrade py.warnings: /opt/odoo19/odoo/odoo/orm/fields.py:547: UserWarning: Property employee.loan.type.loan_limit.required should be a boolean (1).
+  File "/opt/odoo19/odoo/./odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "/opt/odoo19/odoo/odoo/cli/command.py", line 133, in main
+    command().run(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 127, in run
+    main(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1600, in start
+    rc = server.run(preload, stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 668, in run
+    rc = preload_registries(preload)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1514, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 186, in new
+    load_modules(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 456, in load_modules
+    load_module_graph(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 165, in load_module_graph
+    registry._setup_models__(env.cr, [])  # incremental setup
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 475, in _setup_models__
+    model_classes.setup_model_classes(env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 323, in setup_model_classes
+    _setup_fields(model_cls, env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 517, in _setup_fields
+    field.setup(model)
+  File "/opt/odoo19/odoo/odoo/orm/fields.py", line 547, in setup
+    warnings.warn(f'Property {self}.required should be a boolean ({self.required}).', stacklevel=1)
+ 
+2026-03-21 05:11:09,741 99606 WARNING tah_upgrade py.warnings: /opt/odoo19/odoo/odoo/orm/fields.py:547: UserWarning: Property employee.loan.type.loan_term.required should be a boolean (1).
+  File "/opt/odoo19/odoo/./odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "/opt/odoo19/odoo/odoo/cli/command.py", line 133, in main
+    command().run(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 127, in run
+    main(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1600, in start
+    rc = server.run(preload, stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 668, in run
+    rc = preload_registries(preload)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1514, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 186, in new
+    load_modules(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 456, in load_modules
+    load_module_graph(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 165, in load_module_graph
+    registry._setup_models__(env.cr, [])  # incremental setup
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 475, in _setup_models__
+    model_classes.setup_model_classes(env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 323, in setup_model_classes
+    _setup_fields(model_cls, env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 517, in _setup_fields
+    field.setup(model)
+  File "/opt/odoo19/odoo/odoo/orm/fields.py", line 547, in setup
+    warnings.warn(f'Property {self}.required should be a boolean ({self.required}).', stacklevel=1)
+ 
+2026-03-21 05:11:09,741 99606 WARNING tah_upgrade py.warnings: /opt/odoo19/odoo/odoo/orm/fields.py:547: UserWarning: Property employee.loan.type.loan_account.required should be a boolean (1).
+  File "/opt/odoo19/odoo/./odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "/opt/odoo19/odoo/odoo/cli/command.py", line 133, in main
+    command().run(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 127, in run
+    main(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1600, in start
+    rc = server.run(preload, stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 668, in run
+    rc = preload_registries(preload)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1514, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 186, in new
+    load_modules(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 456, in load_modules
+    load_module_graph(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 165, in load_module_graph
+    registry._setup_models__(env.cr, [])  # incremental setup
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 475, in _setup_models__
+    model_classes.setup_model_classes(env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 323, in setup_model_classes
+    _setup_fields(model_cls, env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 517, in _setup_fields
+    field.setup(model)
+  File "/opt/odoo19/odoo/odoo/orm/fields.py", line 547, in setup
+    warnings.warn(f'Property {self}.required should be a boolean ({self.required}).', stacklevel=1)
+ 
+2026-03-21 05:11:09,742 99606 WARNING tah_upgrade py.warnings: /opt/odoo19/odoo/odoo/orm/fields.py:547: UserWarning: Property employee.loan.type.interest_account.required should be a boolean (1).
+  File "/opt/odoo19/odoo/./odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "/opt/odoo19/odoo/odoo/cli/command.py", line 133, in main
+    command().run(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 127, in run
+    main(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1600, in start
+    rc = server.run(preload, stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 668, in run
+    rc = preload_registries(preload)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1514, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 186, in new
+    load_modules(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 456, in load_modules
+    load_module_graph(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 165, in load_module_graph
+    registry._setup_models__(env.cr, [])  # incremental setup
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 475, in _setup_models__
+    model_classes.setup_model_classes(env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 323, in setup_model_classes
+    _setup_fields(model_cls, env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 517, in _setup_fields
+    field.setup(model)
+  File "/opt/odoo19/odoo/odoo/orm/fields.py", line 547, in setup
+    warnings.warn(f'Property {self}.required should be a boolean ({self.required}).', stacklevel=1)
+ 
+2026-03-21 05:11:09,742 99606 WARNING tah_upgrade py.warnings: /opt/odoo19/odoo/odoo/orm/fields.py:547: UserWarning: Property employee.loan.type.journal_id.required should be a boolean (1).
+  File "/opt/odoo19/odoo/./odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "/opt/odoo19/odoo/odoo/cli/command.py", line 133, in main
+    command().run(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 127, in run
+    main(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1600, in start
+    rc = server.run(preload, stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 668, in run
+    rc = preload_registries(preload)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1514, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 186, in new
+    load_modules(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 456, in load_modules
+    load_module_graph(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 165, in load_module_graph
+    registry._setup_models__(env.cr, [])  # incremental setup
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 475, in _setup_models__
+    model_classes.setup_model_classes(env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 323, in setup_model_classes
+    _setup_fields(model_cls, env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 517, in _setup_fields
+    field.setup(model)
+  File "/opt/odoo19/odoo/odoo/orm/fields.py", line 547, in setup
+    warnings.warn(f'Property {self}.required should be a boolean ({self.required}).', stacklevel=1)
+ 
+2026-03-21 05:11:09,743 99606 WARNING tah_upgrade py.warnings: /opt/odoo19/odoo/odoo/orm/fields.py:547: UserWarning: Property employee.loan.employee_id.required should be a boolean (1).
+  File "/opt/odoo19/odoo/./odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "/opt/odoo19/odoo/odoo/cli/command.py", line 133, in main
+    command().run(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 127, in run
+    main(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1600, in start
+    rc = server.run(preload, stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 668, in run
+    rc = preload_registries(preload)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1514, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 186, in new
+    load_modules(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 456, in load_modules
+    load_module_graph(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 165, in load_module_graph
+    registry._setup_models__(env.cr, [])  # incremental setup
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 475, in _setup_models__
+    model_classes.setup_model_classes(env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 323, in setup_model_classes
+    _setup_fields(model_cls, env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 517, in _setup_fields
+    field.setup(model)
+  File "/opt/odoo19/odoo/odoo/orm/fields.py", line 547, in setup
+    warnings.warn(f'Property {self}.required should be a boolean ({self.required}).', stacklevel=1)
+ 
+2026-03-21 05:11:09,743 99606 WARNING tah_upgrade py.warnings: /opt/odoo19/odoo/odoo/orm/fields.py:547: UserWarning: Property employee.loan.manager_id.required should be a boolean (1).
+  File "/opt/odoo19/odoo/./odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "/opt/odoo19/odoo/odoo/cli/command.py", line 133, in main
+    command().run(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 127, in run
+    main(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1600, in start
+    rc = server.run(preload, stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 668, in run
+    rc = preload_registries(preload)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1514, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 186, in new
+    load_modules(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 456, in load_modules
+    load_module_graph(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 165, in load_module_graph
+    registry._setup_models__(env.cr, [])  # incremental setup
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 475, in _setup_models__
+    model_classes.setup_model_classes(env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 323, in setup_model_classes
+    _setup_fields(model_cls, env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 517, in _setup_fields
+    field.setup(model)
+  File "/opt/odoo19/odoo/odoo/orm/fields.py", line 547, in setup
+    warnings.warn(f'Property {self}.required should be a boolean ({self.required}).', stacklevel=1)
+ 
+2026-03-21 05:11:09,744 99606 WARNING tah_upgrade py.warnings: /opt/odoo19/odoo/odoo/orm/fields.py:547: UserWarning: Property employee.loan.start_date.required should be a boolean (1).
+  File "/opt/odoo19/odoo/./odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "/opt/odoo19/odoo/odoo/cli/command.py", line 133, in main
+    command().run(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 127, in run
+    main(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1600, in start
+    rc = server.run(preload, stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 668, in run
+    rc = preload_registries(preload)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1514, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 186, in new
+    load_modules(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 456, in load_modules
+    load_module_graph(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 165, in load_module_graph
+    registry._setup_models__(env.cr, [])  # incremental setup
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 475, in _setup_models__
+    model_classes.setup_model_classes(env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 323, in setup_model_classes
+    _setup_fields(model_cls, env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 517, in _setup_fields
+    field.setup(model)
+  File "/opt/odoo19/odoo/odoo/orm/fields.py", line 547, in setup
+    warnings.warn(f'Property {self}.required should be a boolean ({self.required}).', stacklevel=1)
+ 
+2026-03-21 05:11:09,744 99606 WARNING tah_upgrade py.warnings: /opt/odoo19/odoo/odoo/orm/fields.py:547: UserWarning: Property employee.loan.term.required should be a boolean (1).
+  File "/opt/odoo19/odoo/./odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "/opt/odoo19/odoo/odoo/cli/command.py", line 133, in main
+    command().run(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 127, in run
+    main(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1600, in start
+    rc = server.run(preload, stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 668, in run
+    rc = preload_registries(preload)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1514, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 186, in new
+    load_modules(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 456, in load_modules
+    load_module_graph(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 165, in load_module_graph
+    registry._setup_models__(env.cr, [])  # incremental setup
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 475, in _setup_models__
+    model_classes.setup_model_classes(env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 323, in setup_model_classes
+    _setup_fields(model_cls, env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 517, in _setup_fields
+    field.setup(model)
+  File "/opt/odoo19/odoo/odoo/orm/fields.py", line 547, in setup
+    warnings.warn(f'Property {self}.required should be a boolean ({self.required}).', stacklevel=1)
+ 
+2026-03-21 05:11:09,745 99606 WARNING tah_upgrade py.warnings: /opt/odoo19/odoo/odoo/orm/fields.py:547: UserWarning: Property employee.loan.loan_type_id.required should be a boolean (1).
+  File "/opt/odoo19/odoo/./odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "/opt/odoo19/odoo/odoo/cli/command.py", line 133, in main
+    command().run(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 127, in run
+    main(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1600, in start
+    rc = server.run(preload, stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 668, in run
+    rc = preload_registries(preload)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1514, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 186, in new
+    load_modules(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 456, in load_modules
+    load_module_graph(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 165, in load_module_graph
+    registry._setup_models__(env.cr, [])  # incremental setup
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 475, in _setup_models__
+    model_classes.setup_model_classes(env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 323, in setup_model_classes
+    _setup_fields(model_cls, env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 517, in _setup_fields
+    field.setup(model)
+  File "/opt/odoo19/odoo/odoo/orm/fields.py", line 547, in setup
+    warnings.warn(f'Property {self}.required should be a boolean ({self.required}).', stacklevel=1)
+ 
+2026-03-21 05:11:09,745 99606 WARNING tah_upgrade py.warnings: /opt/odoo19/odoo/odoo/orm/fields.py:547: UserWarning: Property employee.loan.payment_method.required should be a boolean (1).
+  File "/opt/odoo19/odoo/./odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "/opt/odoo19/odoo/odoo/cli/command.py", line 133, in main
+    command().run(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 127, in run
+    main(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1600, in start
+    rc = server.run(preload, stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 668, in run
+    rc = preload_registries(preload)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1514, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 186, in new
+    load_modules(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 456, in load_modules
+    load_module_graph(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 165, in load_module_graph
+    registry._setup_models__(env.cr, [])  # incremental setup
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 475, in _setup_models__
+    model_classes.setup_model_classes(env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 323, in setup_model_classes
+    _setup_fields(model_cls, env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 517, in _setup_fields
+    field.setup(model)
+  File "/opt/odoo19/odoo/odoo/orm/fields.py", line 547, in setup
+    warnings.warn(f'Property {self}.required should be a boolean ({self.required}).', stacklevel=1)
+ 
+2026-03-21 05:11:09,745 99606 WARNING tah_upgrade py.warnings: /opt/odoo19/odoo/odoo/orm/fields.py:547: UserWarning: Property employee.loan.loan_amount.required should be a boolean (1).
+  File "/opt/odoo19/odoo/./odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "/opt/odoo19/odoo/odoo/cli/command.py", line 133, in main
+    command().run(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 127, in run
+    main(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1600, in start
+    rc = server.run(preload, stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 668, in run
+    rc = preload_registries(preload)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1514, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 186, in new
+    load_modules(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 456, in load_modules
+    load_module_graph(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 165, in load_module_graph
+    registry._setup_models__(env.cr, [])  # incremental setup
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 475, in _setup_models__
+    model_classes.setup_model_classes(env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 323, in setup_model_classes
+    _setup_fields(model_cls, env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 517, in _setup_fields
+    field.setup(model)
+  File "/opt/odoo19/odoo/odoo/orm/fields.py", line 547, in setup
+    warnings.warn(f'Property {self}.required should be a boolean ({self.required}).', stacklevel=1)
+ 
+2026-03-21 05:11:09,746 99606 WARNING tah_upgrade py.warnings: /opt/odoo19/odoo/odoo/orm/fields.py:547: UserWarning: Property employee.loan.installment_amount.required should be a boolean (1).
+  File "/opt/odoo19/odoo/./odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "/opt/odoo19/odoo/odoo/cli/command.py", line 133, in main
+    command().run(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 127, in run
+    main(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1600, in start
+    rc = server.run(preload, stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 668, in run
+    rc = preload_registries(preload)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1514, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 186, in new
+    load_modules(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 456, in load_modules
+    load_module_graph(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 165, in load_module_graph
+    registry._setup_models__(env.cr, [])  # incremental setup
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 475, in _setup_models__
+    model_classes.setup_model_classes(env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 323, in setup_model_classes
+    _setup_fields(model_cls, env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 517, in _setup_fields
+    field.setup(model)
+  File "/opt/odoo19/odoo/odoo/orm/fields.py", line 547, in setup
+    warnings.warn(f'Property {self}.required should be a boolean ({self.required}).', stacklevel=1)
+ 
+2026-03-21 05:11:09,746 99606 WARNING tah_upgrade py.warnings: /opt/odoo19/odoo/odoo/orm/fields.py:547: UserWarning: Property employee.loan.notes.required should be a boolean (1).
+  File "/opt/odoo19/odoo/./odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "/opt/odoo19/odoo/odoo/cli/command.py", line 133, in main
+    command().run(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 127, in run
+    main(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1600, in start
+    rc = server.run(preload, stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 668, in run
+    rc = preload_registries(preload)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1514, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 186, in new
+    load_modules(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 456, in load_modules
+    load_module_graph(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 165, in load_module_graph
+    registry._setup_models__(env.cr, [])  # incremental setup
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 475, in _setup_models__
+    model_classes.setup_model_classes(env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 323, in setup_model_classes
+    _setup_fields(model_cls, env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 517, in _setup_fields
+    field.setup(model)
+  File "/opt/odoo19/odoo/odoo/orm/fields.py", line 547, in setup
+    warnings.warn(f'Property {self}.required should be a boolean ({self.required}).', stacklevel=1)
+ 
+2026-03-21 05:11:09,747 99606 WARNING tah_upgrade py.warnings: /opt/odoo19/odoo/odoo/orm/fields.py:547: UserWarning: Property installment.line.loan_id.required should be a boolean (1).
+  File "/opt/odoo19/odoo/./odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "/opt/odoo19/odoo/odoo/cli/command.py", line 133, in main
+    command().run(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 127, in run
+    main(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1600, in start
+    rc = server.run(preload, stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 668, in run
+    rc = preload_registries(preload)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1514, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 186, in new
+    load_modules(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 456, in load_modules
+    load_module_graph(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 165, in load_module_graph
+    registry._setup_models__(env.cr, [])  # incremental setup
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 475, in _setup_models__
+    model_classes.setup_model_classes(env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 323, in setup_model_classes
+    _setup_fields(model_cls, env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 517, in _setup_fields
+    field.setup(model)
+  File "/opt/odoo19/odoo/odoo/orm/fields.py", line 547, in setup
+    warnings.warn(f'Property {self}.required should be a boolean ({self.required}).', stacklevel=1)
+ 
+2026-03-21 05:11:09,748 99606 WARNING tah_upgrade py.warnings: /opt/odoo19/odoo/odoo/orm/fields.py:547: UserWarning: Property dev.skip.installment.employee_id.required should be a boolean (1).
+  File "/opt/odoo19/odoo/./odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "/opt/odoo19/odoo/odoo/cli/command.py", line 133, in main
+    command().run(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 127, in run
+    main(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1600, in start
+    rc = server.run(preload, stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 668, in run
+    rc = preload_registries(preload)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1514, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 186, in new
+    load_modules(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 456, in load_modules
+    load_module_graph(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 165, in load_module_graph
+    registry._setup_models__(env.cr, [])  # incremental setup
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 475, in _setup_models__
+    model_classes.setup_model_classes(env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 323, in setup_model_classes
+    _setup_fields(model_cls, env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 517, in _setup_fields
+    field.setup(model)
+  File "/opt/odoo19/odoo/odoo/orm/fields.py", line 547, in setup
+    warnings.warn(f'Property {self}.required should be a boolean ({self.required}).', stacklevel=1)
+ 
+2026-03-21 05:11:09,748 99606 WARNING tah_upgrade py.warnings: /opt/odoo19/odoo/odoo/orm/fields.py:547: UserWarning: Property dev.skip.installment.loan_id.required should be a boolean (1).
+  File "/opt/odoo19/odoo/./odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "/opt/odoo19/odoo/odoo/cli/command.py", line 133, in main
+    command().run(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 127, in run
+    main(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1600, in start
+    rc = server.run(preload, stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 668, in run
+    rc = preload_registries(preload)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1514, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 186, in new
+    load_modules(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 456, in load_modules
+    load_module_graph(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 165, in load_module_graph
+    registry._setup_models__(env.cr, [])  # incremental setup
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 475, in _setup_models__
+    model_classes.setup_model_classes(env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 323, in setup_model_classes
+    _setup_fields(model_cls, env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 517, in _setup_fields
+    field.setup(model)
+  File "/opt/odoo19/odoo/odoo/orm/fields.py", line 547, in setup
+    warnings.warn(f'Property {self}.required should be a boolean ({self.required}).', stacklevel=1)
+ 
+2026-03-21 05:11:09,748 99606 WARNING tah_upgrade py.warnings: /opt/odoo19/odoo/odoo/orm/fields.py:547: UserWarning: Property dev.skip.installment.installment_id.required should be a boolean (1).
+  File "/opt/odoo19/odoo/./odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "/opt/odoo19/odoo/odoo/cli/command.py", line 133, in main
+    command().run(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 127, in run
+    main(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1600, in start
+    rc = server.run(preload, stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 668, in run
+    rc = preload_registries(preload)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1514, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 186, in new
+    load_modules(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 456, in load_modules
+    load_module_graph(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 165, in load_module_graph
+    registry._setup_models__(env.cr, [])  # incremental setup
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 475, in _setup_models__
+    model_classes.setup_model_classes(env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 323, in setup_model_classes
+    _setup_fields(model_cls, env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 517, in _setup_fields
+    field.setup(model)
+  File "/opt/odoo19/odoo/odoo/orm/fields.py", line 547, in setup
+    warnings.warn(f'Property {self}.required should be a boolean ({self.required}).', stacklevel=1)
+ 
+2026-03-21 05:11:09,749 99606 WARNING tah_upgrade py.warnings: /opt/odoo19/odoo/odoo/orm/fields.py:547: UserWarning: Property dev.skip.installment.notes.required should be a boolean (1).
+  File "/opt/odoo19/odoo/./odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "/opt/odoo19/odoo/odoo/cli/command.py", line 133, in main
+    command().run(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 127, in run
+    main(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1600, in start
+    rc = server.run(preload, stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 668, in run
+    rc = preload_registries(preload)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1514, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 186, in new
+    load_modules(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 456, in load_modules
+    load_module_graph(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 165, in load_module_graph
+    registry._setup_models__(env.cr, [])  # incremental setup
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 475, in _setup_models__
+    model_classes.setup_model_classes(env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 323, in setup_model_classes
+    _setup_fields(model_cls, env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 517, in _setup_fields
+    field.setup(model)
+  File "/opt/odoo19/odoo/odoo/orm/fields.py", line 547, in setup
+    warnings.warn(f'Property {self}.required should be a boolean ({self.required}).', stacklevel=1)
+ 
+2026-03-21 05:11:09,749 99606 WARNING tah_upgrade py.warnings: /opt/odoo19/odoo/odoo/orm/fields.py:547: UserWarning: Property dev.skip.installment.manager_id.required should be a boolean (1).
+  File "/opt/odoo19/odoo/./odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "/opt/odoo19/odoo/odoo/cli/command.py", line 133, in main
+    command().run(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 127, in run
+    main(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1600, in start
+    rc = server.run(preload, stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 668, in run
+    rc = preload_registries(preload)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1514, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 186, in new
+    load_modules(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 456, in load_modules
+    load_module_graph(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 165, in load_module_graph
+    registry._setup_models__(env.cr, [])  # incremental setup
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 475, in _setup_models__
+    model_classes.setup_model_classes(env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 323, in setup_model_classes
+    _setup_fields(model_cls, env)
+  File "/opt/odoo19/odoo/odoo/orm/model_classes.py", line 517, in _setup_fields
+    field.setup(model)
+  File "/opt/odoo19/odoo/odoo/orm/fields.py", line 547, in setup
+    warnings.warn(f'Property {self}.required should be a boolean ({self.required}).', stacklevel=1)
+ 
+2026-03-21 05:11:09,752 99606 WARNING tah_upgrade odoo.fields: Field repair.order.service_no: unknown parameter 'indexe', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:10,230 99606 WARNING tah_upgrade odoo.fields: Field mrp.production.customer_project_id: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:10,310 99606 INFO tah_upgrade odoo.registry: module flex_mrp_custom: creating or updating database tables 
+2026-03-21 05:11:10,640 99606 INFO tah_upgrade odoo.registry: Models have no table: ai.embedding, account.age.report.configuration, account.age.report.configuration.line. 
+2026-03-21 05:11:10,640 99606 INFO tah_upgrade odoo.registry: Recreate table of model ai.embedding. 
+2026-03-21 05:11:10,640 99606 INFO tah_upgrade odoo.registry: Recreate table of model account.age.report.configuration. 
+2026-03-21 05:11:10,641 99606 INFO tah_upgrade odoo.registry: Recreate table of model account.age.report.configuration.line. 
+2026-03-21 05:11:10,648 99606 ERROR tah_upgrade odoo.registry: Model account.age.report.configuration has no table. 
+2026-03-21 05:11:10,648 99606 ERROR tah_upgrade odoo.registry: Model ai.embedding has no table. 
+2026-03-21 05:11:10,648 99606 ERROR tah_upgrade odoo.registry: Model account.age.report.configuration.line has no table. 
+2026-03-21 05:11:10,678 99606 WARNING tah_upgrade py.warnings: /opt/odoo19/odoo/odoo/orm/registry.py:521: UserWarning: sale.order: inconsistent 'compute_sudo' for computed fields amount_invoiced, amount_paid. Either set 'compute_sudo' to the same value on all those fields, or use distinct compute methods for sudoed and non-sudoed fields.
+  File "/opt/odoo19/odoo/./odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "/opt/odoo19/odoo/odoo/cli/command.py", line 133, in main
+    command().run(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 127, in run
+    main(args)
+  File "/opt/odoo19/odoo/odoo/cli/server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1600, in start
+    rc = server.run(preload, stop)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 668, in run
+    rc = preload_registries(preload)
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1514, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 186, in new
+    load_modules(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 456, in load_modules
+    load_module_graph(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 204, in load_module_graph
+    module._check()
+  File "/opt/odoo19/odoo/addons/website/models/ir_module_module.py", line 486, in _check
+    super()._check()
+  File "/opt/odoo19/odoo/odoo/addons/base/models/ir_module.py", line 878, in _check
+    if not module.description_html:
+  File "/opt/odoo19/odoo/odoo/orm/fields.py", line 1736, in __get__
+    self.compute_value(recs)
+  File "/opt/odoo19/odoo/odoo/orm/fields.py", line 1894, in compute_value
+    fields = records.pool.field_computed[self]
+  File "/usr/lib/python3.10/functools.py", line 981, in __get__
+    val = self.func(instance)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 521, in field_computed
+    warnings.warn(
+ 
+2026-03-21 05:11:11,012 99606 INFO tah_upgrade odoo.modules.loading: loading flex_mrp_custom/security/groups.xml 
+2026-03-21 05:11:11,019 99606 INFO tah_upgrade odoo.modules.loading: loading flex_mrp_custom/security/ir.model.access.csv 
+2026-03-21 05:11:11,955 99606 INFO tah_upgrade odoo.modules.loading: loading flex_mrp_custom/views/product.xml 
+2026-03-21 05:11:12,296 99606 INFO tah_upgrade odoo.modules.loading: loading flex_mrp_custom/views/mrp_production.xml 
+2026-03-21 05:11:12,650 99606 INFO tah_upgrade odoo.modules.loading: loading flex_mrp_custom/reports/mrp_production.xml 
+2026-03-21 05:11:12,653 99606 INFO tah_upgrade odoo.modules.loading: loading flex_mrp_custom/wizards/sale_get_product.xml 
+2026-03-21 05:11:12,691 99606 INFO tah_upgrade odoo.modules.loading: loading flex_mrp_custom/wizards/import_component.xml 
+2026-03-21 05:11:12,741 99606 INFO tah_upgrade odoo.addons.base.models.ir_module: module flex_mrp_custom: no translation for language ar_001 
+2026-03-21 05:11:12,830 99606 INFO tah_upgrade odoo.modules.loading: Module flex_mrp_custom loaded in 4.31s, 361 queries (+361 other) 
+2026-03-21 05:11:12,924 99606 INFO tah_upgrade odoo.modules.loading: Loading module flex_sale_workflow (429/434) 
+2026-03-21 05:11:13,214 99606 WARNING tah_upgrade odoo.fields: Field sale.order.customer_project_id: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:13,215 99606 WARNING tah_upgrade odoo.fields: Field sale.order.wood_order_line: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:13,215 99606 WARNING tah_upgrade odoo.fields: Field sale.order.accessory_order_line: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:13,215 99606 WARNING tah_upgrade odoo.fields: Field sale.order.mixer_order_line: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:13,215 99606 WARNING tah_upgrade odoo.fields: Field sale.order.electronic_order_line: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:13,215 99606 WARNING tah_upgrade odoo.fields: Field sale.order.worktop_order_line: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:13,215 99606 WARNING tah_upgrade odoo.fields: Field sale.order.service_order_line: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:13,216 99606 WARNING tah_upgrade odoo.fields: Field sale.order.appliance_order_line: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:13,216 99606 WARNING tah_upgrade odoo.fields: Field sale.order.bedroom_order_line: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:13,528 99606 WARNING tah_upgrade odoo.fields: Field sale.order.customer_project_id: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:13,528 99606 WARNING tah_upgrade odoo.fields: Field sale.order.wood_order_line: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:13,528 99606 WARNING tah_upgrade odoo.fields: Field sale.order.accessory_order_line: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:13,528 99606 WARNING tah_upgrade odoo.fields: Field sale.order.mixer_order_line: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:13,529 99606 WARNING tah_upgrade odoo.fields: Field sale.order.electronic_order_line: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:13,529 99606 WARNING tah_upgrade odoo.fields: Field sale.order.worktop_order_line: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:13,529 99606 WARNING tah_upgrade odoo.fields: Field sale.order.service_order_line: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:13,529 99606 WARNING tah_upgrade odoo.fields: Field sale.order.appliance_order_line: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:13,529 99606 WARNING tah_upgrade odoo.fields: Field sale.order.bedroom_order_line: unknown parameter 'states', if this is an actual parameter you may want to override the method _valid_field_parameter on the relevant model in order to allow it 
+2026-03-21 05:11:13,649 99606 INFO tah_upgrade odoo.registry: module flex_sale_workflow: creating or updating database tables 
+2026-03-21 05:11:14,319 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (carcass_grain, grain) of sale.order() have the same label: Grain. [Modules: flex_sale_spec and flex_sale_spec] 
+2026-03-21 05:11:14,319 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (door_ground_model_one_id, door_model_id) of sale.order() have the same label: Door Model. [Modules: flex_sale_spec and flex_sale_spec] 
+2026-03-21 05:11:14,319 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (frame_color_two, frame_color_one) of sale.order() have the same label: Frame Color. [Modules: flex_sale_spec and flex_sale_spec] 
+2026-03-21 05:11:14,319 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (door_floor2_model_one_id, door_model_id) of sale.order() have the same label: Door Model. [Modules: flex_sale_spec and flex_sale_spec] 
+2026-03-21 05:11:14,320 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (wood_floor2_one_frame_color_one, wood_ground_one_frame_color_one) of sale.order() have the same label: Wood One Frame Color. [Modules: flex_sale_spec and flex_sale_spec] 
+2026-03-21 05:11:14,320 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (frame_floor2_color_one, frame_color_one) of sale.order() have the same label: Frame Color. [Modules: flex_sale_spec and flex_sale_spec] 
+2026-03-21 05:11:14,320 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (glass_floor2_one_model_one_id, glass_ground_one_model_one_id) of sale.order() have the same label: Glass Model. [Modules: flex_sale_spec and flex_sale_spec] 
+2026-03-21 05:11:14,320 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (door_floor2_model_two_id, door_ground_model_two_id) of sale.order() have the same label: Door Model 2. [Modules: flex_sale_spec and flex_sale_spec] 
+2026-03-21 05:11:14,320 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (wood_floor2_two_frame_color_one, wood_ground_two_frame_color_one) of sale.order() have the same label: Wood Two Frame Color. [Modules: flex_sale_spec and flex_sale_spec] 
+2026-03-21 05:11:14,320 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (glass_floor2_two_model_one_id, glass_ground_two_model_one_id) of sale.order() have the same label: Glass Model 2. [Modules: flex_sale_spec and flex_sale_spec] 
+2026-03-21 05:11:14,320 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (frame_color_one_sliding, frame_color_one) of sale.order() have the same label: Frame Color. [Modules: flex_sale_spec and flex_sale_spec] 
+2026-03-21 05:11:14,320 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (frame_color_two_sliding, frame_floor2_color_two) of sale.order() have the same label: Frame Color 2. [Modules: flex_sale_spec and flex_sale_spec] 
+2026-03-21 05:11:14,320 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (additional_currency_rate, currency_rate) of sale.order() have the same label: Currency Rate. [Modules: flex_currencies_reports and sale] 
+2026-03-21 05:11:14,321 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (accessory_categs, accessories) of sale.order() have the same label: Accessories. [Modules: hz_sale_custom and flex_sale_spec] 
+2026-03-21 05:11:14,321 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (wood_untaxed, amount_untaxed) of sale.order() have the same label: Untaxed Amount. [Modules: hz_sale_custom and sale] 
+2026-03-21 05:11:14,321 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (wood_undiscounted, amount_undiscounted) of sale.order() have the same label: Amount Before Discount. [Modules: hz_sale_custom and sale] 
+2026-03-21 05:11:14,321 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (accessory_untaxed, amount_untaxed) of sale.order() have the same label: Untaxed Amount. [Modules: hz_sale_custom and sale] 
+2026-03-21 05:11:14,321 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (accessory_tax, wood_tax) of sale.order() have the same label: Tax Amount. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,321 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (accessory_total, wood_total) of sale.order() have the same label: Total Amount. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,321 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (accessory_unit_prices, wood_unit_prices) of sale.order() have the same label: Unit Prices. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,322 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (accessory_undiscounted, amount_undiscounted) of sale.order() have the same label: Amount Before Discount. [Modules: hz_sale_custom and sale] 
+2026-03-21 05:11:14,322 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (accessory_discount_amount, wood_discount_amount) of sale.order() have the same label: Discount Amount. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,322 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (mixer_untaxed, amount_untaxed) of sale.order() have the same label: Untaxed Amount. [Modules: hz_sale_custom and sale] 
+2026-03-21 05:11:14,322 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (mixer_tax, wood_tax) of sale.order() have the same label: Tax Amount. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,322 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (mixer_total, wood_total) of sale.order() have the same label: Total Amount. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,322 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (mixer_unit_prices, wood_unit_prices) of sale.order() have the same label: Unit Prices. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,322 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (mixer_undiscounted, amount_undiscounted) of sale.order() have the same label: Amount Before Discount. [Modules: hz_sale_custom and sale] 
+2026-03-21 05:11:14,323 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (mixer_discount_amount, wood_discount_amount) of sale.order() have the same label: Discount Amount. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,323 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (electronic_untaxed, amount_untaxed) of sale.order() have the same label: Untaxed Amount. [Modules: hz_sale_custom and sale] 
+2026-03-21 05:11:14,323 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (electronic_tax, wood_tax) of sale.order() have the same label: Tax Amount. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,323 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (electronic_total, wood_total) of sale.order() have the same label: Total Amount. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,323 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (electronic_unit_prices, wood_unit_prices) of sale.order() have the same label: Unit Prices. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,323 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (electronic_undiscounted, amount_undiscounted) of sale.order() have the same label: Amount Before Discount. [Modules: hz_sale_custom and sale] 
+2026-03-21 05:11:14,323 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (electronic_discount_amount, wood_discount_amount) of sale.order() have the same label: Discount Amount. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,324 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (worktop_untaxed, amount_untaxed) of sale.order() have the same label: Untaxed Amount. [Modules: hz_sale_custom and sale] 
+2026-03-21 05:11:14,324 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (worktop_tax, wood_tax) of sale.order() have the same label: Tax Amount. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,324 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (worktop_total, wood_total) of sale.order() have the same label: Total Amount. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,324 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (worktop_unit_prices, wood_unit_prices) of sale.order() have the same label: Unit Prices. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,324 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (worktop_undiscounted, amount_undiscounted) of sale.order() have the same label: Amount Before Discount. [Modules: hz_sale_custom and sale] 
+2026-03-21 05:11:14,324 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (worktop_discount_amount, wood_discount_amount) of sale.order() have the same label: Discount Amount. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,324 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (service_untaxed, amount_untaxed) of sale.order() have the same label: Untaxed Amount. [Modules: hz_sale_custom and sale] 
+2026-03-21 05:11:14,324 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (service_tax, wood_tax) of sale.order() have the same label: Tax Amount. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,324 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (service_total, wood_total) of sale.order() have the same label: Total Amount. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,325 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (service_unit_prices, wood_unit_prices) of sale.order() have the same label: Unit Prices. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,325 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (service_undiscounted, amount_undiscounted) of sale.order() have the same label: Amount Before Discount. [Modules: hz_sale_custom and sale] 
+2026-03-21 05:11:14,325 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (service_discount_amount, wood_discount_amount) of sale.order() have the same label: Discount Amount. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,325 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (appliance_untaxed, amount_untaxed) of sale.order() have the same label: Untaxed Amount. [Modules: hz_sale_custom and sale] 
+2026-03-21 05:11:14,325 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (appliance_tax, wood_tax) of sale.order() have the same label: Tax Amount. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,325 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (appliance_total, wood_total) of sale.order() have the same label: Total Amount. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,325 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (appliance_unit_prices, wood_unit_prices) of sale.order() have the same label: Unit Prices. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,325 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (appliance_undiscounted, amount_undiscounted) of sale.order() have the same label: Amount Before Discount. [Modules: hz_sale_custom and sale] 
+2026-03-21 05:11:14,325 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (appliance_discount_amount, wood_discount_amount) of sale.order() have the same label: Discount Amount. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,325 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (bedroom_untaxed, amount_untaxed) of sale.order() have the same label: Untaxed Amount. [Modules: hz_sale_custom and sale] 
+2026-03-21 05:11:14,325 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (bedroom_tax, wood_tax) of sale.order() have the same label: Tax Amount. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,326 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (bedroom_total, wood_total) of sale.order() have the same label: Total Amount. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,326 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (bedroom_unit_prices, wood_unit_prices) of sale.order() have the same label: Unit Prices. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,326 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (bedroom_undiscounted, amount_undiscounted) of sale.order() have the same label: Amount Before Discount. [Modules: hz_sale_custom and sale] 
+2026-03-21 05:11:14,326 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (bedroom_discount_amount, wood_discount_amount) of sale.order() have the same label: Discount Amount. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,326 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (bedroom_undiscounted_egp, wood_undiscounted_egp) of sale.order() have the same label: Amount Before Discount Eg. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,326 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (bedroom_discount_amount_egp, wood_discount_amount_egp) of sale.order() have the same label: Discount Amount Eg. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,326 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (accessory_undiscounted_egp, wood_undiscounted_egp) of sale.order() have the same label: Amount Before Discount Eg. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,326 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (accessory_discount_amount_egp, wood_discount_amount_egp) of sale.order() have the same label: Discount Amount Eg. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,326 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (mixer_undiscounted_egp, wood_undiscounted_egp) of sale.order() have the same label: Amount Before Discount Eg. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,326 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (mixer_discount_amount_egp, wood_discount_amount_egp) of sale.order() have the same label: Discount Amount Eg. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,327 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (electronic_undiscounted_egp, wood_undiscounted_egp) of sale.order() have the same label: Amount Before Discount Eg. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,327 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (electronic_discount_amount_egp, wood_discount_amount_egp) of sale.order() have the same label: Discount Amount Eg. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,327 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (worktop_undiscounted_egp, wood_undiscounted_egp) of sale.order() have the same label: Amount Before Discount Eg. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,327 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (worktop_discount_amount_egp, wood_discount_amount_egp) of sale.order() have the same label: Discount Amount Eg. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,327 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (service_undiscounted_egp, wood_undiscounted_egp) of sale.order() have the same label: Amount Before Discount Eg. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,327 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (service_discount_amount_egp, wood_discount_amount_egp) of sale.order() have the same label: Discount Amount Eg. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,327 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (appliance_undiscounted_egp, wood_undiscounted_egp) of sale.order() have the same label: Amount Before Discount Eg. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,327 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (appliance_discount_amount_egp, wood_discount_amount_egp) of sale.order() have the same label: Discount Amount Eg. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,327 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (discount_amount, wood_discount_amount) of sale.order() have the same label: Discount Amount. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,327 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (amount_undiscounted_eg, wood_undiscounted_egp) of sale.order() have the same label: Amount Before Discount Eg. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,327 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (discount_amount_other, wood_discount_amount) of sale.order() have the same label: Discount Amount. [Modules: hz_sale_custom and hz_sale_custom] 
+2026-03-21 05:11:14,328 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (sol_warehouse_id, warehouse_id) of sale.order.line() have the same label: Warehouse. [Modules: eq_so_multi_warehouse and sale_stock] 
+2026-03-21 05:11:14,328 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (product_categ_id, categ_id) of sale.order.line() have the same label: Product Category. [Modules: hz_sale_custom and sale] 
+2026-03-21 05:11:14,328 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (flex_product_uom, product_uom_id) of sale.order.line() have the same label: Unit. [Modules: flex_sale_workflow and sale] 
+2026-03-21 05:11:14,329 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (total_pdc_payment, amount_total) of account.move() have the same label: Total. [Modules: sh_pdc and account] 
+2026-03-21 05:11:14,329 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (additional_currency_rate, invoice_currency_rate) of account.move() have the same label: Currency Rate. [Modules: flex_currencies_reports and account] 
+2026-03-21 05:11:14,329 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (partner_address, warehouse_address_id) of stock.picking() have the same label: Address. [Modules: flex_inventory_modified and stock] 
+2026-03-21 05:11:14,330 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (picking_type_code, picking_code) of stock.move() have the same label: Type of Operation. [Modules: flex_sale_workflow and stock] 
+2026-03-21 05:11:14,330 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (is_tax_readonly_purchase, is_tax_readonly_sale) of res.company() have the same label: Readonly Tax. [Modules: ab_tax_readonly and hz_sale_custom] 
+2026-03-21 05:11:14,331 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (notify_on_2, notify_on_1) of res.company() have the same label: Notify On. [Modules: sh_pdc and sh_pdc] 
+2026-03-21 05:11:14,331 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (notify_on_3, notify_on_1) of res.company() have the same label: Notify On. [Modules: sh_pdc and sh_pdc] 
+2026-03-21 05:11:14,331 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (notify_on_4, notify_on_1) of res.company() have the same label: Notify On. [Modules: sh_pdc and sh_pdc] 
+2026-03-21 05:11:14,331 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (notify_on_5, notify_on_1) of res.company() have the same label: Notify On. [Modules: sh_pdc and sh_pdc] 
+2026-03-21 05:11:14,331 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (is_notify_to_user_vendor, is_notify_to_user) of res.company() have the same label: Notify to Internal User. [Modules: sh_pdc and sh_pdc] 
+2026-03-21 05:11:14,331 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (notify_on_2_vendor, notify_on_1_vendor) of res.company() have the same label: Notify On . [Modules: sh_pdc and sh_pdc] 
+2026-03-21 05:11:14,331 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (notify_on_3_vendor, notify_on_1_vendor) of res.company() have the same label: Notify On . [Modules: sh_pdc and sh_pdc] 
+2026-03-21 05:11:14,331 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (notify_on_4_vendor, notify_on_1_vendor) of res.company() have the same label: Notify On . [Modules: sh_pdc and sh_pdc] 
+2026-03-21 05:11:14,331 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (notify_on_5_vendor, notify_on_1_vendor) of res.company() have the same label: Notify On . [Modules: sh_pdc and sh_pdc] 
+2026-03-21 05:11:14,332 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (pos_default_fiscal_position_id, fiscal_position_id) of res.config.settings() have the same label: Default Fiscal Position. [Modules: point_of_sale and flex_account] 
+2026-03-21 05:11:14,333 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (is_tax_readonly_purchase, is_tax_readonly_sale) of res.config.settings() have the same label: Readonly Tax. [Modules: ab_tax_readonly and ab_tax_readonly] 
+2026-03-21 05:11:14,333 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (notify_on_2, notify_on_1) of res.config.settings() have the same label: Notify On. [Modules: sh_pdc and sh_pdc] 
+2026-03-21 05:11:14,333 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (notify_on_3, notify_on_1) of res.config.settings() have the same label: Notify On. [Modules: sh_pdc and sh_pdc] 
+2026-03-21 05:11:14,333 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (notify_on_4, notify_on_1) of res.config.settings() have the same label: Notify On. [Modules: sh_pdc and sh_pdc] 
+2026-03-21 05:11:14,333 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (notify_on_5, notify_on_1) of res.config.settings() have the same label: Notify On. [Modules: sh_pdc and sh_pdc] 
+2026-03-21 05:11:14,333 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (is_notify_to_user_vendor, is_notify_to_user) of res.config.settings() have the same label: Notify to Internal User. [Modules: sh_pdc and sh_pdc] 
+2026-03-21 05:11:14,333 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (notify_on_2_vendor, notify_on_1_vendor) of res.config.settings() have the same label: Notify On . [Modules: sh_pdc and sh_pdc] 
+2026-03-21 05:11:14,333 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (notify_on_3_vendor, notify_on_1_vendor) of res.config.settings() have the same label: Notify On . [Modules: sh_pdc and sh_pdc] 
+2026-03-21 05:11:14,333 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (notify_on_4_vendor, notify_on_1_vendor) of res.config.settings() have the same label: Notify On . [Modules: sh_pdc and sh_pdc] 
+2026-03-21 05:11:14,333 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (notify_on_5_vendor, notify_on_1_vendor) of res.config.settings() have the same label: Notify On . [Modules: sh_pdc and sh_pdc] 
+2026-03-21 05:11:14,334 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (stock_picking_scrap_type, stock_picking_type) of res.config.settings() have the same label: Stock Picking Opration Type. [Modules: stock_cancel_app and stock_cancel_app] 
+2026-03-21 05:11:14,334 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (total_pdc_payment, amount_total) of account.bank.statement.line() have the same label: Total. [Modules: None and None] 
+2026-03-21 05:11:14,334 99606 WARNING tah_upgrade odoo.addons.base.models.ir_model: Two fields (additional_currency_rate, invoice_currency_rate) of account.bank.statement.line() have the same label: Currency Rate. [Modules: None and None] 
+2026-03-21 05:11:15,383 99606 INFO tah_upgrade odoo.schema: Keep unexpected index sale_order__date_order_index on table sale_order 
+2026-03-21 05:11:15,383 99606 INFO tah_upgrade odoo.schema: Keep unexpected index sale_order__team_id_index on table sale_order 
+2026-03-21 05:11:15,383 99606 INFO tah_upgrade odoo.schema: Keep unexpected index sale_order__project_id_index on table sale_order 
+2026-03-21 05:11:15,385 99606 INFO tah_upgrade odoo.schema: Keep unexpected index account_bank_statement_line__sequence_index on table account_bank_statement_line 
+2026-03-21 05:11:15,385 99606 INFO tah_upgrade odoo.schema: Keep unexpected index account_bank_statement_line__internal_index_index on table account_bank_statement_line 
+2026-03-21 05:11:15,450 99606 INFO tah_upgrade odoo.registry: Models have no table: ai.embedding, account.age.report.configuration, account.age.report.configuration.line. 
+2026-03-21 05:11:15,451 99606 INFO tah_upgrade odoo.registry: Recreate table of model ai.embedding. 
+2026-03-21 05:11:15,451 99606 INFO tah_upgrade odoo.registry: Recreate table of model account.age.report.configuration. 
+2026-03-21 05:11:15,451 99606 INFO tah_upgrade odoo.registry: Recreate table of model account.age.report.configuration.line. 
+2026-03-21 05:11:15,461 99606 ERROR tah_upgrade odoo.registry: Model account.age.report.configuration has no table. 
+2026-03-21 05:11:15,462 99606 ERROR tah_upgrade odoo.registry: Model ai.embedding has no table. 
+2026-03-21 05:11:15,462 99606 ERROR tah_upgrade odoo.registry: Model account.age.report.configuration.line has no table. 
+2026-03-21 05:11:15,478 99606 INFO tah_upgrade odoo.modules.loading: loading flex_sale_workflow/security/groups.xml 
+2026-03-21 05:11:15,635 99606 INFO tah_upgrade odoo.modules.loading: loading flex_sale_workflow/views/sale.xml 
+2026-03-21 05:11:15,984 99606 WARNING tah_upgrade odoo.addons.base.models.ir_ui_view: The group “product.group_discount_per_so_line” defined in view does not exist!
+View error context:
+{'file': '/opt/odoo19/odoo/tahb_upgrade/flex_sale_workflow/views/sale.xml',
+ 'line': 25,
+ 'name': 'view_order_form_inherit',
+ 'view': ir.ui.view(3603,),
+ 'view.model': 'sale.order',
+ 'view.parent': ir.ui.view(1690,),
+ 'xmlid': 'view_order_form_inherit'} 
+2026-03-21 05:11:15,999 99606 WARNING tah_upgrade odoo.addons.base.models.ir_ui_view: <b>Access Rights Inconsistency</b><br/>This view may not work for all users: some users may have a combination of groups where the elements <b><tt>&lt;field name=&#34;opportunity_id&#34;/&gt;</tt></b> are displayed, but they depend on the field <b><tt>tag_ids</tt></b> that is not accessible. You might fix this by modifying user groups to make sure that all users who have access to those elements also have access to the field, typically via group implications. Alternatively, you could adjust the “<i>groups</i>” or “<i>invisible</i>” attributes for these fields, to make sure they are always available together.<br/>Debugging information:<br/>- field “tag_ids” is accessible for groups: &#39;sales_team.group_sale_salesman&#39;<br/>- element “&lt;field name=&#34;opportunity_id&#34; context=&#34;{                     &#39;default_campaign_id&#39;: campaign_id,                     &#39;default_company_id&#39;: company_id,                     &#39;default_medium_id&#39;: medium_id,                     &#39;default_partner_id&#39;: partner_id,                     &#39;default_source_id&#39;: source_id,                     &#39;default_tag_ids&#39;: tag_ids,                     &#39;default_type&#39;: &#39;opportunity&#39;,                 }&#34;/&gt;” is shown in the view for groups: &#39;base.group_portal&#39; | &#39;sales_team.group_sale_salesman&#39; | &#39;account.group_account_readonly&#39; | &#39;account.group_account_invoice&#39; | &#39;project.group_project_user&#39; | &#39;stock.group_stock_user&#39; | &#39;planning.group_planning_manager&#39; | &#39;studio_customization.sales_user_all_docum_40776034-bc7d-42c0-9e5d-c204f8218b5b&#39;
+View error context:
+{'file': '/opt/odoo19/odoo/tahb_upgrade/flex_sale_workflow/views/sale.xml',
+ 'line': 1,
+ 'name': 'view_order_form_inherit',
+ 'view': ir.ui.view(3603,),
+ 'view.model': 'sale.order',
+ 'view.parent': ir.ui.view(1690,),
+ 'xmlid': 'view_order_form_inherit'} 
+2026-03-21 05:11:16,304 99606 WARNING tah_upgrade odoo.addons.base.models.ir_ui_view: The group “product.group_discount_per_so_line” defined in view does not exist!
+View error context:
+{'file': '/opt/odoo19/odoo/tahb_upgrade/flex_sale_workflow/views/sale.xml',
+ 'line': 25,
+ 'name': 'view_order_form_inherit',
+ 'view': ir.ui.view(3603,),
+ 'view.model': 'sale.order',
+ 'view.parent': ir.ui.view(1690,),
+ 'xmlid': 'view_order_form_inherit'} 
+2026-03-21 05:11:16,319 99606 WARNING tah_upgrade odoo.addons.base.models.ir_ui_view: <b>Access Rights Inconsistency</b><br/>This view may not work for all users: some users may have a combination of groups where the elements <b><tt>&lt;field name=&#34;opportunity_id&#34;/&gt;</tt></b> are displayed, but they depend on the field <b><tt>tag_ids</tt></b> that is not accessible. You might fix this by modifying user groups to make sure that all users who have access to those elements also have access to the field, typically via group implications. Alternatively, you could adjust the “<i>groups</i>” or “<i>invisible</i>” attributes for these fields, to make sure they are always available together.<br/>Debugging information:<br/>- field “tag_ids” is accessible for groups: &#39;sales_team.group_sale_salesman&#39;<br/>- element “&lt;field name=&#34;opportunity_id&#34; context=&#34;{                     &#39;default_campaign_id&#39;: campaign_id,                     &#39;default_company_id&#39;: company_id,                     &#39;default_medium_id&#39;: medium_id,                     &#39;default_partner_id&#39;: partner_id,                     &#39;default_source_id&#39;: source_id,                     &#39;default_tag_ids&#39;: tag_ids,                     &#39;default_type&#39;: &#39;opportunity&#39;,                 }&#34;/&gt;” is shown in the view for groups: &#39;base.group_portal&#39; | &#39;sales_team.group_sale_salesman&#39; | &#39;account.group_account_readonly&#39; | &#39;account.group_account_invoice&#39; | &#39;project.group_project_user&#39; | &#39;stock.group_stock_user&#39; | &#39;planning.group_planning_manager&#39; | &#39;studio_customization.sales_user_all_docum_40776034-bc7d-42c0-9e5d-c204f8218b5b&#39;
+View error context:
+{'file': '/opt/odoo19/odoo/tahb_upgrade/flex_sale_workflow/views/sale.xml',
+ 'line': 1,
+ 'name': 'view_order_form_inherit',
+ 'view': ir.ui.view(3603,),
+ 'view.model': 'sale.order',
+ 'view.parent': ir.ui.view(1690,),
+ 'xmlid': 'view_order_form_inherit'} 
+2026-03-21 05:11:16,438 99606 INFO tah_upgrade odoo.modules.loading: loading flex_sale_workflow/views/stock_quant.xml 
+2026-03-21 05:11:17,805 99606 INFO tah_upgrade odoo.modules.loading: loading flex_sale_workflow/views/stock_picking.xml 
+2026-03-21 05:11:18,095 99606 INFO tah_upgrade odoo.modules.loading: loading flex_sale_workflow/views/account_move.xml 
+2026-03-21 05:11:18,179 99606 WARNING tah_upgrade odoo.modules.loading: Transient module states were reset 
+2026-03-21 05:11:18,183 99606 ERROR tah_upgrade odoo.registry: Failed to load registry 
+2026-03-21 05:11:18,184 99606 CRITICAL tah_upgrade odoo.service.server: Failed to initialize database `tah_upgrade`. 
+Traceback (most recent call last):
+  File "/opt/odoo19/odoo/odoo/service/server.py", line 1514, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "/opt/odoo19/odoo/odoo/tools/func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "/opt/odoo19/odoo/odoo/orm/registry.py", line 186, in new
+    load_modules(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 456, in load_modules
+    load_module_graph(
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 216, in load_module_graph
+    load_data(env, idref, mode, kind='data', package=package)
+  File "/opt/odoo19/odoo/odoo/modules/loading.py", line 59, in load_data
+    convert_file(env, package.name, filename, idref, mode, noupdate=kind == 'demo')
+  File "/opt/odoo19/odoo/odoo/tools/convert.py", line 693, in convert_file
+    convert_xml_import(env, module, fp, idref, mode, noupdate)
+  File "/opt/odoo19/odoo/odoo/tools/convert.py", line 792, in convert_xml_import
+    obj.parse(doc.getroot())
+  File "/opt/odoo19/odoo/odoo/tools/convert.py", line 663, in parse
+    self._tag_root(de)
+  File "/opt/odoo19/odoo/odoo/tools/convert.py", line 605, in _tag_root
+    f(rec)
+  File "/opt/odoo19/odoo/odoo/tools/convert.py", line 616, in _tag_root
+    raise ParseError(msg) from None  # Restart with "--log-handler odoo.tools.convert:DEBUG" for complete traceback
+odoo.tools.convert.ParseError: while parsing /opt/odoo19/odoo/tahb_upgrade/flex_sale_workflow/views/account_move.xml:4
+Error while validating view near:
+
+<form string="Account Entry" js_class="account_move_form" __validate__="1">
+                    <header>
+                        <!-- Post -->
+                        <button name="action_post" string="Post" class="oe_highlight" type="object" groups="account.group_account_invoice" data-hotkey="q" context="{'validate_analytic': True, 'disable_abnormal_invoice_detection': False}" invisible="hide_post_button or move_type != 'entry'"/>
+
+sh_import_journal_item is not a valid action on account.move
+
+View error context:
+{'file': '/opt/odoo19/odoo/tahb_upgrade/flex_sale_workflow/views/account_move.xml',
+ 'line': 2,
+ 'name': 'account.move.form.inherit',
+ 'view': ir.ui.view(3842,),
+ 'view.model': 'account.move',
+ 'view.parent': ir.ui.view(690,),
+ 'xmlid': 'view_account_move_form_inherit'}
+
+2026-03-21 05:11:18,185 99606 INFO tah_upgrade odoo.service.server: Initiating shutdown 
+2026-03-21 05:11:18,185 99606 INFO tah_upgrade odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2026-03-21 05:11:18,185 99606 INFO tah_upgrade odoo.sql_db: ConnectionPool(read/write;used=0/count=0/max=64): Closed 1 connections  

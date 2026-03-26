@@ -7,7 +7,7 @@
     "website":      "softatt.com",
     "license":      "OPL-1",
     "category":     "hr",
-    "depends":      ["hr", "hr_attendance", "hr_contract","hr_holidays"],
+    "depends":      ["hr", "hr_attendance", "hr_holidays"],
     "currency":     "USD",
     "data": [
         "security/ir.model.access.csv",

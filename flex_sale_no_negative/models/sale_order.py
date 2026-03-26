@@ -9,7 +9,7 @@ class SaleOrder(models.Model):
     def action_confirm(self):
         if not self.env.user.has_group('flex_sale_no_negative.group_exceed_no_stock'):
             for line in self.order_line.filtered(
-                    lambda l: l.product_id and l.product_id.detailed_type == 'product' and l.product_id.prevent_negative):
+                    lambda l: l.product_id and l.product_id.type == 'product' and l.product_id.prevent_negative):
                 # if line.free_qty_today < line.product_uom_qty:
                 # warehouse = line.order_id.warehouse_id
                 warehouse = line.sol_warehouse_id

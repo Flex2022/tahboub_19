@@ -550,7 +550,7 @@ class SaleOrder(models.Model):
         cannot_create = not self.env.user.has_group('hz_sale_custom.group_sale_create')
         if cannot_create and not self._context.get('creating_from_crm', False):
             doc = etree.XML(result['arch'])
-            for node in doc.xpath("//tree") + doc.xpath("//form") + doc.xpath("//kanban"):
+            for node in doc.xpath("//list") + doc.xpath("//form") + doc.xpath("//kanban"):
                 node.set('create', '0')
             result['arch'] = etree.tostring(doc, encoding='unicode')
         return result

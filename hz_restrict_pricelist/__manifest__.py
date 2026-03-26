@@ -3,7 +3,7 @@
     'name': "Pricelist User Restriction",
     'description': "Restrict pricelists for specific user(s)",
     'summary': "",
-    'version': '15.0.1',
+    'version': '19.0.1',
     'author': "Hossam Zaki - Flex-Ops",
     'website': "https://flex-ops.com",
     'category': '',

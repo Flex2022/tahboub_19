@@ -28,6 +28,12 @@ For Module Support : devintelle@gmail.com  or Skype : devintelle
 		</field>
     </record>
 
+    <record id="stock_account.view_move_search" model="ir.ui.view">
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='inventory']" position="after"/>
+        </field>
+    </record>
+
     <record id="transfers_split_button_search_inher" model="ir.ui.view">
         <field name="name">stock.move.serach.inherit</field>
         <field name="model">stock.move</field>

@@ -3,7 +3,8 @@
     'version': '19.0.1.0.0',
     'category': 'Generic Modules/Human Resources',
     'author': 'Ryad Abderrahim',
-    'depends': ['hr', 'hr_attendance', 'resource', 'hr_work_entry', 'hr_work_entry_contract', 'hr_payroll'],
+    'license': 'LGPL-3',
+    'depends': ['hr', 'hr_attendance', 'resource', 'hr_work_entry', 'hr_payroll'],
     'data': [
         'security/ir.model.access.csv',
 

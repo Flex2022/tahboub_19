@@ -232,9 +232,22 @@ class AccountMove(models.Model):
                 'company_id': self.company_id.id
             })
 
+    def action_delete_duplicates(self):
+        """Compatibility shim for legacy button references kept in old inherited views."""
+        self.ensure_one()
+        return {
+            'type': 'ir.actions.client',
+            'tag': 'display_notification',
+            'params': {
+                'title': _('Duplicate Action'),
+                'message': _('This legacy action is no longer supported in Odoo 19.'),
+                'type': 'warning',
+                'sticky': False,
+            },
+        }
+
 
 class AccountMoveLine(models.Model):
-    _name = 'account.move.line'
     _inherit = 'account.move.line'
 
     additional_currency = fields.Many2one('res.currency', related='move_id.additional_currency')

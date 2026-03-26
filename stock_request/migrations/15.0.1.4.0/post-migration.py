@@ -1,10 +1,18 @@
-# Copyright 2023 Tecnativa - Pedro M. Baeza
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-from openupgradelib import openupgrade
+"""Compatibility migration shim for Odoo 19 without openupgradelib."""
+
+from odoo import api
+from odoo.tools.convert import convert_file
+
+SUPERUSER_UID = 1
 
 
-@openupgrade.migrate()
-def migrate(env, version):
-    openupgrade.load_data(
-        env.cr, "stock_request", "migrations/15.0.1.4.0/noupdate_changes.xml"
+def migrate(cr, version):
+    env = api.Environment(cr, SUPERUSER_UID, {})
+    convert_file(
+        env,
+        "stock_request",
+        "migrations/15.0.1.4.0/noupdate_changes.xml",
+        {},
+        "init",
+        noupdate=True,
     )
