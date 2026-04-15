@@ -47,7 +47,7 @@ function printPdf(url, callback) {
     iframe.src = url;
 }
 
-function getReportUrl(action, type) {
+function getReportUrl(action, type, env) {
     let url = `/report/${type}/${action.report_name}`;
     const actionContext = action.context || {};
     if (action.data && JSON.stringify(action.data) !== "{}") {
@@ -102,9 +102,9 @@ registry
 
         // check the state of wkhtmltopdf before proceeding
         if (!wkhtmltopdfStateProm) {
-            wkhtmltopdfStateProm = await rpc("/report/check_wkhtmltopdf");
+            wkhtmltopdfStateProm = rpc("/report/check_wkhtmltopdf");
         }
-        const state = wkhtmltopdfStateProm;
+        const state = await wkhtmltopdfStateProm;
         // display a notification according to wkhtmltopdf's state
         const message = getWKHTMLTOPDF_MESSAGES(state)
         if (message) {
@@ -116,7 +116,7 @@ registry
         if (["upgrade", "ok"].includes(state)) {
             // trigger the download of the PDF report
             //return _triggerDownload(action, options, "pdf");
-            const url = getReportUrl(action, "pdf");
+            const url = getReportUrl(action, "pdf", env);
             if (default_print_option === "print") {
                 env.services.ui.block();
                 printPdf(url, () => {
@@ -128,7 +128,7 @@ registry
             }
             return true;
         } else {
-            // open the report in the client action if generating the PDF is not possible
-            return _executeReportClientAction(action, options);
+            // Let the standard report handler continue (HTML fallback in core behavior).
+            return false;
         }
     })

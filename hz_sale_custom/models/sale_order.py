@@ -601,7 +601,7 @@ class SaleOrder(models.Model):
             order_lines[-len(template.sale_order_template_line_ids)][2]['sequence'] = -99
 
         self.order_line = order_lines
-        self.order_line._compute_tax_id()
+        self.order_line._compute_tax_ids()
 
         # then, process the list of optional products from the template
         option_lines = [(5, 0, 0)]

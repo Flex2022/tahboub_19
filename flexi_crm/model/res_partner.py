@@ -49,12 +49,11 @@ class ResPartner(models.Model):
                     partner.warn_mobile_exist = True
 
     @api.model
-    def name_search(self, name, args=None, operator='ilike', limit=100):
-        args = args or []
-        recs = self.browse()
-        if not recs:
-            recs = self.search(['|', ('mobile', operator, name), ('name', operator, name)] + args, limit=limit)
-        return recs.name_get()
+    def name_search(self, name='', domain=None, operator='ilike', limit=100):
+        domain = domain or []
+        name = name or ''
+        recs = self.search(['|', ('mobile', operator, name), ('name', operator, name)] + domain, limit=limit)
+        return [(rec.id, rec.display_name) for rec in recs.sudo()]
 
     # def _get_warn_mobile_exist(self):
     #     for partner in self:
